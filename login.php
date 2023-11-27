@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body {font-family: arial;}
+      body {
+        font-family: arial;
+        background: url(img/background-1.jpg);
+        background-size: cover;
+      }
 
       .form-container {
         width: 320px;
