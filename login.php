@@ -135,6 +135,15 @@
         color: rgba(156, 163, 175, 1);
       }
 
+      @media screen and (max-width: 476px){
+        .form-container {
+          margin: 0 0 0 15px;
+        }
+
+        body {
+          background: url(img/background-2.jpg);
+        }
+      }
     </style>
 </head>
 <body>
