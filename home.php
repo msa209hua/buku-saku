@@ -137,7 +137,10 @@ input:not(:placeholder-shown) ~ .reset {
 </style>
 </head>
 <body>
+<?php
+include "koneksi.php";
 
+?>
 <ul>
   <li><a class="active" href="index.php"><b>Buku Saku</b></a></li>
   <li><a href="index.php">Data Kasus</a></li>
@@ -145,38 +148,82 @@ input:not(:placeholder-shown) ~ .reset {
 </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
-<form class="form">
-      <button>
-          <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-              <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-      </button>
-      <input class="input" placeholder="Type your text" required="" type="text">
-      <button class="reset" type="reset">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-      </button>
-  </form>
-  <br>
-  <br>
+<form action="home.php" method="GET">
   <table>
+  <tr>
+          <td width="7%">
+          <form method="GET">
+            <select name="tingkat">
+              <option value="10 PPLG A">10 PPLG A</option>
+              <option value="10 PPLG B">10 PPLG B</option>
+              <option value="10 KIMIA A">10 KIMIA A</option>
+              <option value="10 KIMIA B">10 KIMIA B</option>
+              <option value="10 KIMIA C">10 KIMIA C</option>
+              <option value="10 ANIMASI A">10 ANIMASI A</option>
+              <option value="10 ANIMASI B">10 ANIMASI B</option>
+              <option value="10 DKV A">10 DKV A</option>
+              <option value="10 DKV B">10 DKV B</option>
+              <option value="10 DKV C">10 DKV C</option>
+              <option value="10 MEKATRONIKA A">10 MEKATRONIKA A</option>
+              <option value="10 MEKATRONIKA B">10 MEKATRONIKA B</option>
+              <option value="10 MEKATRONIKA C">10 MEKATRONIKA C</option>
+              <option value="10 MEKATRONIKA D">10 MEKATRONIKA D</option>
+              <option value="10 PEMESINAN A">10 PEMESINAN A</option>
+              <option value="10 PEMESINAN B">10 PEMESINAN B</option>
+              <option value="11 PPLG A">11 PPLG A</option>
+              <option value="11 PPLG B">11 PPLG B</option>
+              <option value="11 KIMIA A">11 KIMIA A</option>
+              <option value="11 KIMIA B">11 KIMIA B</option>
+              <option value="11 KIMIA C">11 KIMIA C</option>
+              <option value="11 ANIMASI A">11 ANIMASI A</option>
+              <option value="11 ANIMASI B">11 ANIMASI B</option>
+              <option value="11 DKV A">11 DKV A</option>
+              <option value="11 DKV B">11 DKV B</option>
+              <option value="11 DKV C">11 DKV C</option>
+              <option value="11 MEKATRONIKA A">11 MEKATRONIKA A</option>
+              <option value="11 MEKATRONIKA B">11 MEKATRONIKA B</option>
+              <option value="11 MEKATRONIKA C">11 MEKATRONIKA C</option>
+              <option value="11 MEKATRONIKA D">11 MEKATRONIKA D</option>
+              <option value="11 PEMESINAN A">11 PEMESINAN A</option>
+              <option value="11 PEMESINAN B">11 PEMESINAN B</option>
+            </select>
+            </td>
+            <td>
+              <input type="submit" name="cari" value="Cari">
+            </td>
+          
+        </tr>
+    <?php
+    if (isset($_GET['tingkat'])) {
+      $ting = $_GET['tingkat'];
+      $tingkat = explode(" ",$ting);
+      $angkatan=$tingkat[0];
+      $jurusan=$tingkat[1];
+      $kelas=$tingkat[2];
+      $sql=mysqli_query($conn, "SELECT * FROM siswa 
+      WHERE tingkat='$angkatan' and jurusan='$jurusan' and kelas='$kelas' 
+      ORDER BY nis ASC");
+    
+    ?>
     <tr>
-        <th>NIS</th>
-        <th>Nama</th>
-        <th>Kelas</th>
-        <th>Jenis Kasus</th>
-        <th>Poin</th>
+      <th>NIS</th>
+      <th>Nama</th>
+      <th>Kelas</th>
+      <th>Laporkan</th>
     </tr>
+    <?php foreach ($sql as $row) : ?>
     <tr>
-        <td>102205831</td>
-        <td>Dava</td>
-        <td>XI RPL c</td>
-        <td>Rambut</td>
-        <td>Poin</td>
+    <td><?= $row["nis"];?></td>
+          <td><?= $row["nama"];?></td>
+          <td><?= $row["tingkat"]." ".$row["jurusan"]." ".$row["kelas"];?></td>
+          <td><?php echo "
+                        <a href='proses_kasus.php?id=$row[nis]'>Lapor</a>"?></td>
     </tr>
+    <?php
+    endforeach;
+    }
+    ?>
   </table>
-</div>
-
+</form>
 </body>
 </html>
