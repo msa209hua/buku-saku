@@ -149,7 +149,7 @@
 <body>
 <div class="form-container">
 	<p class="title">Login <br> <span style="font-size: 18px;">E - Buku Saku</span></p>
-	<form class="form">
+	<form class="form" action="proses-login.php" method="POST">
 		<div class="input-group">
 			<label for="username">Username</label>
 			<input type="text" name="username" id="username" style="width: 90%;" placeholder="">
@@ -158,10 +158,12 @@
 			<label for="password">Password</label>
 			<input type="password" name="password" id="password" style="width: 90%;" placeholder="">
 			<div class="forgot">
-				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+				<a rel="noopener noreferrer" href="forgot.php">Forgot Password ?</a>
 			</div>
 		</div>
-		<button type="submit" class="sign" name="sign">Sign in</button>
+    <input type="submit" value="Sign in" name="signin" class="sign">
 	</form>
+
+  
 </body>
 </html>
