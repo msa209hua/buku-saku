@@ -1,18 +1,25 @@
 <?php
+include "koneksi.php";
+
+$sql = "SELECT * FROM siswa";
+$siswa = mysqli_query($conn, $sql);
 
 if (isset($_POST['signin'])) {
-  
-  if ($_POST['username'] == "admin" && $_POST['password'] == "admin") {
-    header("location: home.php");
-  } else if ($_POST['username'] == "hi" && $_POST['password'] == "yey") {
-    header("location: forgot.php");
-  } else {
-    echo "
-      <script>
-          alert('Username atau Password salah');
-          window.location.href='login.php';
-      </script>
-      ";
-  }
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  foreach ($siswa as $data) {
+    if ($username == "admin" && $password == "admin") {
+      header("location: home.php");
+    } else if ($username == $data['nama'] && $password == $data['nis']) {
+      header("location: forgot.php");
+    } else {
+      echo "
+        <script>
+            alert('Username atau Password salah');
+            window.location.href='login.php';
+        </script>
+        ";
+    }
+ }
 }
 ?>
