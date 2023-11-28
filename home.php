@@ -217,7 +217,7 @@ include "koneksi.php";
           <td><?= $row["nama"];?></td>
           <td><?= $row["tingkat"]." ".$row["jurusan"]." ".$row["kelas"];?></td>
           <td><?php echo "
-                        <a href='proses_kasus.php?id=$row[nis]'>Lapor</a>"?></td>
+                        <a href='proses-kasus.php?id=$row[nis]'>Lapor</a>"?></td>
     </tr>
     <?php
     endforeach;
