@@ -75,6 +75,10 @@ li a:hover:not(.active) {
             </td>
         </tr>
         <tr>
+            <td>Keterangan</td>
+            <td><input type="text" name="keterangan"></td>
+        </tr>
+        <tr>
             <td><input type="submit" name="lapor" value="Laporkan"></td>
         </tr>
     </table>
