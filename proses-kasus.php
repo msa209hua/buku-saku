@@ -57,7 +57,7 @@ li a:hover:not(.active) {
 </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
-<form action="proses-kasus.php" method="GET">
+<form action="proses.php" method="POST">
     <table>
         <tr>
             <td>Nama Siswa</td>
