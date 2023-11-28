@@ -152,11 +152,11 @@
 	<form class="form" action="proses-login.php" method="POST">
 		<div class="input-group">
 			<label for="username">Username</label>
-			<input type="text" name="username" id="username" style="width: 90%;" placeholder="">
+			<input type="text" name="username" id="username" style="width: 90%;" placeholder="Username menggunakan huruf KAPITAL">
 		</div>
 		<div class="input-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" style="width: 90%;" placeholder="">
+			<input type="password" name="password" id="password" style="width: 90%;" placeholder="Masukan Password dengan benar">
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="forgot.php">Forgot Password ?</a>
 			</div>
