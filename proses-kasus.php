@@ -1,8 +1,10 @@
 <?php
 include "koneksi.php";
 $id=$_GET['id'];
-$sql=mysqli_query($conn, "SELECT nama FROM siswa WHERE nis=$id");
+$sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
 $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus");
+include "koneksi.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +61,14 @@ li a:hover:not(.active) {
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
 <form action="proses.php" method="POST">
     <table>
+    <tr>
+                <td>id</td>
+                <td><input type="hidden" name="id" value=<?=$id?>></td>
+            </tr>
+    <tr>
+            <td>NIS</td>
+            <td><?php foreach ($sql as $nama) :?><?=$nama["nis"]; ?><?php endforeach;?></td>
+        </tr>
         <tr>
             <td>Nama Siswa</td>
             <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
@@ -79,7 +89,11 @@ li a:hover:not(.active) {
             <td><input type="text" name="keterangan"></td>
         </tr>
         <tr>
-            <td><input type="submit" name="lapor" value="Laporkan"></td>
+            <td>Poin</td>
+            <td><input type="number" name="poin"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?>></td>
         </tr>
     </table>
 </form>
