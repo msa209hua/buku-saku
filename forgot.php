@@ -9,6 +9,6 @@
 <body>
     <p>Jika kamu lupa Username dan Passwordmu, mohon cek kembali <br>
     nama dan NIS kamu</p>
-    <a href="login.php">Kembali ke halaman Login</a>
+    <a href="index.php">Kembali ke halaman Login</a>
 </body>
 </html>

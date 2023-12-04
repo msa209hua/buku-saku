@@ -11,12 +11,12 @@ if (isset($_POST['signin'])) {
     if ($username == "admin" && $password == "admin") {
       header("location: home.php");
     } else if ($username == $data['nama'] && $password == $data['nis']) {
-      header("location: forgot.php");
+      header("location: buku-saku.php");
     } else {
       echo "
         <script>
             alert('Username atau Password salah');
-            window.location.href='login.php';
+            window.location.href='index.php';
         </script>
         ";
     }
