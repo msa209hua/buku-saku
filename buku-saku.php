@@ -34,19 +34,19 @@
       <table class="table table-secondary table-striped table-responsive-md">
         <tr>
           <td>Nama Lengkap</td>
-          <td>: BINTANG LAZUARDY AZZURO</td>
+          <td>: </td>
         </tr>
         <tr>
           <td>NIS</td>
-          <td>: 102205803</td>
+          <td>: </td>
         </tr>
         <tr>
           <td>Kelas</td>
-          <td>: XI RPL A</td>
+          <td>: </td>
         </tr>
         <tr>
           <td>Poin</td>
-          <td>: 100</td>
+          <td>: </td>
         </tr>
       </table>
     </div>
