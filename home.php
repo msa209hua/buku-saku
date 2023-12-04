@@ -145,7 +145,7 @@ include "koneksi.php";
 ?>
 <ul>
   <li><a class="active" href="index.php"><b>Buku Saku</b></a></li>
-  <li><a href="index.php">Data Kasus</a></li>
+  <li><a href="data-kasus.php">Data Kasus</a></li>
   <li><a href="user.php">Data Siswa </a></li>
 </ul>
 

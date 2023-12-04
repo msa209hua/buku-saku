@@ -6,11 +6,12 @@ if (isset($_POST['lapor'])) {
     foreach ($sql as $value) {
         $nis=$value["nis"];
         $nama=$value["nama"];
-        $kelas=$value["kelas"];
+        $kelas=$value["tingkat"]." ".$value["jurusan"]." ".$value["kelas"];;
         $kasus=$_POST["kasus"];
         $poin=$_POST["poin"];
-      $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,poin) VALUES
-      ('$nis','$nama','$kelas','$kasus','$poin')");
+        $keterangan=$_POST["keterangan"];
+      $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,poin,keterangan) VALUES
+      ('$nis','$nama','$kelas','$kasus','$poin','$keterangan')");
       }
       echo "
     <script>
