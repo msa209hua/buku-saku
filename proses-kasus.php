@@ -89,10 +89,6 @@ li a:hover:not(.active) {
             <td><input type="text" name="keterangan"></td>
         </tr>
         <tr>
-            <td>Poin</td>
-            <td><input type="number" name="poin"></td>
-        </tr>
-        <tr>
             <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?>></td>
         </tr>
     </table>
