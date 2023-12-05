@@ -13,159 +13,150 @@
         background-size: cover;
       }
 
-      .form-container {
-        width: 320px;
-        border-radius: 0.75rem;
-        background-color: rgba(17, 24, 39, 1);
-        padding: 2rem;
-        color: rgba(243, 244, 246, 1);
-        margin: 120px 0 0 480px;
-      }
-
-      .title {
-        text-align: center;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        font-weight: 700;
-      }
-
-      .form {
-        margin-top: 1.5rem;
-      }
-
-      .input-group {
-        margin-top: 0.25rem;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-      }
-
-      .input-group label {
-        display: block;
-        color: rgba(156, 163, 175, 1);
-        margin-bottom: 4px;
-      }
-
-      .input-group input {
-        width: 100%;
-        border-radius: 0.375rem;
-        border: 1px solid rgba(55, 65, 81, 1);
-        outline: 0;
-        background-color: rgba(17, 24, 39, 1);
-        padding: 0.75rem 1rem;
-        color: rgba(243, 244, 246, 1);
-      }
-
-      .input-group input:focus {
-        border-color: rgba(167, 139, 250);
-      }
-
-      .forgot {
-        display: flex;
-        justify-content: flex-end;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        color: rgba(156, 163, 175,1);
-        margin: 8px 0 14px 0;
-      }
-
-      .forgot a,.signup a {
-        color: rgba(243, 244, 246, 1);
-        text-decoration: none;
-        font-size: 14px;
-      }
-
-      .forgot a:hover, .signup a:hover {
-        text-decoration: underline rgba(167, 139, 250, 1);
-      }
-
-      .sign {
-        display: block;
-        width: 100%;
-        background-color: rgba(167, 139, 250, 1);
-        padding: 0.75rem;
-        text-align: center;
-        color: rgba(17, 24, 39, 1);
-        border: none;
-        border-radius: 0.375rem;
-        font-weight: 600;
-      }
-
-      .social-message {
-        display: flex;
-        align-items: center;
-        padding-top: 1rem;
-      }
-
-      .line {
-        height: 1px;
-        flex: 1 1 0%;
-        background-color: rgba(55, 65, 81, 1);
-      }
-
-      .social-message .message {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        color: rgba(156, 163, 175, 1);
-      }
-
-      .social-icons {
+      .form-control {
+        margin: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+        width: 400px;
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px;
+        border-radius: 8px;
+        margin-left: 470px;
+        margin-top: 125px;
+      }
+      .title {
+        font-size: 28px;
+        font-weight: 800;
+      }
+      .input-field {
+        position: relative;
+        width: 100%;
       }
 
-      .social-icons .icon {
-        border-radius: 0.125rem;
-        padding: 0.75rem;
-        border: none;
-        background-color: transparent;
-        margin-left: 8px;
+      .input {
+        margin-top: 15px;
+        width: 100%;
+        outline: none;
+        border-radius: 8px;
+        height: 45px;
+        border: 1.5px solid #ecedec;
+        background: transparent;
+        padding-left: 10px;
+      }
+      .input:focus {
+        border: 1.5px solid #2d79f3;
+      }
+      .input-field .label {
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        color: #ccc;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .input-field .input:focus ~ .label,
+      .input-field .input:valid ~ .label {
+        top: 5px;
+        left: 5px;
+        font-size: 12px;
+        color: #2d79f3;
+        background-color: #ffffff;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .submit-btn {
+        margin-top: 30px;
+        height: 55px;
+        background: #f2f2f2;
+        border-radius: 11px;
+        border: 0;
+        outline: none;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, #000000 100%);
+        box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
+        transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+        cursor: pointer;
       }
 
-      .social-icons .icon svg {
-        height: 1.25rem;
-        width: 1.25rem;
-        fill: #fff;
+      .submit-btn:hover {
+        box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #0000003a;
       }
 
-      .signup {
-        text-align: center;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        color: rgba(156, 163, 175, 1);
-      }
-
-      @media screen and (max-width: 476px){
-        .form-container {
-          margin: 0 0 0 15px;
-        }
-
-        body {
-          background: url(img/background-2.jpg);
-        }
+      a {
+        text-decoration: none;
+        color: black;
       }
     </style>
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<div class="form-container">
-	<p class="title">Login <br> <span style="font-size: 18px;">E - Buku Saku</span></p>
-	<form class="form" action="proses-login.php" method="POST">
-		<div class="input-group">
-			<label for="username">Username</label>
-			<input type="text" name="username" id="username" style="width: 90%;" placeholder="Username menggunakan huruf KAPITAL">
-		</div>
-		<div class="input-group">
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" style="width: 90%;" placeholder="Masukan Password dengan benar" maxlength="9">
-			<div class="forgot">
-				<a rel="noopener noreferrer" href="forgot.php">Forgot Password ?</a>
-			</div>
-		</div>
-    <input type="submit" value="Sign in" name="signin" class="sign">
-	</form>
 
-  
+  <form class="form-control" action="proses-login.php" method="POST">
+    <p class="title">Login <br><span style="font-size: 18px;">E - Buku Saku</span></p>
+    <div class="input-field">
+      <input required="" class="input" type="text" name="username"/>
+      <label class="label" for="input">Username menggunakan huruf KAPITAL</label>
+    </div>
+    <div class="input-field">
+      <input required="" class="input" type="password" name="password" maxlength="9"/>
+      <label class="label" for="input">Masukan Password dengan benar</label>
+    </div>
+    <a href="#">Forgot your password?</a>
+    <button class="submit-btn" name="signin">Sign In</button>
+  </form>
+
+  <!-- Skrip Jawa -->
+
+  <script>
+    // Definisikan variabel untuk menyimpan posisi popup
+    const top = window.innerHeight / 2;
+    const left = window.innerWidth / 2;
+
+    // Definisikan variabel untuk menyimpan warna popup
+    const color = "yellow";
+    const textColor = "black";
+
+    // Definisikan variabel untuk menyimpan border popup
+    const borderColor = "darkorange";
+
+    // Buat elemen popup
+    const popup = document.createElement("div");
+    popup.style.position = "fixed";
+    popup.style.top = top + "px";
+    popup.style.left = left + "px";
+    popup.style.width = "200px";
+    popup.style.height = "100px";
+    popup.style.backgroundColor = color;
+    popup.style.opacity = 0.7;
+    popup.style.border = "1px solid " + borderColor;
+
+    // Tambahkan teks ke popup
+    const text = document.createElement("p");
+    text.textContent = "Periksa kembali nama dan NIS-nya, pastikan nama huruf KAPITAL semua.";
+    text.style.color = textColor;
+
+    // Tambahkan teks ke popup
+    popup.appendChild(text);
+
+    // Tampilkan popup
+    document.body.appendChild(popup);
+
+    // Tambahkan event listener ke elemen <a>
+    const a = document.querySelector("a");
+
+    if (a) {
+      a.addEventListener("click", () => {
+        // Tampilkan popup
+        popup.style.display = "block";
+      });
+    }
+
+  </script>
 </body>
 </html>

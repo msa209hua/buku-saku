@@ -177,7 +177,7 @@
 
   <div class="catatan">
     <p class="judul">Catatan Kasus</p>
-    <table class="table-2 table table-striped table-secondary">
+    <table class="table-2 table table-striped">
       <tr>
         <td>NO</td>
         <td>HARI/TANGGAL</td>
