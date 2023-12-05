@@ -18,7 +18,10 @@ if (isset($_POST['lapor'])) {
       ('$nis','$nama','$kelas','$kasus','$poin_kasus','$keterangan')");
       }
       echo "$poin_kasus
-    
+    <script>
+        alert('Laporan Berhasil!');
+        window.location.href='home.php';
+    </script>
     ";
   }
 ?>
