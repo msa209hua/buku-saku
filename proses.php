@@ -8,23 +8,17 @@ if (isset($_POST['lapor'])) {
         $nama=$value["nama"];
         $kelas=$value["tingkat"]." ".$value["jurusan"]." ".$value["kelas"];
         $kasus=$_POST["kasus"];
-        $poin=$poin_kasus;
         $keterangan=$_POST["keterangan"];
         $kasus_sql =mysqli_query($conn, "SELECT poin FROM tb_kasus WHERE jenis_kasus=$kasus");
-        foreach ($kasus_sql as $total) 
-        {
-          $poin_kasus=1;
-          $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin - $poin_kasus WHERE nis=$nis");
-        };
-        
+        $poin_total=mysqli_fetch_array($kasus_sql);
+        $poin_kasus=$poin_total["poin"];
+        echo "$poin_kasus";
+        $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin - $poin_kasus WHERE nis=$nis");
       $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,poin,keterangan) VALUES
-      ('$nis','$nama','$kelas','$kasus','$poin','$keterangan')");
+      ('$nis','$nama','$kelas','$kasus','$poin_kasus','$keterangan')");
       }
-      echo "
-    <script>
-        alert('Laporan Berhasil!');
-        window.location.href='home.php';
-    </script>
+      echo "$poin_kasus
+    
     ";
   }
 ?>
