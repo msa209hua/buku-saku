@@ -25,7 +25,7 @@
       padding: 10px 20px 35px 20px;
     }
 
-    .judul-1 {
+    .judul {
       background-color: #d7d8da;
       text-align: center;
       font-weight: 900;
@@ -33,6 +33,10 @@
       margin-top: 55px;
       border-top: 1px solid #b5b6b7;
       border-bottom: 1px solid #b5b6b7;
+    }
+
+    .table-2 {
+      margin-top: -16px;
     }
   </style>
 </head>
@@ -76,8 +80,8 @@
   </div>
 
   <div class="catatan">
-    <p class="judul-1">Catatan Kasus</p>
-    <table class="table table-striped table-secondary">
+    <p class="judul">Catatan Kasus</p>
+    <table class="table-2 table table-striped table-secondary">
       <tr>
         <td>NO</td>
         <td>HARI/TANGGAL</td>
@@ -85,9 +89,19 @@
         <td>POIN</td>
       </tr>
       <tr>
-        
+        <!-- dari databes -->
+      </tr>
+      <tr>
+        <td>TOTAL POIN</td>
+        <td><!-- dari databes -->poin</td>
       </tr>
     </table>
+  </div>
+  <div class="jenis-kasus">
+  <p class="judul">Jenis Pelanggan</p>
+  <table class="table table-striped ">
+    
+  </table>
   </div>
 </body>
 
