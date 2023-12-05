@@ -83,7 +83,7 @@
     include "koneksi.php";
 
     // Terima id pengguna dari session
-    $id = $_SESSION["id"];
+    $id = $_GET['id'];
 
     // Ambil data pengguna dari database
     $sql = "SELECT * FROM siswa WHERE nis = $id";
@@ -119,7 +119,7 @@
           echo "
           <tr>
             <td><b>Nama Lengkap</b></td>
-            <td><b>:".
+            <td><b>: ".
                $row["nama"] 
               ."</b></td>
           </tr>
@@ -129,8 +129,8 @@
         // Tampilkan NIS
         echo "
           <tr>
-            <td><b>Nama Lengkap</b></td>
-            <td><b>:".
+            <td><b>NIS</b></td>
+            <td><b>: ".
                $row["nis"] 
               ."</b></td>
           </tr>
@@ -139,9 +139,9 @@
         // Tampilkan kelas
         echo "
           <tr>
-            <td><b>Nama Lengkap</b></td>
-            <td><b>:".
-               $row["kelas"] 
+            <td><b>Kelas</b></td>
+            <td><b>: ".
+              $row["tingkat"]." - ".$row["jurusan"]." - ".$row["kelas"] 
               ."</b></td>
           </tr>
           ";
@@ -151,7 +151,7 @@
           // Poin tidak ada
           echo "
           <tr>
-            <td><b>Nama Lengkap</b></td>
+            <td><b>Poin</b></td>
             <td><b>:
                - 
               </b></td>
@@ -161,8 +161,8 @@
           // Poin ada
           echo "
           <tr>
-            <td><b>Nama Lengkap</b></td>
-            <td><b>:".
+            <td><b>Poin</b></td>
+            <td><b>: ".
                $row["poin"] 
               ."</b></td>
           </tr>
@@ -171,7 +171,6 @@
       } else {
         echo "Data pengguna tidak ditemukan";
       }
-
       ?>
     </table>
   </div>
