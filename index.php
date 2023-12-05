@@ -107,56 +107,11 @@
       <input required="" class="input" type="password" name="password" maxlength="9"/>
       <label class="label" for="input">Masukan Password dengan benar</label>
     </div>
+    <div class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+  </div>
     <a href="#">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
-
-  <!-- Skrip Jawa -->
-
-  <script>
-    // Definisikan variabel untuk menyimpan posisi popup
-    const top = window.innerHeight / 2;
-    const left = window.innerWidth / 2;
-
-    // Definisikan variabel untuk menyimpan warna popup
-    const color = "yellow";
-    const textColor = "black";
-
-    // Definisikan variabel untuk menyimpan border popup
-    const borderColor = "darkorange";
-
-    // Buat elemen popup
-    const popup = document.createElement("div");
-    popup.style.position = "fixed";
-    popup.style.top = top + "px";
-    popup.style.left = left + "px";
-    popup.style.width = "200px";
-    popup.style.height = "100px";
-    popup.style.backgroundColor = color;
-    popup.style.opacity = 0.7;
-    popup.style.border = "1px solid " + borderColor;
-
-    // Tambahkan teks ke popup
-    const text = document.createElement("p");
-    text.textContent = "Periksa kembali nama dan NIS-nya, pastikan nama huruf KAPITAL semua.";
-    text.style.color = textColor;
-
-    // Tambahkan teks ke popup
-    popup.appendChild(text);
-
-    // Tampilkan popup
-    document.body.appendChild(popup);
-
-    // Tambahkan event listener ke elemen <a>
-    const a = document.querySelector("a");
-
-    if (a) {
-      a.addEventListener("click", () => {
-        // Tampilkan popup
-        popup.style.display = "block";
-      });
-    }
-
-  </script>
 </body>
 </html>
