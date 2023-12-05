@@ -158,7 +158,7 @@
 		</div>
 		<div class="input-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" style="width: 90%;" placeholder="Masukan Password dengan benar">
+			<input type="password" name="password" id="password" style="width: 90%;" placeholder="Masukan Password dengan benar" maxlength="9">
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="forgot.php">Forgot Password ?</a>
 			</div>

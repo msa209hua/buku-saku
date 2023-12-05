@@ -75,36 +75,104 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
+    <?php
+    // Definisikan variabel session
+    session_start();
+
+    // Koneksi ke database MySQL
+    include "koneksi.php";
+
+    // Terima id pengguna dari session
+    $id = $_SESSION["id"];
+
+    // Ambil data pengguna dari database
+    $sql = "SELECT * FROM siswa WHERE nis = $id";
+    $result = mysqli_query($conn, $sql);
+
+    
+    ?>
+
   <div class="nav">
     <h1>e-Buku Saku</h1>
   </div>
 
   <div class="identitas">
     <table class="table table-secondary table-striped table-responsive-md">
-      <tr>
-        <td><b>Nama Lengkap</b></td>
-        <td><b>:
-            <!-- dari databes -->
-          </b></td>
-      </tr>
-      <tr>
-        <td><b>NIS</b></td>
-        <td><b>:
-            <!-- dari databes -->
-          </b></td>
-      </tr>
-      <tr>
-        <td><b>Kelas</b></td>
-        <td><b>:
-            <!-- dari databes -->
-          </b></td>
-      </tr>
-      <tr>
-        <td><b>Total Poin</b></td>
-        <td><b>:
-            <!-- dari databes -->
-          </b></td>
-      </tr>
+      <?php
+      // Tampilkan data pengguna
+      if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        // Cek apakah nama ada di database
+        if (empty($row["nama"])) {
+          // Nama tidak ada
+          echo "
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td><b>:
+               - 
+              </b></td>
+          </tr>
+          ";
+        } else {
+          // Nama ada
+          echo "
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td><b>:".
+               $row["nama"] 
+              ."</b></td>
+          </tr>
+          ";
+        }
+
+        // Tampilkan NIS
+        echo "
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td><b>:".
+               $row["nis"] 
+              ."</b></td>
+          </tr>
+          ";
+
+        // Tampilkan kelas
+        echo "
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td><b>:".
+               $row["kelas"] 
+              ."</b></td>
+          </tr>
+          ";
+
+        // Tampilkan poin
+        if (empty($row["poin"])) {
+          // Poin tidak ada
+          echo "
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td><b>:
+               - 
+              </b></td>
+          </tr>
+          ";
+        } else {
+          // Poin ada
+          echo "
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td><b>:".
+               $row["poin"] 
+              ."</b></td>
+          </tr>
+          ";
+        }
+      } else {
+        echo "Data pengguna tidak ditemukan";
+      }
+
+      ?>
     </table>
   </div>
 
