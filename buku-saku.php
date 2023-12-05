@@ -30,12 +30,41 @@
       text-align: center;
       font-weight: 900;
       font-size: 30px;
-      margin-top: 55px;
+      margin-top: 100px;
+      border-top: 1px solid #b5b6b7;
+      border-bottom: 1px solid #b5b6b7;
+    }
+
+    .footer {
+      background-color: #d7d8da;
+      text-align: center;
+      height: 25px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 100px;
       border-top: 1px solid #b5b6b7;
       border-bottom: 1px solid #b5b6b7;
     }
 
     .table-2 {
+      margin-top: -16px;
+    }
+
+    .table-3 {
+      margin-left: 20px;
+      border: 1px solid #b5b6b7;
+      border-top: 0;
+    }
+
+    .table-4 {
+      margin-left: -5px;
+      border: 1px solid #b5b6b7;
+      border-top: 0;
+    }
+
+    .row {
+      margin-right: 0px;
+      padding: 0px;
       margin-top: -16px;
     }
   </style>
@@ -93,15 +122,96 @@
       </tr>
       <tr>
         <td>TOTAL POIN</td>
-        <td><!-- dari databes -->poin</td>
+        <td>
+          <!-- dari databes -->poin
+        </td>
       </tr>
     </table>
   </div>
   <div class="jenis-kasus">
-  <p class="judul">Jenis Pelanggan</p>
-  <table class="table table-striped ">
-    
-  </table>
+    <p class="judul">Jenis Pelanggaran</p>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table-3 table table-striped">
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>Pelanggaran</th>
+              <th>Poin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Terlambat</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Merokok</td>
+              <td>-50</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Mabok</td>
+              <td>-75</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Kabur</td>
+              <td>-25</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Rambut Panjang(Laki-Laki)</td>
+              <td>-10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table class="table-4 table table-striped">
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>Pelanggaran</th>
+              <th>Poin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6</td>
+              <td>Berkata Kasar/Kotor</td>
+              <td>-5</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Berkelahi</td>
+              <td>-20</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Seragam tidak sesuai hari</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Sepatu</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Atribut</td>
+              <td>-10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <p>&copy;TEFA RPL</p>
   </div>
 </body>
 
