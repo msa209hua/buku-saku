@@ -87,8 +87,9 @@
 
     // Ambil data pengguna dari database
     $sql = "SELECT * FROM siswa WHERE nis = $id";
-    $sql_2 = "SELECT * FROM siswa WHERE nis = $id";
+    $sql_2 = "SELECT * FROM tb_pelanggaran WHERE nis = $id";
     $result = mysqli_query($conn, $sql);
+    $pelanggaran = mysqli_query($conn, $sql_2);
 
     
     ?>
@@ -182,22 +183,37 @@
       <tr>
         <td>NO</td>
         <td>HARI/TANGGAL</td>
-        <td>PELANGGARAN & KEBAIKAN</td>
+        <td>PELANGGARAN</td>
         <td>POIN</td>
       </tr>
-      <?php foreach ($result as $row) : ?>
-        <tr>
-            <td><?= $row["id_menu"];  ?></td>
-            <td><?= $row["nama_menu"];  ?></td>
-            <td><?= $row["harga_menu"];  ?></td>
-            <td><?= $row["nama_kategori"];  ?></td>
-        </tr>
-      <?php endforeach; ?>
+      <?php
+      if ($pelanggaran != NULL) {
+        foreach ($pelanggaran as $row) {
+          echo "
+            <td>".$row["id_kasus"]."</td>
+            <td>".$row["tanggal"]."</td>
+            <td>".$row["pelanggaran"]."</td>
+            <td>-".$row["poin_minus"]."</td>
+          ";
+        }
+      } else {
+        echo "<h1 style='text-align: center; margin-top: -16px;'>Selamat, Anda bersih!</h1>";
+      }
+      
+      ?>
+      
       <tr>
-        <td>TOTAL POIN</td>
-        <td>
-          <!-- dari databes -->poin
-        </td>
+        <td><b>TOTAL POIN</b></td>
+        <td></td>
+        <td></td>
+        <?php 
+        $sql = "SELECT * FROM siswa WHERE nis = $id";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        echo "
+        <td><b>".$row["poin"]."</b></td>
+        ";
+        ?>
       </tr>
     </table>
   </div>
