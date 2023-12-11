@@ -107,9 +107,6 @@
       <input required="" class="input" type="password" name="password" maxlength="9"/>
       <label class="label" for="input">Masukan Password dengan benar</label>
     </div>
-    <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
     <a href="#">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
