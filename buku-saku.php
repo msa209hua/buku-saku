@@ -87,6 +87,7 @@
 
     // Ambil data pengguna dari database
     $sql = "SELECT * FROM siswa WHERE nis = $id";
+    $sql_2 = "SELECT * FROM siswa WHERE nis = $id";
     $result = mysqli_query($conn, $sql);
 
     
@@ -184,9 +185,14 @@
         <td>PELANGGARAN & KEBAIKAN</td>
         <td>POIN</td>
       </tr>
-      <tr>
-        <!-- dari databes -->
-      </tr>
+      <?php foreach ($result as $row) : ?>
+        <tr>
+            <td><?= $row["id_menu"];  ?></td>
+            <td><?= $row["nama_menu"];  ?></td>
+            <td><?= $row["harga_menu"];  ?></td>
+            <td><?= $row["nama_kategori"];  ?></td>
+        </tr>
+      <?php endforeach; ?>
       <tr>
         <td>TOTAL POIN</td>
         <td>

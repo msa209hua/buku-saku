@@ -107,8 +107,9 @@
       <input required="" class="input" type="password" name="password" maxlength="9"/>
       <label class="label" for="input">Masukan Password dengan benar</label>
     </div>
-    <a href="#">Forgot your password?</a>
+    <a href="forgot.php">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
+
 </body>
 </html>
