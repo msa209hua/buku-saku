@@ -64,9 +64,8 @@ tr:nth-child(even) {
     $sql=mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
     ?>
 <ul>
-  <li><a class="active" href="index.php"><b>Buku Saku</b></a></li>
-  <li><a href="index.php">Data Kasus</a></li>
-  <li><a href="user.php">Data Siswa </a></li>
+  <li><a class="active" href="admin.php"><b>Buku Saku</b></a></li>
+  <li><a href="data-kasus.php">Data Kasus</a></li>
 </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
@@ -87,7 +86,7 @@ tr:nth-child(even) {
           <td><?= $row["nama_siswa"]?></td>
           <td><?= $row["kelas"]?></td>
           <td><?= $row["pelanggaran"];?></td>
-          <td><?= $row["poin"]?></td>
+          <td><?= $row["poin_minus"]?></td>
           <td><?= $row["keterangan"]?></td>
     </tr>
         </tr>

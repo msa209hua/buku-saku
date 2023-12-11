@@ -144,13 +144,12 @@ include "koneksi.php";
 
 ?>
 <ul>
-  <li><a class="active" href="index.php"><b>Buku Saku</b></a></li>
+  <li><a class="active" href="admin.php"><b>Buku Saku</b></a></li>
   <li><a href="data-kasus.php">Data Kasus</a></li>
-  <li><a href="user.php">Data Siswa </a></li>
 </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
-<form action="home.php" method="GET">
+<form action="admin.php" method="GET">
   <table>
   <tr>
           <td width="7%">
