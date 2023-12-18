@@ -23,4 +23,7 @@ if (isset($_POST['lapor'])) {
     </script>
     ";
   }
+  if (isset($_POST['batalkan'])) {
+    header('Location: admin.php');
+  }
 ?>

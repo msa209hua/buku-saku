@@ -53,9 +53,8 @@ li a:hover:not(.active) {
 </head>
 <body>
 <ul>
-  <li><a class="active" href="index.php"><b>Buku Saku</b></a></li>
-  <li><a href="index.php">Data Kasus</a></li>
-  <li><a href="user.php">Data Siswa </a></li>
+  <li><a class="active" href="admin.php"><b>Buku Saku</b></a></li>
+  <li><a href="admin.php">Data Kasus</a></li>
 </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
@@ -90,6 +89,7 @@ li a:hover:not(.active) {
         </tr>
         <tr>
             <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?>></td>
+            <td><input type="submit" name="batalkan" value="Batalkan"></td>
         </tr>
     </table>
 </form>
