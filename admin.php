@@ -57,6 +57,23 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.css-button {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  background-color: red;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.css-button:hover {
+  color: red;
+  padding: 4px;
+  background-color: white;
+  border: 1px solid red;
+  transition: .2s;
+}
 /* From uiverse.io by @satyamchaudharydev */
 /* removing default style of button */
 @media screen and (max-width: 600px)
@@ -165,7 +182,7 @@ include "koneksi.php";
           <td><?= $row["nama"];?></td>
           <td><?= $row["tingkat"]." ".$row["jurusan"]." ".$row["kelas"];?></td>
           <td><?php echo "
-                        <a href='proses-kasus.php?id=$row[nis]'>Lapor</a>"?></td>
+                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>"?></td>
     </tr>
     <?php
     endforeach;

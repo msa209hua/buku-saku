@@ -75,7 +75,7 @@
         font-size: 25px;
       }
 
-      .table-2, .table-3 {
+      .table-2, .table-3, .table-4 {
         font-size: 12px;
       }
     }
