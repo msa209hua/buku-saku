@@ -181,24 +181,24 @@
     <p class="judul">Catatan Kasus</p>
     <table class="table-2 table table-striped">
       <tr>
-        <td>NO</td>
-        <td>HARI/TANGGAL</td>
-        <td>PELANGGARAN</td>
-        <td>POIN</td>
+        <td><b>NO</b></td>
+        <td><b>TANGGAL/WAKTU</b></td>
+        <td><b>PELANGGARAN</b></td>
+        <td><b>POIN</b></td>
       </tr>
       <?php
-      if ($pelanggaran != NULL) {
+      $nomor = 1;
         foreach ($pelanggaran as $row) {
           echo "
-            <td>".$row["id_kasus"]."</td>
+          <tr>
+            <td>".$nomor."</td>
             <td>".$row["tanggal"]."</td>
             <td>".$row["pelanggaran"]."</td>
             <td>-".$row["poin_minus"]."</td>
+          <tr/>
           ";
+        $nomor++;
         }
-      } else {
-        echo "<h1 style='text-align: center; margin-top: -16px;'>Selamat, Anda bersih!</h1>";
-      }
       
       ?>
       

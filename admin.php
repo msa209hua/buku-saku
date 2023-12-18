@@ -125,7 +125,8 @@ include "koneksi.php";
             <td>
               <input type="submit" name="cari" value="Cari">
             </td>
-          
+            <td></td>
+            <td></td>
         </tr>
     <?php
     if (isset($_GET['tingkat'])) {
