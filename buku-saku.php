@@ -51,13 +51,11 @@
     }
 
     .table-3 {
-      margin-left: 20px;
       border: 1px solid #b5b6b7;
       border-top: 0;
     }
 
     .table-4 {
-      margin-left: -5px;
       border: 1px solid #b5b6b7;
       border-top: 0;
     }
