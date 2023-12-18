@@ -97,7 +97,7 @@ li a {
 <form action="proses.php" method="POST">
     <table>
     <tr>
-                <td>id</td>
+                <td></td>
                 <td><input type="hidden" name="id" value=<?=$id?>></td>
             </tr>
     <tr>
