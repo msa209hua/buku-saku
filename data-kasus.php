@@ -56,6 +56,27 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+@media screen and (max-width: 600px)
+{
+  li a.active {
+  background: linear-gradient(#181C24, #282c34);
+  font-size: 20px;
+  color: white;
+}
+li a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 10px;
+}
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 9px;
+}
+}
     </style>
 </head>
 <body>
