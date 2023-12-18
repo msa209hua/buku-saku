@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Des 2023 pada 04.35
+-- Waktu pembuatan: 18 Des 2023 pada 03.15
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -106,7 +106,7 @@ INSERT INTO `siswa` (`nis`, `nama`, `tingkat`, `jurusan`, `kelas`, `jenis_kelami
 (102205828, 'REYNALDI MOHAMMAD', 11, 'PPLG', 'A', 'L', 100),
 (102205829, 'RIZKY IRWANSYAH', 11, 'PPLG', 'A', 'L', 100),
 (102205830, 'SELVI NURCAHYANI PUTRI', 11, 'PPLG', 'A', 'P', 100),
-(102205831, 'TANSZAH', 11, 'PPLG', 'A', 'L', 97),
+(102205831, 'TANSZAH', 11, 'PPLG', 'A', 'L', 100),
 (102205832, 'WAHYU AFIANSYAH', 11, 'PPLG', 'A', 'L', 100),
 (102205833, 'ADYILA NAFA NAURAAYU', 11, 'PPLG', 'B', 'P', 100),
 (102205834, 'AGHNIYA RIZKY AMALIA', 11, 'PPLG', 'B', 'P', 100),
@@ -625,7 +625,7 @@ INSERT INTO `siswa` (`nis`, `nama`, `tingkat`, `jurusan`, `kelas`, `jenis_kelami
 (102206360, 'WANDA WANDIRA', 11, 'MEKATRONIKA', 'D', 'P', 100),
 (102206361, 'WINDA AMALIA', 11, 'MEKATRONIKA', 'D', 'P', 100),
 (102206362, 'ZAHRA KHAIRUNNISA', 11, 'MEKATRONIKA', 'D', 'P', 100),
-(102306363, 'ADI FADLY SHAADIQIN', 10, 'PPLG', 'A', 'L', 98),
+(102306363, 'ADI FADLY SHAADIQIN', 10, 'PPLG', 'A', 'L', 100),
 (102306364, 'AHMAD IQBAL MAULANA', 10, 'PPLG', 'A', 'L', 100),
 (102306365, 'AL RASYID NAZARUDIN', 10, 'PPLG', 'A', 'L', 100),
 (102306366, 'AQELL RAZZA HAFIIZ', 10, 'PPLG', 'A', 'L', 100),
@@ -1395,15 +1395,6 @@ CREATE TABLE `tb_pelanggaran` (
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_pelanggaran`
---
-
-INSERT INTO `tb_pelanggaran` (`id_kasus`, `tanggal`, `nis`, `nama_siswa`, `kelas`, `pelanggaran`, `poin_minus`, `keterangan`) VALUES
-(1, '2023-12-11 03:27:55', 102205831, 'TANSZAH', '11 PPLG A', 'Rambut', '3', 'Rambut panjang'),
-(2, '2023-12-11 03:05:47', 102306363, 'ADI FADLY SHAADIQIN', '10 PPLG A', 'Telat', '1', 'Telat masuk kelas'),
-(3, '2023-12-11 03:33:44', 102306363, 'ADI FADLY SHAADIQIN', '10 PPLG A', 'Telat', '1', 'Telat masuk kelas');
-
 -- --------------------------------------------------------
 
 --
@@ -1593,7 +1584,7 @@ ALTER TABLE `tb_kasus`
 -- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  MODIFY `id_kasus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kasus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
