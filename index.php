@@ -92,6 +92,27 @@
         text-decoration: none;
         color: black;
       }
+
+      @media screen and (max-width: 600px) {
+        body {
+          background: url(img/background-2.jpg);
+        }
+
+        .form-control {
+        margin: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px;
+        border-radius: 8px;
+        margin-left: 5px;
+        margin-top: 100px;
+        }
+      }
     </style>
 </head>
 <body>

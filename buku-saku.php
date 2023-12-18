@@ -65,6 +65,20 @@
       padding: 0px;
       margin-top: -16px;
     }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        padding-top: 23px;
+      }
+
+      .judul {
+        font-size: 25px;
+      }
+
+      .table-2, .table-3 {
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 

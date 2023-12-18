@@ -107,7 +107,7 @@ li a {
           <td><?= $row["nama_siswa"]?></td>
           <td><?= $row["kelas"]?></td>
           <td><?= $row["pelanggaran"];?></td>
-          <td><?= $row["poin_minus"]?></td>
+          <td>-<?= $row["poin_minus"]?></td>
           <td><?= $row["keterangan"]?></td>
     </tr>
         </tr>
