@@ -158,6 +158,7 @@ include "koneksi.php";
             <td></td>
             <td></td>
         </tr>
+        
     <?php
     if (isset($_GET['tingkat'])) {
       $ting = $_GET['tingkat'];
@@ -170,6 +171,12 @@ include "koneksi.php";
       ORDER BY nis ASC");
     
     ?>
+    <tr>
+      <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
+      <td><b style="font-size: 20px; font-weight: 800;"><?php echo $ting; ?></b></td>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
       <th>NIS</th>
       <th>Nama</th>
