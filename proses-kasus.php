@@ -64,6 +64,17 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.judul {
+      background-color: #d7d8da;
+      text-align: center;
+      font-weight: 900;
+      font-size: 25px;
+      margin-top: 100px;
+      margin-bottom: -1px;
+      border-top: 1px solid #b5b6b7;
+      border-bottom: 1px solid #b5b6b7;
+    }
 @media screen and (max-width: 600px)
 {
   li a.active {
@@ -128,6 +139,76 @@ li a {
             <td><input type="submit" name="batalkan" value="Batalkan"></td>
         </tr>
     </table>
+
+    <div class="jenis-kasus">
+    <p class="judul">Jenis Pelanggaran</p>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table-3 table table-striped">
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>Pelanggaran</th>
+              <th>Poin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Terlambat</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Merokok</td>
+              <td>-50</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Mabok</td>
+              <td>-75</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Kabur</td>
+              <td>-25</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Rambut Panjang(Laki-Laki)</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Berkata Kasar/Kotor</td>
+              <td>-5</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Berkelahi</td>
+              <td>-20</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Seragam tidak sesuai hari</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Sepatu</td>
+              <td>-10</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Atribut</td>
+              <td>-10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
 </form>
 </div>
 </body>
