@@ -1,0 +1,12 @@
+1. Tambah kasus lainnya - Tanszah
+2. Proteksi kasus siswa menggunakan tiga - Barengan
+   1. id_pelanggaran
+   2. nis siswa
+   3. tanggal
+3. Print laporan - Tanszah
+4. Tambahan logo pada cover - Bintang
+5. Fitur pedoman di halaman siswa dan guru - Bintang
+6. Fitur pencarian di halaman guru - Tanszah
+7. Fitur credit di semua halaman - Tanszah
+8. UI/UX - Bintang
+9. Halaman admin utama - Bintang
