@@ -85,7 +85,7 @@ li a {
     $sql=mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
     ?>
 <ul>
-  <li><a class="active" href="admin.php"><b>Buku Saku</b></a></li>
+  <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
   <li><a href="data-kasus.php">Data Kasus</a></li>
 </ul>
 

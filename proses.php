@@ -19,11 +19,11 @@ if (isset($_POST['lapor'])) {
       echo "
     <script>
         alert('Laporan Berhasil!');
-        window.location.href='admin.php';
+        window.location.href='admin-buksak.php';
     </script>
     ";
   }
   if (isset($_POST['batalkan'])) {
-    header('Location: admin.php');
+    header('Location: admin-buksak.php');
   }
 ?>

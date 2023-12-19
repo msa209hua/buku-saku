@@ -100,8 +100,8 @@ li a {
 </head>
 <body>
 <ul>
-  <li><a class="active" href="admin.php"><b>Buku Saku</b></a></li>
-  <li><a href="admin.php">Data Kasus</a></li>
+  <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
+  <li><a href="admin-buksak.php">Data Kasus</a></li>
 </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
