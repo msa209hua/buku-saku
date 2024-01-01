@@ -113,6 +113,17 @@
         margin-top: 100px;
         }
       }
+      .footer { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 10;
+    background-color: deepskyblue;
+    width: 100%;
+    text-align: center;
+    font-weight:600;
+    height: 50px;
+}
     </style>
 </head>
 <body>
@@ -131,6 +142,6 @@
     <a href="forgot.php">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
-
+  <div class="footer"><p style="padding-top: 25px;">&copy; 2023 Made By TEFA RPL SMKN 2 CIMAHI😘</p></div>
 </body>
 </html>
