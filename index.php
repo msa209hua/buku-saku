@@ -113,22 +113,19 @@
         margin-top: 100px;
         }
       }
-      .footer { 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    z-index: 10;
-    background-color: deepskyblue;
-    width: 100%;
-    text-align: center;
-    font-weight:600;
-    height: 30px;
-}
     </style>
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+  <nav class="navbar">
+    <div class="container" style="justify-content: center; margin-top: 40px; margin-bottom: -70px;">
+      <a class="navbar-brand" href="" style="background-color: rgba(255, 255, 255, 0.7); padding: 5px; border-radius: 10px;">
+        <img src="img/smkn2cmi.png" alt="Bootstrap" width="70" height="70" style="margin-right: 20px;">
+        <img src="img/kesiswaan.png" alt="Bootstrap" width="90" height="75">
+      </a>
+    </div>
+  </nav>
   <form class="form-control" action="proses-login.php" method="POST">
     <p class="title">Login <br><span style="font-size: 18px;">E - Buku Saku</span></p>
     <div class="input-field">
@@ -142,6 +139,17 @@
     <a href="forgot.php">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
-  <div class="footer"><p style="padding-top: 3px;">&copy; 2023 Made By TEFA RPL SMKN 2 CIMAHI😘</p></div>
+  <nav class="navbar">
+    <div class="container" style="justify-content: center; margin-top: 40px; margin-left: 8px;">
+      <a class="navbar-brand" href="" style="background-color: rgba(255, 255, 255, 0.7); padding: 5px; border-radius: 10px;">
+        <img src="img/logo-animasi-min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
+        <img src="img/logo-multimedia_min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
+        <img src="img/logo-rpl-new_min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
+        <img src="img/Logo-Kimia_min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
+        <img src="img/Logo-Meka_min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
+        <img src="img/Logo-Mesin-min.png" alt="Bootstrap" width="60" height="50" style="margin-right: 10px;">
+      </a>
+    </div>
+  </nav>
 </body>
 </html>
