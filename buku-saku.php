@@ -114,6 +114,10 @@
         width: 400px;
         height: 600px;
       }
+
+      .button {
+        margin-left: 33%;
+      }
     }
   </style>
 </head>
@@ -378,7 +382,7 @@
 <?php
   echo "<form action='buku-saku.php?id=$id' method='post'>"
   ?>
-  <button class="button" style="margin-left: 33%; margin-top: 40px; margin-bottom: -40px;">Kembali Ke Atas</button>
+  <button class="button" style="margin-left: 45%; margin-top: 40px; margin-bottom: -40px;">Kembali Ke Atas</button>
 
 </form>
 
