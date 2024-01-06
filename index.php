@@ -122,7 +122,7 @@
     width: 100%;
     text-align: center;
     font-weight:600;
-    height: 50px;
+    height: 30px;
 }
     </style>
 </head>
@@ -142,6 +142,6 @@
     <a href="forgot.php">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
-  <div class="footer"><p style="padding-top: 25px;">&copy; 2023 Made By TEFA RPL SMKN 2 CIMAHI😘</p></div>
+  <div class="footer"><p style="padding-top: 3px;">&copy; 2023 Made By TEFA RPL SMKN 2 CIMAHI😘</p></div>
 </body>
 </html>
