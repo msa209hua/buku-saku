@@ -93,6 +93,10 @@
         color: black;
       }
 
+      .B {
+        margin-left: 550px;
+      }
+
       @media screen and (max-width: 600px) {
         body {
           background: url(img/background-2.jpg);
@@ -112,6 +116,37 @@
         margin-left: 5px;
         margin-top: 100px;
         }
+
+        .container {
+          margin-left: -8px;
+          justify-content: center;
+        }
+      }
+
+      @media screen and (min-width: 601px) and (max-width: 1000px) {
+        .form-control {
+        background-color: #ffffff;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px;
+        border-radius: 8px;
+        margin-left: 250px;
+        margin-top: 100px;
+        }
+
+        .A {
+          margin-left: 100px;
+          justify-content: center;
+        }
+
+        .B {
+          margin-left: 240px;
+          justify-content: center;
+        }
       }
     </style>
 </head>
@@ -119,7 +154,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <nav class="navbar">
-    <div class="container" style="justify-content: center; margin-top: 40px; margin-bottom: -70px;">
+    <div class="container A" style="justify-content: center; margin-top: 40px; margin-bottom: -70px;">
       <a class="navbar-brand" href="" style="background-color: rgba(255, 255, 255, 0.7); padding: 5px; border-radius: 10px;">
         <img src="img/smkn2cmi.png" alt="Bootstrap" width="70" height="70" style="margin-right: 20px;">
         <img src="img/kesiswaan.png" alt="Bootstrap" width="90" height="75">
@@ -140,7 +175,7 @@
     <button class="submit-btn" name="signin">Sign In</button>
   </form>
   <nav class="navbar">
-    <div class="container" style="justify-content: center; margin-top: 40px; margin-left: 8px;">
+    <div class="container B" style="margin-top: 40px;">
       <a class="navbar-brand" href="" style="background-color: rgba(255, 255, 255, 0.7); padding: 5px; border-radius: 10px;">
         <img src="img/logo-animasi-min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
         <img src="img/logo-multimedia_min.png" alt="Bootstrap" width="50" height="50" style="margin-right: 10px;">
