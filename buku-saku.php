@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>e - Buku Saku</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
     .nav {
       list-style-type: none;
@@ -106,7 +105,9 @@
         font-size: 25px;
       }
 
-      .table-2, .table-3, .table-4 {
+      .table-2,
+      .table-3,
+      .table-4 {
         font-size: 12px;
       }
 
@@ -123,28 +124,26 @@
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <?php
-    // Definisikan variabel session
-    session_start();
+  <?php
+  // Definisikan variabel session
+  session_start();
 
-    // Koneksi ke database MySQL
-    include "koneksi.php";
+  // Koneksi ke database MySQL
+  include "koneksi.php";
 
-    // Terima id pengguna dari session
-    $id = $_GET['id'];
+  // Terima id pengguna dari session
+  $id = $_GET['id'];
 
-    // Ambil data pengguna dari database
-    $sql = "SELECT * FROM siswa WHERE nis = $id";
-    $sql_2 = "SELECT * FROM tb_pelanggaran WHERE nis = $id";
-    $result = mysqli_query($conn, $sql);
-    $pelanggaran = mysqli_query($conn, $sql_2);
+  // Ambil data pengguna dari database
+  $sql = "SELECT * FROM siswa WHERE nis = $id";
+  $sql_2 = "SELECT * FROM tb_pelanggaran WHERE nis = $id";
+  $result = mysqli_query($conn, $sql);
+  $pelanggaran = mysqli_query($conn, $sql_2);
 
-    
-    ?>
+
+  ?>
 
   <div class="nav">
     <h1>e-Buku Saku</h1>
@@ -173,9 +172,9 @@
           echo "
           <tr>
             <td><b>Nama Lengkap</b></td>
-            <td><b>: ".
-               $row["nama"] 
-              ."</b></td>
+            <td><b>: " .
+            $row["nama"]
+            . "</b></td>
           </tr>
           ";
         }
@@ -184,9 +183,9 @@
         echo "
           <tr>
             <td><b>NIS</b></td>
-            <td><b>: ".
-               $row["nis"] 
-              ."</b></td>
+            <td><b>: " .
+          $row["nis"]
+          . "</b></td>
           </tr>
           ";
 
@@ -194,9 +193,9 @@
         echo "
           <tr>
             <td><b>Kelas</b></td>
-            <td><b>: ".
-              $row["tingkat"]." - ".$row["jurusan"]." - ".$row["kelas"] 
-              ."</b></td>
+            <td><b>: " .
+          $row["tingkat"] . " - " . $row["jurusan"] . " - " . $row["kelas"]
+          . "</b></td>
           </tr>
           ";
 
@@ -216,9 +215,9 @@
           echo "
           <tr>
             <td><b>Poin</b></td>
-            <td><b>: ".
-               $row["poin"] 
-              ."</b></td>
+            <td><b>: " .
+            $row["poin"]
+            . "</b></td>
           </tr>
           ";
         }
@@ -240,30 +239,30 @@
       </tr>
       <?php
       $nomor = 1;
-        foreach ($pelanggaran as $row) {
-          echo "
+      foreach ($pelanggaran as $row) {
+        echo "
           <tr>
-            <td>".$nomor."</td>
-            <td>".$row["tanggal"]."</td>
-            <td>".$row["pelanggaran"]."</td>
-            <td>-".$row["poin_minus"]."</td>
+            <td>" . $nomor . "</td>
+            <td>" . $row["tanggal"] . "</td>
+            <td>" . $row["pelanggaran"] . "</td>
+            <td>-" . $row["poin_minus"] . "</td>
           <tr/>
           ";
         $nomor++;
-        }
-      
+      }
+
       ?>
-      
+
       <tr>
         <td><b>TOTAL POIN</b></td>
         <td></td>
         <td></td>
-        <?php 
+        <?php
         $sql = "SELECT * FROM siswa WHERE nis = $id";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
         echo "
-        <td><b>".$row["poin"]."</b></td>
+        <td><b>" . $row["poin"] . "</b></td>
         ";
         ?>
       </tr>
@@ -353,7 +352,7 @@
   </div>
 
   <div class="pedoman" style="text-align: center;">
-  <p class="judul">PEDOMAN</p>
+    <p class="judul">PEDOMAN</p>
     <img src="img/pedoman_1.png" alt=""><br>
     <img src="img/pedoman_2.png" alt=""><br>
     <img src="img/pedoman_3.png" alt=""><br>
@@ -379,12 +378,11 @@
     <img src="img/pedoman_23.png" alt=""><br>
   </div>
 
-<?php
+  <?php
   echo "<form action='buku-saku.php?id=$id' method='post'>"
   ?>
   <button class="button" style="margin-left: 45%; margin-top: 40px; margin-bottom: -40px;">Kembali Ke Atas</button>
-
-</form>
+  </form>
 
   <div class="footer">
     <p>&copy;TEFA RPL</p>
