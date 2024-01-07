@@ -12,12 +12,13 @@
 9. Halaman admin utama - Bintang
 
 lower admin;
-- report player
-- check log
+- report player (klirr)
+- check log (klirr)
 
 super admin;
-- tambah kasus
-- hapus kasus
+- tambah kasus (klirr)
+- edit kasus (klirr)
+- hapus kasus (klirr)
 - report player
 - hapus pelanggaran
-- check log
+- check log (klirr)
