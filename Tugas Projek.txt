@@ -4,9 +4,20 @@
    2. nis siswa
    3. tanggal
 3. Print laporan - Tanszah
-4. Tambahan logo pada cover - Bintang
-5. Fitur pedoman di halaman siswa dan guru - Bintang
+4. Tambahan logo pada cover - Bintang (klirr)
+5. Fitur pedoman di halaman siswa dan guru - Bintang (klirr)
 6. Fitur pencarian di halaman guru - Tanszah
 7. Fitur credit di semua halaman - Tanszah
-8. UI/UX - Bintang
+8. UI/UX - Bintang (klirr)
 9. Halaman admin utama - Bintang
+
+lower admin;
+- report player
+- check log
+
+super admin;
+- tambah kasus
+- hapus kasus
+- report player
+- hapus pelanggaran
+- check log

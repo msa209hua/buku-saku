@@ -46,8 +46,11 @@ if (mysqli_num_rows($result) == 1) {
 
     // Kirim data pengguna ke halaman data
     header("Location: buku-saku.php?id=" . $row["nis"]);
-} else if ($username == "admin e buku saku" && $password == "admin07") {
+} else if ($username == "lower admin" && $password == "lower") {
     header("Location: admin-buksak.php");
+
+} else if ($username == "super admin" && $password == "super") {
+    header("Location: S.U.P.E.R/index.php");
 }
 
 else {
