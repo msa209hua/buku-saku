@@ -48,7 +48,7 @@
     <li><a href="admin-buksak.php">List Siswa</a></li>
     <li><a href="data-kasus.php">Data Kasus</a></li>
     <li><a href="pedoman.php">Pedoman</a></li>
-    <li><a href="user.php">Users</a></li>
+    <li><a href="hapus-pelanggaran.php">Hapus Pelanggaran</a></li>
     <li><a href="kasus.php">Kasus</a></li>
     <li><a href="kategori.php">Kategori Menu</a></li>
     <li><a href="menu.php">Menu</a></li>

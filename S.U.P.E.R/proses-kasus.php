@@ -20,35 +20,34 @@ include "koneksi.php";
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #181C24;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-  color: white;
-}
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 20%;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
 
-li a {
-  display: block;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-}
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
 
-li a.active {
-  background: linear-gradient(#181C24, #282c34);
-  font-size: 30px;
-  color: white;
-}
+    li a.active {
+      background: linear-gradient(brown, chocolate);
+      font-size: 30px;
+      color: white;
+    }
 
-li a:hover:not(.active) {
-  background-color: rgb(82, 28, 14);
-  color: white;
-  font-weight: bold;
-}
+    li a:hover:not(.active) {
+      background-color: rgb(82, 28, 14);
+      color: white;
+      font-weight: bold;
+    }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -100,9 +99,16 @@ li a {
 </head>
 <body>
 <ul>
-  <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
-  <li><a href="admin-buksak.php">Data Kasus</a></li>
-</ul>
+    <li><a class="active" href="index.php"><b>SUPER Administrator</b></a></li>
+    <li><a href="index.php">Dasboard</a></li>
+    <li><a href="admin-buksak.php">List Siswa</a></li>
+    <li><a href="data-kasus.php">Data Kasus</a></li>
+    <li><a href="pedoman.php">Pedoman</a></li>
+    <li><a href="hapus-pelanggaran.php">Hapus Pelanggaran</a></li>
+    <li><a href="kasus.php">Kasus</a></li>
+    <li><a href="kategori.php">Kategori Menu</a></li>
+    <li><a href="menu.php">Menu</a></li>
+  </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
 <form action="proses.php" method="POST">
