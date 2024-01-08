@@ -19,6 +19,6 @@ super admin;
 - tambah kasus (klirr)
 - edit kasus (klirr)
 - hapus kasus (klirr)
-- report player
+- report player (klirr)
 - hapus pelanggaran
 - check log (klirr)

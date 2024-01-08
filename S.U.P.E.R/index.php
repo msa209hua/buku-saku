@@ -12,7 +12,7 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      width: 25%;
+      width: 20%;
       background-color: #f1f1f1;
       position: fixed;
       height: 100%;
@@ -44,10 +44,10 @@
 
   <ul>
     <li><a class="active" href="index.php"><b>SUPER Administrator</b></a></li>
+    <li><a href="index.php">Dasboard</a></li>
     <li><a href="admin-buksak.php">List Siswa</a></li>
     <li><a href="data-kasus.php">Data Kasus</a></li>
     <li><a href="pedoman.php">Pedoman</a></li>
-    <li><a href="index.php">Dasboard</a></li>
     <li><a href="user.php">Users</a></li>
     <li><a href="kasus.php">Kasus</a></li>
     <li><a href="kategori.php">Kategori Menu</a></li>

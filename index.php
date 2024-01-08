@@ -101,7 +101,7 @@
     }
 
     .B {
-      margin-left: 550px;
+      margin-left: 460px;
     }
 
     @media screen and (max-width: 600px) {
