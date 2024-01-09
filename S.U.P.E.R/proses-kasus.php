@@ -102,12 +102,11 @@ li a {
     <li><a class="active" href="index.php"><b>SUPER Administrator</b></a></li>
     <li><a href="index.php">Dasboard</a></li>
     <li><a href="admin-buksak.php">List Siswa</a></li>
-    <li><a href="data-kasus.php">Data Kasus</a></li>
+    <li><a href="data-kasus.php">Log Kasus</a></li>
+    <li><a href="kasus.php">Data Kasus</a></li>
     <li><a href="pedoman.php">Pedoman</a></li>
     <li><a href="hapus-pelanggaran.php">Hapus Pelanggaran</a></li>
-    <li><a href="kasus.php">Kasus</a></li>
-    <li><a href="kategori.php">Kategori Menu</a></li>
-    <li><a href="menu.php">Menu</a></li>
+    <li><a href="credit-buksak.php">Tentang</a></li>
   </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
