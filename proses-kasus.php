@@ -100,9 +100,12 @@ li a {
 </head>
 <body>
 <ul>
-  <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
-  <li><a href="admin-buksak.php">Data Kasus</a></li>
-</ul>
+    <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
+    <li><a href="admin-buksak.php">List Siswa</a></li>
+    <li><a href="data-kasus.php">Data Kasus</a></li>
+    <li><a href="pedoman.php">Pedoman</a></li>
+    <li><a href="credit-buksak.php">Tentang</a></li>
+  </ul>
 
 <div style="margin-left:20%;padding:10px 16px;height:1000px;">
 <form action="proses.php" method="POST">

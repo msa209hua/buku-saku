@@ -95,6 +95,7 @@
     <li><a href="admin-buksak.php">List Siswa</a></li>
     <li><a href="data-kasus.php">Data Kasus</a></li>
     <li><a href="pedoman.php">Pedoman</a></li>
+    <li><a href="credit-buksak.php">Tentang</a></li>
   </ul>
 
   <div style="margin-left:20%;padding:10px 16px;height:1000px;">

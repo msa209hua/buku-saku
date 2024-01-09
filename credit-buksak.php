@@ -6,6 +6,42 @@
     <title>Document</title>
 </head>
 <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 20%;
+      background-color: #181C24;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      color: white;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li a.active {
+      background: linear-gradient(#181C24, #282c34);
+      font-size: 30px;
+      color: white;
+    }
+
+    li a:hover:not(.active) {
+      background-color: rgb(82, 28, 14);
+      color: white;
+      font-weight: bold;
+    }
+
     .card-client {
   background: #2cb5a0;
   width: 13rem;
@@ -121,6 +157,13 @@
 }
 </style>
 <body>
+<ul>
+    <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
+    <li><a href="admin-buksak.php">List Siswa</a></li>
+    <li><a href="data-kasus.php">Data Kasus</a></li>
+    <li><a href="pedoman.php">Pedoman</a></li>
+    <li><a href="credit-buksak.php">Tentang</a></li>
+  </ul>
     <table align="center">
         <tr>
             <td align="center"><h1>Di Buat Oleh</h1></td>

@@ -91,11 +91,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
     <ul>
-        <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
-        <li><a href="admin-buksak.php">List Siswa</a></li>
-        <li><a href="data-kasus.php">Data Kasus</a></li>
-        <li><a href="pedoman.php">Pedoman</a></li>
-    </ul>
+    <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
+    <li><a href="admin-buksak.php">List Siswa</a></li>
+    <li><a href="data-kasus.php">Data Kasus</a></li>
+    <li><a href="pedoman.php">Pedoman</a></li>
+    <li><a href="credit-buksak.php">Tentang</a></li>
+  </ul>
 
     <div class="pedoman" style="text-align: center;">
         <img src="img/pedoman_1.png" alt=""><br>
