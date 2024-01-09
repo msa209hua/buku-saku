@@ -20,5 +20,5 @@ super admin;
 - edit kasus (klirr)
 - hapus kasus (klirr)
 - report player (klirr)
-- hapus pelanggaran
+- hapus pelanggaran (unklirr)
 - check log (klirr)

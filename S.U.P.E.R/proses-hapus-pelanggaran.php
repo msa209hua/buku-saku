@@ -78,18 +78,15 @@
       border-bottom: 1px solid #b5b6b7;
     }
 
+    .table {
+      width: 80%;
+      margin-left: 273px;
+    }
+
     .table-2 {
       margin-top: -16px;
-    }
-
-    .table-3 {
-      border: 1px solid #b5b6b7;
-      border-top: 0;
-    }
-
-    .table-4 {
-      border: 1px solid #b5b6b7;
-      border-top: 0;
+      width: 80%;
+      margin-left: 273px;
     }
 
     .row {
@@ -271,29 +268,28 @@
 
   <div class="catatan">
     <p class="judul">Catatan Kasus</p>
+    <form action="delete-pelanggaran.php" method="post">
     <table class="table-2 table table-striped">
       <tr>
         <td><b>NO</b></td>
         <td><b>TANGGAL/WAKTU</b></td>
         <td><b>PELANGGARAN</b></td>
         <td><b>POIN</b></td>
+        <td><b>EDIT | HAPUS</b></td>
       </tr>
       <?php
       $nomor = 1;
-      foreach ($pelanggaran as $row) {
-        echo "
+      foreach ($pelanggaran as $row) : ?>
           <tr>
-            <td>" . $nomor . "</td>
-            <td>" . $row["tanggal"] . "</td>
-            <td>" . $row["pelanggaran"] . "</td>
-            <td>-" . $row["poin_minus"] . "</td>
-          <tr/>
-          ";
-        $nomor++;
-      }
-
-      ?>
-
+            <td><?=$nomor; ?></td>
+            <td><?=$row["tanggal"]; ?></td>
+            <td><?=$row["pelanggaran"]; ?></td>
+            <td><?=-$row["poin_minus"]; ?></td>
+            <td><b><a href="edit-pelanggaran.php?id=<?= $row["id_kasus"]; ?>">Edit</a> |
+            <a href="delete-pelanggaran.php?id=<?= $row["id_kasus"]; ?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
+          </tr>
+        <?php $nomor++; ?>
+        <?php endforeach; ?>
       <tr>
         <td><b>TOTAL POIN</b></td>
         <td></td>
@@ -304,10 +300,12 @@
         $row = mysqli_fetch_array($result);
         echo "
         <td><b>" . $row["poin"] . "</b></td>
+        <td></td>
         ";
         ?>
       </tr>
     </table>
+    </form>
   </div>
           </tbody>
         </table>

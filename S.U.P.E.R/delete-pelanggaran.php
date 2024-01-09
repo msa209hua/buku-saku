@@ -9,15 +9,15 @@
         echo "
             <script>
                 alert('Data anda berhasil dihapus');
+                window.location.href='hapus-pelanggaran.php';
             </script>
         ";
-        header("Location: hapus-pelanggaran.php");
     } else {
         echo "
             <script>
                 alert('Data anda gagal dihapus');
+                window.location.href='hapus-pelanggaran.php';
             </script>
         ";
-        header("Location: hapus-pelanggaran.php");
     }
 ?>

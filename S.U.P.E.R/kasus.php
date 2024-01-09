@@ -107,7 +107,6 @@ nav a {
                     <td><?= $row["id_kasus"];  ?></td>
                     <td><?= $row["jenis_kasus"];  ?></td>
                     <td>
-
                     <?php
                     echo "<a href='edit_kasus.php?id=$row[id_kasus]'>Edit</a>";
                     ?>
