@@ -2,25 +2,6 @@
 include "koneksi.php";
 $id=$_POST['id'];
 $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
-$nama=mysqli_fetch_array($sql)["nama"];
-$sql_2 = mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE nama_siswa='$nama'");
-$sql_3=mysqli_query($conn, "SELECT * FROM tb_pelanggaran");
-$pelanggaran=mysqli_fetch_array($sql_2)["pelanggaran"];
-$tanggal=mysqli_fetch_array($sql_2)["tanggal"];
-foreach ($sql_3 as $hasil) {
-  $nama_siswa=$hasil["nama_siswa"];
-  $jenis_pel=$hasil["pelanggaran"];
-  $tanggal_kasus=$hasil["tanggal"];
-  if ($nama == $nama_siswa && $pelanggaran == $jenis_pel && $tanggal == $tanggal_kasus) {
-    echo "
-  <script>
-      alert('Pelanggaran telah dilaporkan hari ini, LAPORAN DITOLAK!');
-      window.location.href='admin-buksak.php';
-  </script>
-  ";
-  }
-}
-
 
 if (isset($_POST['lapor'])) {
   foreach ($sql as $value) {

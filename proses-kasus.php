@@ -3,6 +3,7 @@ include "koneksi.php";
 $id=$_GET['id'];
 $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
 $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus");
+$sql_pelanggaran=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE nis=$id");
 include "koneksi.php";
 
 ?>
@@ -141,6 +142,30 @@ li a {
             <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?>></td>
             <td><input type="submit" name="batalkan" value="Batalkan"></td>
         </tr>
+    </table><br>
+
+    <table>
+      <tr>
+        <td><b>Riwayat Pelanggaran</b></td>
+      </tr>
+      <?php 
+      $jumlah_baris = 3;
+      $log = array();
+      while ($row = $sql_pelanggaran->fetch_assoc()) {
+        $log[] = $row;
+      }
+      $log_terbaru = array_slice($log, -$jumlah_baris);
+      foreach ($log_terbaru as $row) : ?>
+      <tr>
+        <td><?=$row["tanggal"]; ?></td>
+        <td><?=$row["nis"]; ?></td>
+        <td><?=$row["nama_siswa"]; ?></td>
+        <td><?=$row["kelas"]; ?></td>
+        <td><?=$row["pelanggaran"]; ?></td>
+        <td>-<?=$row["poin_minus"]; ?></td>
+        <td><?=$row["keterangan"]; ?></td>
+        </tr>
+        <?php endforeach; ?>
     </table>
 
     <div class="jenis-kasus">
