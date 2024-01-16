@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jan 2024 pada 04.04
+-- Waktu pembuatan: 16 Jan 2024 pada 01.37
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -78,7 +78,7 @@ INSERT INTO `siswa` (`nis`, `nama`, `tingkat`, `jurusan`, `kelas`, `jenis_kelami
 (102205800, 'ARUL FITRAH INSANI', 11, 'PPLG', 'A', 'L', 100),
 (102205801, 'AZKIYA NAIFAH YUSUF', 11, 'PPLG', 'A', 'P', 100),
 (102205802, 'BAYU USMAN RADHITYA', 11, 'PPLG', 'A', 'L', 100),
-(102205803, 'BINTANG LAZUARDY AZZURO', 11, 'PPLG', 'A', 'L', 40),
+(102205803, 'BINTANG LAZUARDY AZZURO', 11, 'PPLG', 'A', 'L', 100),
 (102205804, 'CORI BACHTIAR ANNAFI', 11, 'PPLG', 'A', 'L', 100),
 (102205805, 'DAVID HIZIB MURSYID', 11, 'PPLG', 'A', 'L', 100),
 (102205806, 'DONNY MASHDAR RIZQI', 11, 'PPLG', 'A', 'L', 100),
@@ -1392,7 +1392,7 @@ INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`, `tingkat`) VALUES
 
 CREATE TABLE `tb_pelanggaran` (
   `id_kasus` int(11) NOT NULL,
-  `tanggal` date NOT NULL DEFAULT current_timestamp(),
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
   `nis` int(11) NOT NULL,
   `nama_siswa` varchar(50) NOT NULL,
   `kelas` varchar(10) NOT NULL,
@@ -1400,16 +1400,6 @@ CREATE TABLE `tb_pelanggaran` (
   `poin_minus` varchar(10) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tb_pelanggaran`
---
-
-INSERT INTO `tb_pelanggaran` (`id_kasus`, `tanggal`, `nis`, `nama_siswa`, `kelas`, `pelanggaran`, `poin_minus`, `keterangan`) VALUES
-(1, '2024-01-15', 1, '1', '1', '1', '1', '1'),
-(10, '2024-01-15', 102205803, 'BINTANG LAZUARDY AZZURO', '11 PPLG A', 'Terlambat', '10', ''),
-(11, '2024-01-15', 102205803, 'BINTANG LAZUARDY AZZURO', '11 PPLG A', 'Terlambat', '10', ''),
-(12, '2024-01-15', 102205803, 'BINTANG LAZUARDY AZZURO', '11 PPLG A', 'Terlambat', '10', '');
 
 -- --------------------------------------------------------
 
