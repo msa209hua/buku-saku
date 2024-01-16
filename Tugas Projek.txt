@@ -22,3 +22,72 @@ super admin;
 - report player (klirr)
 - hapus pelanggaran (unklirr)
 - check log (klirr)
+
+<?php
+        if (isset($_GET['cari'])) {
+          $ting = $_GET['tingkat'];
+          $tingkat = explode(" ", $ting);
+          $angkatan = $tingkat[0];
+          $jurusan = $tingkat[1];
+          $kelas = $tingkat[2];
+          $sql = mysqli_query($conn, "SELECT * FROM siswa 
+      WHERE tingkat='$angkatan' and jurusan='$jurusan' and kelas='$kelas' 
+      ORDER BY nis ASC");
+        ?>
+          <tr>
+            <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
+            <td><b style="font-size: 20px; font-weight: 800;"><?php echo $ting; ?></b></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>NIS</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+            <th>Laporkan</th>
+          </tr>
+          <?php foreach ($sql as $row) : ?>
+            <tr>
+              <td><?= $row["nis"]; ?></td>
+              <td><?= $row["nama"]; ?></td>
+              <td><?= $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
+              <td><?php echo "
+                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
+            </tr>
+        <?php
+          endforeach;
+        }
+        ?>
+        <?php
+        if (isset($_GET['search'])) {
+          $hasil = $_GET['search'];
+          $sql = mysqli_query($conn, "SELECT * FROM siswa
+      WHERE nama
+      like '%" . $hasil . "%'");
+        
+      
+      ?>
+        <tr>
+          <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
+          <td><b style="font-size: 20px; font-weight: 800;"></b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>NIS</th>
+          <th>Nama</th>
+          <th>Kelas</th>
+          <th>Laporkan</th>
+        </tr>
+        <?php foreach ($sql as $row) : ?>
+          <tr>
+            <td><?= $row["nis"]; ?></td>
+            <td><?= $row["nama"]; ?></td>
+            <td><?= $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
+            <td><?php echo "
+                      <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
+          </tr>
+      <?php
+        endforeach;
+      }
+      ?>
