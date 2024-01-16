@@ -174,47 +174,7 @@
       <table>
         <tr>
           <td>
-            <form method="GET">
-              <select name="tingkat">
-                <option value="10 PPLG A">10 PPLG A</option>
-                <option value="10 PPLG B">10 PPLG B</option>
-                <option value="10 KIMIA A">10 KIMIA A</option>
-                <option value="10 KIMIA B">10 KIMIA B</option>
-                <option value="10 KIMIA C">10 KIMIA C</option>
-                <option value="10 ANIMASI A">10 ANIMASI A</option>
-                <option value="10 ANIMASI B">10 ANIMASI B</option>
-                <option value="10 DKV A">10 DKV A</option>
-                <option value="10 DKV B">10 DKV B</option>
-                <option value="10 DKV C">10 DKV C</option>
-                <option value="10 MEKATRONIKA A">10 MEKATRONIKA A</option>
-                <option value="10 MEKATRONIKA B">10 MEKATRONIKA B</option>
-                <option value="10 MEKATRONIKA C">10 MEKATRONIKA C</option>
-                <option value="10 MEKATRONIKA D">10 MEKATRONIKA D</option>
-                <option value="10 PEMESINAN A">10 PEMESINAN A</option>
-                <option value="10 PEMESINAN B">10 PEMESINAN B</option>
-                <option value="11 PPLG A">11 PPLG A</option>
-                <option value="11 PPLG B">11 PPLG B</option>
-                <option value="11 KIMIA A">11 KIMIA A</option>
-                <option value="11 KIMIA B">11 KIMIA B</option>
-                <option value="11 KIMIA C">11 KIMIA C</option>
-                <option value="11 ANIMASI A">11 ANIMASI A</option>
-                <option value="11 ANIMASI B">11 ANIMASI B</option>
-                <option value="11 DKV A">11 DKV A</option>
-                <option value="11 DKV B">11 DKV B</option>
-                <option value="11 DKV C">11 DKV C</option>
-                <option value="11 MEKATRONIKA A">11 MEKATRONIKA A</option>
-                <option value="11 MEKATRONIKA B">11 MEKATRONIKA B</option>
-                <option value="11 MEKATRONIKA C">11 MEKATRONIKA C</option>
-                <option value="11 MEKATRONIKA D">11 MEKATRONIKA D</option>
-                <option value="11 PEMESINAN A">11 PEMESINAN A</option>
-                <option value="11 PEMESINAN B">11 PEMESINAN B</option>
-              </select>
-          </td>
-          <td>
-            <input type="submit" name="cari" value="Cari">
-          </td>
-          <td>
-            <div class="input-container">
+          <div class="input-container">
               <input type="text" name="search" class="input" placeholder="search...">
               <span class="icon">
                 <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,29 +190,27 @@
               </span>
             </div>
           </td>
+          <td>
+            
+          </td>
+          <td>
+            
+          </td>
           <td></td>
         </tr>
 
         <?php
-        if (isset($_GET['cari'])) {
-          $ting = $_GET['tingkat'];
-          $tingkat = explode(" ", $ting);
-          $angkatan = $tingkat[0];
-          $jurusan = $tingkat[1];
-          $kelas = $tingkat[2];
-          $sql = mysqli_query($conn, "SELECT * FROM siswa 
-      WHERE tingkat='$angkatan' and jurusan='$jurusan' and kelas='$kelas' 
-      ORDER BY nis ASC");
+        
           if (isset($_GET['search'])) {
             $hasil = $_GET['search'];
             $sql = mysqli_query($conn, "SELECT * FROM siswa
         WHERE nama
         like '%" . $hasil . "%'");
-          }
+          
         ?>
           <tr>
             <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
-            <td><b style="font-size: 20px; font-weight: 800;"><?php echo $ting; ?></b></td>
+            <td><b style="font-size: 20px; font-weight: 800;"></b></td>
             <td></td>
             <td></td>
           </tr>
