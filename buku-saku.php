@@ -130,6 +130,10 @@
   // Definisikan variabel session
   session_start();
 
+  if (!isset($_SESSION['nis'])) {
+    header('Location: index.php');
+  }
+
   // Koneksi ke database MySQL
   include "koneksi.php";
 

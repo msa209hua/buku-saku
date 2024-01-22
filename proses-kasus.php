@@ -100,6 +100,13 @@ li a {
     </style>
 </head>
 <body>
+<?php
+  session_start();
+
+  if (!isset($_SESSION['nis'])) {
+    header('Location: index.php');
+  }
+?>
 <ul>
     <li><a class="active" href="admin-buksak.php"><b>Buku Saku</b></a></li>
     <li><a href="admin-buksak.php">List Siswa</a></li>

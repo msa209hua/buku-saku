@@ -42,14 +42,15 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
 
     // Simpan data pengguna ke dalam session
-    $_SESSION["id"] = $row["nis"];
+    session_start();
+    $_SESSION["nis"] = $row["nis"];
 
     // Kirim data pengguna ke halaman data
     header("Location: buku-saku.php?id=" . $row["nis"]);
 } else if ($username == "lower admin" && $password == "lower") {
     header("Location: admin-buksak.php");
 
-} else if ($username == "super admin" && $password == "super") {
+} else if ($username == "SUPER ADMIN" && $password == "SUPER") {
     header("Location: S.U.P.E.R/index.php");
 }
 

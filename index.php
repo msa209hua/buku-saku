@@ -103,6 +103,10 @@
     .B {
       margin-left: 460px;
     }
+    
+    input[type="text"] {
+      text-transform: uppercase;
+    }
 
     @media screen and (max-width: 600px) {
       body {
@@ -172,12 +176,12 @@
   <form class="form-control" action="proses-login.php" method="POST">
     <p class="title">Login <br><span style="font-size: 18px;">E - Buku Saku</span></p>
     <div class="input-field">
-      <input required="" class="input" type="text" name="username" />
-      <label class="label" for="input">Username menggunakan huruf KAPITAL</label>
+      <input required="" class="input" type="text" name="username"/>
+      <label class="label" for="input">Masukan Username yang sesuai</label>
     </div>
     <div class="input-field">
       <input required="" class="input" type="password" name="password" maxlength="9" />
-      <label class="label" for="input">Masukan Password dengan benar</label>
+      <label class="label" for="input">Masukan Password yang sesuai</label>
     </div>
     <a href="forgot.php">Forgot your password?</a>
     <button class="submit-btn" name="signin">Sign In</button>
@@ -194,6 +198,8 @@
       </a>
     </div>
   </nav>
+
+  
 </body>
 
 </html>

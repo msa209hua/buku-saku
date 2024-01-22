@@ -86,6 +86,13 @@
 </head>
 
 <body>
+<?php
+  session_start();
+
+  if (!isset($_SESSION['nis'])) {
+    header('Location: index.php');
+  }
+?>
   <?php
   include "koneksi.php";
   $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
