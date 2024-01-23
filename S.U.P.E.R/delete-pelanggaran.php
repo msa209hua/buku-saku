@@ -1,10 +1,10 @@
 <?php
     include 'koneksi.php';
-
-    $id_kasus_1 = $_GET['id_kasus'];
-    $kasus_id = $_GET['kasus_id'];
+    
+    $id_kasus_1 = $_GET['id_pelanggaran'];
+    $kasus_id = $_GET['id_kasus'];
     $nis=$_GET['id'];
-    $sql = "DELETE FROM tb_pelanggaran WHERE id_kasus = $id_kasus_1";
+    $sql = "DELETE FROM tb_pelanggaran WHERE id_pelanggaran = $id_kasus_1";
     $kasus_sql =mysqli_query($conn, "SELECT poin FROM tb_kasus WHERE id_kasus='$kasus_id'");
     $poin_total=mysqli_fetch_array($kasus_sql);
     $poin_kasus=$poin_total["poin"];

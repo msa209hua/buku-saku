@@ -274,7 +274,7 @@
 
   <div class="catatan">
     <p class="judul">Catatan Kasus</p>
-    <form action="delete-pelanggaran.php" method="post">
+    <form action="delete-pelanggaran.php" method="GET">
     <table class="table-2 table table-striped">
       <tr>
         <td><b>NO</b></td>
@@ -291,17 +291,11 @@
             <td><?=$row["tanggal"]; ?></td>
             <td><?=$row["pelanggaran"]; ?></td>
             <td><?=-$row["poin_minus"]; ?></td>
-            <td><b><a href="edit-pelanggaran.php?id=<?= $row["id_kasus"]; ?>">Edit</a> |
-            <a href="delete-pelanggaran.php?id_kasus=<?= $row["id_kasus"]; ?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
+            <td><b><a href="edit-pelanggaran.php?id_pelanggaran=<?= $row["id_pelanggaran"]; ?>">Edit</a> |
+            <a href="delete-pelanggaran.php?id_pelanggaran=<?= $row["id_pelanggaran"]; ?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
           </tr>
-          <?php
-          $pel=$row["pelanggaran"];
-          $sql_3 = mysqli_query($conn, "SELECT id_kasus FROM tb_kasus WHERE pelanggaran = '$pel'");
-          $kasus=mysqli_fetch_array($sql_3);
-          $kasus_id=$kasus["id_kasus"];
-          
-          ?>
-          <input type="hidden" name="id_kasus" value=<?=$id_kasus?>>
+          <input type="hidden" name="id_kasus" value=<?=$row["id_kasus"]?>>
+          <input type="hidden" name="id" value=<?=$id?>>
         <?php $nomor++; ?>
         <?php endforeach; ?>
       <tr>
