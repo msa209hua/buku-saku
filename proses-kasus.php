@@ -103,7 +103,7 @@ li a {
 <?php
   session_start();
 
-  if (!isset($_SESSION['nis'])) {
+  if (!isset($_SESSION['id_masuk'])) {
     header('Location: index.php');
   }
 ?>

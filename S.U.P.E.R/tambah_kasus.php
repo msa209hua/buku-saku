@@ -40,6 +40,13 @@ li a:hover:not(.active) {
 </head>
 <body>
 <?php
+session_start();
+
+if (!isset($_SESSION['id_masuk'])) {
+  header('Location: index.php');
+}
+?>
+<?php
 
 require 'koneksi.php';
 

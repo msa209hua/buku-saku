@@ -63,7 +63,13 @@ nav a {
 </style>
 </head>
 <body>
+<?php
+session_start();
 
+if (!isset($_SESSION['id_masuk'])) {
+  header('Location: index.php');
+}
+?>
 <ul>
   <li><a class="active" href="index.php"><b>La Cafe</b></a></li>
   <li><a href="index.php">Dasboard</a></li>

@@ -90,6 +90,11 @@
 <body>
   <?php
   include "koneksi.php";
+  session_start();
+
+  if (!isset($_SESSION['id_masuk'])) {
+    header('Location: index.php');
+  }
   $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
   ?>
  <ul>

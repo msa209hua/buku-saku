@@ -43,14 +43,18 @@ if (mysqli_num_rows($result) == 1) {
 
     // Simpan data pengguna ke dalam session
     session_start();
-    $_SESSION["nis"] = $row["nis"];
+    $_SESSION["id_masuk"] = $row["nis"];
 
     // Kirim data pengguna ke halaman data
     header("Location: buku-saku.php?id=" . $row["nis"]);
-} else if ($username == "lower admin" && $password == "lower") {
+} else if ($username == "LOWER ADMIN" && $password == "LOWER") {
+    session_start();
+    $_SESSION["id_masuk"] = $password;
     header("Location: admin-buksak.php");
 
 } else if ($username == "SUPER ADMIN" && $password == "SUPER") {
+    session_start();
+    $_SESSION["id_masuk"] = $password;
     header("Location: S.U.P.E.R/index.php");
 }
 

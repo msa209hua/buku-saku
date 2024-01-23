@@ -57,6 +57,11 @@ input[type=text]:focus {
 <?php
         include 'koneksi.php';
 
+        session_start();
+
+        if (!isset($_SESSION['id_masuk'])) {
+          header('Location: index.php');
+        }
         if (isset($_GET['update'])) {
             $id = $_GET['id'];
             $jenis = $_GET['jenis'];

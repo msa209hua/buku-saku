@@ -7,6 +7,13 @@ $sql_pelanggaran=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE nis=$id
 include "koneksi.php";
 
 ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['id_masuk'])) {
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
