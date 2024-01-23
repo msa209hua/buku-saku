@@ -21,50 +21,50 @@
         <div class="logo"></div>
         <ul class="menu">
             <li class="active">
-                <a href="#">
-                    <i class="fas fa-tachometer-alt"></i>
+                <a href="index.php">
+                    <img src="../img/dashboard.png" alt="" style="width: 30px; height: 30px;">
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-user"></i>
-                    <span>Profile</span>
+                <a href="admin-buksak.php">
+                    <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
+                    <span>List Siswa</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Statistics</span>
+                <a href="data-kasus.php">
+                    <img src="../img/log.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Log Kasus</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-brief-case"></i>
-                    <span>Careers</span>
+                <a href="kasus.php">
+                    <img src="../img/data.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Data Kasus</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-question-circle"></i>
-                    <span>FAQ</span>
+                <a href="pedoman.php">
+                    <img src="../img/pedoman.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Pedoman</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-star"></i>
-                    <span>Testimonials</span>
+                <a href="hapus-pelanggaran.php">
+                    <img src="../img/hapus.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Hapus Pelanggaran</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span>Setting</span>
+                <a href="credit-buksak.php">
+                    <img src="../img/about.png" alt="" style="width: 30px; height: 30px;"> 
+                    <span>Tentang</span>
                 </a>
             </li>
             <li class="logout">
-                <a href="#">
-                    <i class="fas fa-sign-out-alt"></i>
+                <a href="../index.php">
+                    <img src="../img/logout.png" alt="" style="width: 30px; height: 30px;">
                     <span>Logout</span>
                 </a>
             </li>

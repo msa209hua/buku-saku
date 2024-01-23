@@ -24,7 +24,7 @@ body {
     color: #fff;
     overflow: hidden;
     transition: all 0.5s linear;
-    background: rgba(113, 99, 186, 255);
+    background: linear-gradient(240deg,brown, chocolate);
 }
 
 .sidebar:hover {
@@ -107,7 +107,7 @@ body {
 }
 
 .header--title {
-    color: rgba(113, 99, 186, 255);
+    color: linear-gradient(brown, chocolate);
 }
 
 .user--info {
@@ -119,7 +119,7 @@ body {
 .search--box {
     background: rgba(237, 237, 237);
     border-radius: 15px;
-    color: rgba(113, 99, 186, 255);
+    color: linear-gradient(brown, chocolate);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -154,7 +154,7 @@ body {
 }
 
 .main--title {
-    color: rgba(113, 99, 186, 255);
+    color: linear-gradient(orangered, orange);
     padding-bottom: 10px;
     font-size: 15px;
 }
@@ -264,7 +264,7 @@ table {
 }
 
 thead {
-    background: rgba(113, 99, 186, 255);
+    background: linear-gradient(-200deg, brown, chocolate);
     color: #fff;
 }
 
@@ -288,7 +288,7 @@ tr:nth-child(even) {
 }
 
 tfoot {
-    background: rgba(113, 99, 186, 255);
+    background: linear-gradient(-200deg, brown, chocolate);
     font-weight: bold;
     color: #fff;
 }
