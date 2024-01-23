@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jan 2024 pada 01.37
+-- Waktu pembuatan: 23 Jan 2024 pada 02.57
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -1391,7 +1391,7 @@ INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`, `tingkat`) VALUES
 --
 
 CREATE TABLE `tb_pelanggaran` (
-  `id_kasus` int(11) NOT NULL,
+  `id_pelanggaran` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
   `nis` int(11) NOT NULL,
   `nama_siswa` varchar(50) NOT NULL,
@@ -1531,7 +1531,7 @@ ALTER TABLE `tb_mapel`
 -- Indeks untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  ADD PRIMARY KEY (`id_kasus`);
+  ADD PRIMARY KEY (`id_pelanggaran`);
 
 --
 -- Indeks untuk tabel `tb_siswa`
@@ -1590,7 +1590,7 @@ ALTER TABLE `tb_kasus`
 -- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  MODIFY `id_kasus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
