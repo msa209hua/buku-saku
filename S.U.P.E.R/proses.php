@@ -18,7 +18,7 @@ if (isset($_POST['lapor'])) {
     $poin_kasus=$poin_total["poin"];
     echo "$id_kasus";
     $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin - $poin_kasus WHERE nis=$nis");
-  $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (id_kasus,nis,nama_siswa,kelas,pelanggaran,poin_minus,keterangan) VALUES
+  $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (id_pelanggaran,nis,nama_siswa,kelas,pelanggaran,poin_minus,keterangan) VALUES
   ('$id_kasus','$nis','$nama','$kelas','$kasus','$poin_kasus','$keterangan')");
   }
   echo "
