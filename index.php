@@ -103,10 +103,6 @@
     .B {
       margin-left: 460px;
     }
-    
-    input[type="text"] {
-      text-transform: uppercase;
-    }
 
     @media screen and (max-width: 600px) {
       body {
