@@ -2,15 +2,19 @@
     include 'koneksi.php';
     
     $id_kasus_1 = $_GET['id_pelanggaran'];
-    $kasus_id = $_GET['id_kasus'];
-    $nis=$_GET['id'];
-    $sql = "DELETE FROM tb_pelanggaran WHERE id_pelanggaran = $id_kasus_1";
-    $kasus_sql =mysqli_query($conn, "SELECT poin FROM tb_kasus WHERE id_kasus='$kasus_id'");
-    $poin_total=mysqli_fetch_array($kasus_sql);
-    $poin_kasus=$poin_total["poin"];
-    $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin + $poin_kasus WHERE nis=$nis");
-    $hapus = mysqli_query($conn, $sql);
-    echo "$id_kasus";
+    $sql_2=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE id_pelanggaran='$id_kasus_1'");
+    foreach ($sql_2 as $row) {
+        $kasus_id=$row["pelanggaran"];
+        $nis=$row["nis"];
+        $sql = "DELETE FROM tb_pelanggaran WHERE id_pelanggaran = $id_kasus_1";
+        $kasus_sql =mysqli_query($conn, "SELECT poin FROM tb_kasus WHERE jenis_kasus='$kasus_id'");
+        $poin_total=mysqli_fetch_array($kasus_sql);
+        $poin_kasus=$poin_total["poin"];
+        $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin + $poin_kasus WHERE nis=$nis");
+        $hapus = mysqli_query($conn, $sql);
+    }
+    
+    echo "$poin_kasus";
     /*if ($hapus) {
         echo "
             <script>

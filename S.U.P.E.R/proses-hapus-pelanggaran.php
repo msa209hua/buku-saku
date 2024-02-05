@@ -164,7 +164,7 @@
   ?>
   <?php
   // Definisikan variabel session
-  session_start();
+  
 
   // Koneksi ke database MySQL
   include "koneksi.php";
@@ -292,10 +292,9 @@
             <td><?=$row["pelanggaran"]; ?></td>
             <td><?=-$row["poin_minus"]; ?></td>
             <td><b><a href="edit-pelanggaran.php?id_pelanggaran=<?= $row["id_pelanggaran"]; ?>">Edit</a> |
-            <a href="delete-pelanggaran.php?id_pelanggaran=<?= $row["id_pelanggaran"]; ?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
+            <a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
           </tr>
-          <input type="hidden" name="id_kasus" value=<?=$row["id_kasus"]?>>
-          <input type="hidden" name="id" value=<?=$id?>>
+          
         <?php $nomor++; ?>
         <?php endforeach; ?>
       <tr>
