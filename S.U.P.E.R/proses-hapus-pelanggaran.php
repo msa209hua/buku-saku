@@ -281,7 +281,7 @@
         <td><b>TANGGAL/WAKTU</b></td>
         <td><b>PELANGGARAN</b></td>
         <td><b>POIN</b></td>
-        <td><b>EDIT | HAPUS</b></td>
+        <td><b>ACTION</b></td>
       </tr>
       <?php
       $nomor = 1;
@@ -291,8 +291,7 @@
             <td><?=$row["tanggal"]; ?></td>
             <td><?=$row["pelanggaran"]; ?></td>
             <td><?=-$row["poin_minus"]; ?></td>
-            <td><b><a href="edit-pelanggaran.php?id_pelanggaran=<?= $row["id_pelanggaran"]; ?>">Edit</a> |
-            <a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
+            <td><a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
           </tr>
           
         <?php $nomor++; ?>

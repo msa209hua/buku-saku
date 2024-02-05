@@ -37,17 +37,6 @@ li a:hover:not(.active) {
   font-weight: bold;
 }
 
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-
 input[type=text]:focus {
   border: 3px solid #555;
 }
@@ -55,44 +44,48 @@ input[type=text]:focus {
 </head>
 <body>
 <?php
-        include 'koneksi.php';
+  include 'koneksi.php';
 
-        session_start();
+  session_start();
 
-        if (!isset($_SESSION['id_masuk'])) {
-          header('Location: index.php');
-        }
-        if (isset($_GET['update'])) {
-            $id = $_GET['id'];
-            $jenis = $_GET['jenis'];
-            $keterangan = $_GET['keterangan'];
+  if (!isset($_SESSION['id_masuk'])) {
+    header('Location: index.php');
+  }
 
-            $result = mysqli_query($conn, "UPDATE tb_kasus SET jenis_kasus='$jenis' WHERE id_kasus=$id");
-            if ($result) {
-                echo "
-                <script>
-                    alert('Data berhasil diedit');
-                    window.location.href='edit-pelanggaran.php';
-                </script>";
-            } else {
-                echo "
-                <script>
-                    alert('Data gagal diedit');
-                    window.location.href='edit_edit-pelanggaran.php';
-                </script>";
-            }
-        }
+  $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus");
+  $sql_pelanggaran=mysqli_query($conn, "SELECT * FROM tb_pelanggaran");
 
-        $id = $_GET['id'];
+  if (isset($_POST['update'])) {
+      $id = $_GET['id'];
+      $pelanggaran = $sql_pelanggaran['pelanggaran'];
+      $keterangan = $sql_pelanggaran['keterangan'];
 
-        $result = mysqli_query($conn, "SELECT * FROM tb_kasus WHERE id_kasus = $id");
+      $result = mysqli_query($conn, "UPDATE tb_pelanggaran SET pelanggaran='$pelanggaran' WHERE id_pelanggaran=$id");
+      if ($result) {
+          echo "
+          <script>
+              alert('Data berhasil diedit');
+              window.location.href='proses-hapus-pelanggaran.php?id=$id';
+          </script>";
+      } else {
+          echo "
+          <script>
+              alert('Data gagal diedit');
+              window.location.href='edit-pelanggaran.php';
+          </script>";
+      }
+  }
+
+  $id = $_GET['id_pelanggaran'];
+
+  $result = mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE id_pelanggaran = $id");
         
 
-        while ($user_data = mysqli_fetch_array($result)) {
-            $jenis = $user_data['jenis_kasus'];
-            $keterangan = $user_data['keterangan'];
-        }
-        ?>
+  while ($user_data = mysqli_fetch_array($result)) {
+      $pelanggaran = $user_data['pelanggaran'];
+      $keterangan = $user_data['keterangan'];
+  }
+?>
 
 <ul>
     <li><a class="active" href="index.php"><b>SUPER Administrator</b></a></li>
@@ -108,33 +101,38 @@ input[type=text]:focus {
 
 <div style="margin-left:25%;padding:1px 16px;height:1000px;">
 <a href="index.php">Home</a>
-        <a href="kasus.php">Back</a>
+<a href="proses-hapus-pelanggaran.php">Back</a>
         <br><br>
 
-        <form action="edit_Kasus.php" name="update_Kasus" method="GET">
-            <table border="0">
-                <tr>
-                    <td>Jenis Kasus</td>
-                    <td>
-                        <input type="text" name="jenis" value=<?php echo $jenis; ?>>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Keterangan</td>
-                    <td>
-                        <input type="number" name="poin" value=<?php echo $poin; ?>>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
-                    </td>
-                    <td>
-                        <input type="submit" value="Update" name="update">
-                    </td>
-                </tr>
-            </table>
-        </form>
+<form action="edit_pelanggaran.php" name="update_pelanggaran" method="GET">
+    <table border="0">
+        <tr>
+            <td>Jenis Pelanggaran</td>
+            <td>
+            <select name="kasus">
+                    <?php foreach ($sql_kasus as $row) :?>
+                        <option value=<?= $row["jenis_kasus"];?>><?= $row["jenis_kasus"];?></option>
+                        
+                        <?php endforeach;?>
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Keterangan</td>
+            <td>
+                <input type="text" name="keterangan" value=<?php echo $keterangan; ?>>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="hidden" name="id" value=<?php echo $_GET['id_pelanggaran']; ?>>
+            </td>
+            <td>
+                <input type="submit" value="Update" name="update">
+            </td>
+        </tr>
+    </table>
+</form>
 </div>
 
 </body>

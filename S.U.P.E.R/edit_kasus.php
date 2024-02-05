@@ -37,16 +37,6 @@ li a:hover:not(.active) {
   font-weight: bold;
 }
 
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
 
 input[type=text]:focus {
   border: 3px solid #555;
@@ -67,7 +57,7 @@ input[type=text]:focus {
             $jenis = $_GET['jenis'];
             $poin = $_GET['poin'];
 
-            $result = mysqli_query($conn, "UPDATE tb_kasus SET jenis_kasus='$jenis' WHERE id_kasus=$id");
+            $result = mysqli_query($conn, "UPDATE tb_kasus SET jenis_kasus='$jenis', poin='$poin' WHERE id_kasus=$id");
             if ($result) {
                 echo "
                 <script>

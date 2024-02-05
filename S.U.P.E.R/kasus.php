@@ -103,7 +103,8 @@ if (!isset($_SESSION['id_masuk'])) {
             <tr>
                 <th>Id Kasus</th>
                 <th>Jenis Kasus</th>
-                <th>Edit | Hapus</th>
+                <th>POIN MINUS</th>
+                <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
@@ -111,6 +112,7 @@ if (!isset($_SESSION['id_masuk'])) {
                 <tr>
                     <td><?= $row["id_kasus"];  ?></td>
                     <td><?= $row["jenis_kasus"];  ?></td>
+                    <td>-<?= $row["poin"];  ?></td>
                     <td>
                     <?php
                     echo "<a href='edit_kasus.php?id=$row[id_kasus]'>Edit</a>";

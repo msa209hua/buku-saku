@@ -14,12 +14,11 @@
         $hapus = mysqli_query($conn, $sql);
     }
     
-    echo "$poin_kasus";
-    /*if ($hapus) {
+    if ($poin_kasus) {
         echo "
             <script>
                 alert('Data anda berhasil dihapus');
-                window.location.href='hapus-pelanggaran.php';
+                window.location.href='proses-hapus-pelanggaran.php?id=$nis';
             </script>
         ";
     } else {
@@ -29,5 +28,5 @@
                 window.location.href='hapus-pelanggaran.php';
             </script>
         ";
-    }*/
+    }
 ?>
