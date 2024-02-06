@@ -1,42 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css_style_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background: linear-gradient(brown, chocolate);
-  font-size: 30px;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: rgb(82, 28, 14);
-  color: white;
-  font-weight: bold;
-}
-
 
 input[type=text]:focus {
   border: 3px solid #555;
@@ -137,8 +105,14 @@ input[type=text]:focus {
             </li>
         </ul>
     </div>
-
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Edit Kasus</h2>
+            </div>
+        </div>
+<div>
 <a href="index.php">Home</a>
         <a href="kasus.php">Back</a>
         <br><br>
@@ -168,6 +142,6 @@ input[type=text]:focus {
             </table>
         </form>
 </div>
-
+      </div>
 </body>
 </html>

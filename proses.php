@@ -2,6 +2,7 @@
 include "koneksi.php";
 $id=$_POST['id'];
 $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
+
 if (isset($_POST['lapor'])) {
     foreach ($sql as $value) {
         $nis=$value["nis"];

@@ -5,44 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css_style_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-        }
-
-        ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 20%;
-      background-color: #f1f1f1;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-    }
-
-    li a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
-
-    li a.active {
-      background: linear-gradient(brown, chocolate);
-      font-size: 30px;
-      color: white;
-      line-height: 34px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-    }
-
-    li a:hover:not(.active) {
-      background-color: rgb(82, 28, 14);
-      color: white;
-      font-weight: bold;
-    }
 
         button {
             display: flex;
@@ -151,7 +117,13 @@
             </li>
         </ul>
     </div>
-
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Pedoman Sekolah</h2>
+            </div>
+        </div>
     <div class="pedoman" style="text-align: center;">
         <img src="../img/pedoman_1.png" alt=""><br>
         <img src="../img/pedoman_2.png" alt=""><br>
@@ -183,6 +155,7 @@
 
     <div class="footer">
         <p>&copy;TEFA RPL</p>
+    </div>
     </div>
 </body>
 

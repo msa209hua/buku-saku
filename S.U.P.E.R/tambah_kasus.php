@@ -1,42 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background: linear-gradient(brown, chocolate);
-  font-size: 30px;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: rgb(82, 28, 14);
-  color: white;
-  font-weight: bold;
-}
-</style>
+<link rel="stylesheet" href="css_style_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <?php
@@ -126,16 +93,22 @@ if (isset($_POST['tambah'])) {
             </li>
         </ul>
     </div>
-
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Tambah Kasus</h2>
+            </div>
+        </div>
+<div>
 <form action="tambah_kasus.php" method="post">
-        <h2>Tambah kasus</h2><br>
         Jenis Kasus <input type="text" name="jenis"><br>
         Poin Minus <input type="text" name="poin"><br>
         <input type="submit" value="tambahkan" name="tambah"><br>
     </form>
 
     
+</div>
 </div>
 
 </body>

@@ -21,41 +21,10 @@ if (!isset($_SESSION['id_masuk'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css_style_new.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-  margin: 0;
-  font-family: Arial;
-}
-
-ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 20%;
-      background-color: #f1f1f1;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-    }
-
-    li a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
-
-    li a.active {
-      background: linear-gradient(brown, chocolate);
-      font-size: 30px;
-      color: white;
-    }
-
-    li a:hover:not(.active) {
-      background-color: rgb(82, 28, 14);
-      color: white;
-      font-weight: bold;
-    }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -106,6 +75,7 @@ li a {
     </style>
 </head>
 <body>
+  
 <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
@@ -160,136 +130,144 @@ li a {
         </ul>
     </div>
 
-<div style="margin-left:20%;padding:10px 16px;height:1000px;">
-<form action="proses.php" method="POST">
-    <table>
-    <tr>
-                <td></td>
-                <td><input type="hidden" name="id" value=<?=$id?>></td>
-            </tr>
-    <tr>
-            <td>NIS</td>
-            <td><?php foreach ($sql as $nis) :?><?=$nis["nis"]; ?><?php endforeach;?></td>
-        </tr>
-        <tr>
-            <td>Nama Siswa</td>
-            <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
-        </tr>
-        <tr>
-            <td>Pilih Kasus</td>
-            <td>
-            <select name="kasus">
-                    <?php foreach ($sql_kasus as $row) :?>
-                        <option value=<?= $row["jenis_kasus"];?>><?= $row["jenis_kasus"];?></option>
-                        
-                        <?php endforeach;?>
-                    </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Keterangan</td>
-            <td><input type="text" name="keterangan"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
-            <td><input type="submit" name="batalkan" value="Batalkan"></td>
-        </tr>
-    </table><br>
-    
-    <table>
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Report Siswa</h2>
+            </div>
+        </div>
+  <div>
+  <form action="proses.php" method="POST">
+      <table>
       <tr>
-        <td><b>Riwayat Pelanggaran</b></td>
-      </tr>
-      <?php 
-      $jumlah_baris = 3;
-      $log = array();
-      while ($row = $sql_pelanggaran->fetch_assoc()) {
-        $log[] = $row;
-      }
-      $log_terbaru = array_slice($log, -$jumlah_baris);
-      foreach ($log_terbaru as $row) : ?>
+                  <td></td>
+                  <td><input type="hidden" name="id" value=<?=$id?>></td>
+              </tr>
       <tr>
-        <td><?=$row["tanggal"]; ?></td>
-        <td><?=$row["nis"]; ?></td>
-        <td><?=$row["nama_siswa"]; ?></td>
-        <td><?=$row["kelas"]; ?></td>
-        <td><?=$row["pelanggaran"]; ?></td>
-        <td>-<?=$row["poin_minus"]; ?></td>
-        <td><?=$row["keterangan"]; ?></td>
+              <td>NIS</td>
+              <td><?php foreach ($sql as $nis) :?><?=$nis["nis"]; ?><?php endforeach;?></td>
+          </tr>
+          <tr>
+              <td>Nama Siswa</td>
+              <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
+          </tr>
+          <tr>
+              <td>Pilih Kasus</td>
+              <td>
+              <select name="kasus">
+                      <?php foreach ($sql_kasus as $row) :?>
+                          <option value=<?= $row["jenis_kasus"];?>><?= $row["jenis_kasus"];?></option>
+                          
+                          <?php endforeach;?>
+                      </select>
+              </td>
+          </tr>
+          <tr>
+              <td>Keterangan</td>
+              <td><input type="text" name="keterangan"></td>
+          </tr>
+          <tr>
+              <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
+              <td><input type="submit" name="batalkan" value="Batalkan"></td>
+          </tr>
+      </table><br>
+      
+      <table>
+        <tr>
+          <td><b>Riwayat Pelanggaran</b></td>
         </tr>
-        <?php endforeach; ?>
-    </table>
+        <?php 
+        $jumlah_baris = 3;
+        $log = array();
+        while ($row = $sql_pelanggaran->fetch_assoc()) {
+          $log[] = $row;
+        }
+        $log_terbaru = array_slice($log, -$jumlah_baris);
+        foreach ($log_terbaru as $row) : ?>
+        <tr>
+          <td><?=$row["tanggal"]; ?></td>
+          <td><?=$row["nis"]; ?></td>
+          <td><?=$row["nama_siswa"]; ?></td>
+          <td><?=$row["kelas"]; ?></td>
+          <td><?=$row["pelanggaran"]; ?></td>
+          <td>-<?=$row["poin_minus"]; ?></td>
+          <td><?=$row["keterangan"]; ?></td>
+          </tr>
+          <?php endforeach; ?>
+      </table>
 
-    <div class="jenis-kasus">
-    <p class="judul">Jenis Pelanggaran</p>
-    <div class="row">
-      <div class="col-md-6">
-        <table class="table-3 table table-striped">
-          <thead>
-            <tr>
-              <th>NO</th>
-              <th>Pelanggaran</th>
-              <th>Poin</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Terlambat</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Merokok</td>
-              <td>-50</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Mabok</td>
-              <td>-75</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Kabur</td>
-              <td>-25</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Rambut Panjang(Laki-Laki)</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Berkata Kasar/Kotor</td>
-              <td>-5</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Berkelahi</td>
-              <td>-20</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Seragam tidak sesuai hari</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Sepatu</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Atribut</td>
-              <td>-10</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="jenis-kasus">
+      <p class="judul">Jenis Pelanggaran</p>
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table-3 table table-striped">
+            <thead>
+              <tr>
+                <th>NO</th>
+                <th>Pelanggaran</th>
+                <th>Poin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Terlambat</td>
+                <td>-10</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Merokok</td>
+                <td>-50</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Mabok</td>
+                <td>-75</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Kabur</td>
+                <td>-25</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Rambut Panjang(Laki-Laki)</td>
+                <td>-10</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Berkata Kasar/Kotor</td>
+                <td>-5</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Berkelahi</td>
+                <td>-20</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Seragam tidak sesuai hari</td>
+                <td>-10</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Sepatu</td>
+                <td>-10</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Atribut</td>
+                <td>-10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
 
+    </div>
+  </form>
   </div>
-</form>
-</div>
+        </div>
 </body>
 </html>

@@ -4,42 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css_style_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-    }
-        ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 20%;
-      background-color: #f1f1f1;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-    }
-
-    li a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
-
-    li a.active {
-      background: linear-gradient(brown, chocolate);
-      font-size: 30px;
-      color: white;
-    }
-
-    li a:hover:not(.active) {
-      background-color: rgb(82, 28, 14);
-      color: white;
-      font-weight: bold;
-    }
-
     .card-client {
   background: #2cb5a0;
   width: 13rem;
@@ -161,6 +130,15 @@
   if (!isset($_SESSION['id_masuk'])) {
     header('Location: index.php');
   }?>
+
+<div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>List Siswa</h2>
+            </div>
+        </div>
+
 <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
@@ -295,5 +273,6 @@
 </div></td>
         </tr>
     </table>
+</div>
 </body>
 </html>

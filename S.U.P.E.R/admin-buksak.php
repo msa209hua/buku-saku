@@ -7,50 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css_style_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 20%;
-      background-color: #f1f1f1;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-    }
-
-    li a {
-      display: block;
-      color: #000;
-      padding: 5px 16px;
-      text-decoration: none;
-    }
-
-    li a.active {
-      background: linear-gradient(brown, chocolate);
-      font-size: 30px;
-      color: white;
-      line-height: 34px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-    }
-
-    li a:hover:not(.active) {
-      background-color: rgb(82, 28, 14);
-      color: white;
-      font-weight: bold;
-    }
-
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
+    
 
     td,
     th {
@@ -83,19 +44,6 @@
     /* From uiverse.io by @satyamchaudharydev */
     /* removing default style of button */
     @media screen and (max-width: 600px) {
-      li a.active {
-        background: linear-gradient(#181C24, #282c34);
-        font-size: 20px;
-        color: white;
-      }
-
-      li a {
-        display: block;
-        color: white;
-        padding: 8px 16px;
-        text-decoration: none;
-        font-size: 10px;
-      }
 
       table {
         font-family: arial, sans-serif;
@@ -162,6 +110,7 @@
     header('Location: index.php');
   }
   ?>
+  
   <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
@@ -216,68 +165,78 @@
         </ul>
     </div>
 
-  <div style="margin-left:20%;padding:10px 16px;height:1000px;">
-    <form action="admin-buksak.php" method="GET">
-      <table>
-        <tr>
-          <td>
-          <div class="input-container">
-              <input type="text" name="search" class="input" placeholder="search...">
-              <span class="icon">
-                <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </g>
-                </svg>
-              </span>
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>List Siswa</h2>
             </div>
-          </td>
-          <td>
-            
-          </td>
-          <td>
-            
-          </td>
-          <td></td>
-        </tr>
-        <?php
-          if (isset($_GET['search'])) {
-            $hasil = $_GET['search'];
-            $sql = mysqli_query($conn, "SELECT * FROM siswa
-        WHERE nama
-        like '%" . $hasil . "%'");
-        ?>
-          <tr>
-            <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
-            <td><b style="font-size: 20px; font-weight: 800;"></b></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>NIS</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-            <th>Laporkan</th>
-          </tr>
-          <?php foreach ($sql as $row) : ?>
-            <tr>
-              <td><?= $row["nis"]; ?></td>
-              <td><?= $row["nama"]; ?></td>
-              <td><?= $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
-              <td><?php echo "
-                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
-            </tr>
-        <?php
-          endforeach;
-        }
-        ?>
-      </table>
-    </form>
+        </div>
+
+        <div>
+          <form action="admin-buksak.php" method="GET">
+            <table>
+              <tr>
+                <td>
+                <div class="input-container">
+                    <input type="text" name="search" class="input" placeholder="search...">
+                    <span class="icon">
+                      <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  
+                </td>
+                <td>
+                  
+                </td>
+                <td></td>
+              </tr>
+              <?php
+                if (isset($_GET['search'])) {
+                  $hasil = $_GET['search'];
+                  $sql = mysqli_query($conn, "SELECT * FROM siswa
+              WHERE nama
+              like '%" . $hasil . "%'");
+              ?>
+                <tr>
+                  <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
+                  <td><b style="font-size: 20px; font-weight: 800;"></b></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>NIS</th>
+                  <th>Name</th>
+                  <th>Class</th>
+                  <th>Action</th>
+                </tr>
+                <?php foreach ($sql as $row) : ?>
+                  <tr>
+                    <td><?= $row["nis"]; ?></td>
+                    <td><?= $row["nama"]; ?></td>
+                    <td><?= $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
+                    <td><?php echo "
+                              <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
+                  </tr>
+              <?php
+                endforeach;
+              }
+              ?>
+            </table>
+          </form>
+    </div>
+
 </body>
 
 </html>
