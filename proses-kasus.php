@@ -175,75 +175,36 @@ li a {
         <?php endforeach; ?>
     </table>
 
-    <div class="jenis-kasus">
-    <p class="judul">Jenis Pelanggaran</p>
-    <div class="row">
-      <div class="col-md-6">
-        <table class="table-3 table table-striped">
+    <?php
+    include 'koneksi.php';
+
+    $sql = "SELECT * FROM tb_kasus";
+    $pelanggaran = mysqli_query($conn, $sql);
+    ?>
+      <div class="jenis-kasus">
+      <p class="judul">Jenis Pelanggaran</p>
+      <div class="row">
+        <div>
+          <table class="table-3 table table-striped" style="width: 100%;">
           <thead>
-            <tr>
-              <th>NO</th>
-              <th>Pelanggaran</th>
-              <th>Poin</th>
+            <tr style="font-size: 20px;">
+              <td><b>No.</b></td>
+              <td><b>Kasus</b></td>
+              <td><b>Poin Minus</b></td>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Terlambat</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Merokok</td>
-              <td>-50</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Mabok</td>
-              <td>-75</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Kabur</td>
-              <td>-25</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Rambut Panjang(Laki-Laki)</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Berkata Kasar/Kotor</td>
-              <td>-5</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Berkelahi</td>
-              <td>-20</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Seragam tidak sesuai hari</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Sepatu</td>
-              <td>-10</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Atribut</td>
-              <td>-10</td>
-            </tr>
+            <?php foreach ($pelanggaran as $item) : ?>
+                <tr>
+                    <td><?= $item["id_kasus"];  ?></td>
+                    <td><?= $item["jenis_kasus"];  ?></td>
+                    <td>-<?= $item["poin"];  ?></td>
+                </tr>
+            <?php endforeach; ?>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
-    </div>
-
-  </div>
 </form>
 </div>
 </body>

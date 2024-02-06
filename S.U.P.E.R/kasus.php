@@ -113,8 +113,8 @@ if (!isset($_SESSION['id_masuk'])) {
             <tr>
                 <th>Id Kasus</th>
                 <th>Jenis Kasus</th>
-                <th>POIN MINUS</th>
-                <th>ACTIONS</th>
+                <th>Poin Minus</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
