@@ -41,6 +41,10 @@ input[type=text]:focus {
             }
         }
 
+        if (isset($_GET['batal'])) {
+          header("Location: kasus.php");
+        }
+
         $id = $_GET['id'];
 
         $result = mysqli_query($conn, "SELECT * FROM tb_kasus WHERE id_kasus = $id");
@@ -112,11 +116,7 @@ input[type=text]:focus {
                 <h2>Edit Kasus</h2>
             </div>
         </div>
-<div>
-<a href="index.php">Home</a>
-        <a href="kasus.php">Back</a>
-        <br><br>
-
+      <div>
         <form action="edit_Kasus.php" name="update_Kasus" method="GET">
             <table border="0">
                 <tr>
@@ -135,12 +135,17 @@ input[type=text]:focus {
                     <td>
                         <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
                     </td>
-                    <td>
-                        <input type="submit" value="Update" name="update">
-                    </td>
                 </tr>
             </table>
+
+            <table style="width: 0px;">
+  <tr>
+    <td><input type="submit" value="Batalkan" name="batal"></td>
+    <td><input type="submit" value="Update" name="update"></td>
+    </tr>
+  </table>
         </form>
+
 </div>
       </div>
 </body>

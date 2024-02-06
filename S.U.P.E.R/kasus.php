@@ -97,10 +97,6 @@ if (!isset($_SESSION['id_masuk'])) {
             </div>
         </div>
 <div>
-<h3>Data Kasus</h3>
-    <a href="index.php">[<] Back</a><br><br>
-    <br>
-
     <?php
     include 'koneksi.php';
 
@@ -109,7 +105,7 @@ if (!isset($_SESSION['id_masuk'])) {
     ?>
     <nav>
         
-        <a href="tambah_kasus.php">[+] Tambah Kasus</a>
+        <a href="tambah_kasus.php" style="padding: 8px; border-radius: 16px; background-color: green; color: white; font-weight: 600;">+ Tambah Kasus</a>
     </nav>
     <br>
     <table border="1" cellspacing="0" cellpadding="10px">

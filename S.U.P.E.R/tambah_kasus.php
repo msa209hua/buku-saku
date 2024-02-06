@@ -38,6 +38,10 @@ if (isset($_POST['tambah'])) {
         </script>";
     }
 }
+
+if (isset($_POST['batal'])) {
+  header("Location: kasus.php");
+}
 ?>
 
 <div class="sidebar">
@@ -102,9 +106,23 @@ if (isset($_POST['tambah'])) {
         </div>
 <div>
 <form action="tambah_kasus.php" method="post">
-        Jenis Kasus <input type="text" name="jenis"><br>
-        Poin Minus <input type="text" name="poin"><br>
-        <input type="submit" value="tambahkan" name="tambah"><br>
+  <table>
+    <tr>
+      <td>Jenis Kasus</td>
+      <td><input type="text" name="jenis"></td>
+    </tr>
+    <tr>
+      <td>Poin Minus</td>
+      <td><input type="text" name="poin"></td>
+    </tr>
+  </table>
+
+  <table style="width: 0px;">
+  <tr>
+    <td><input type="submit" value="Batalkan" name="batal"></td>
+    <td><input type="submit" value="Tambahkan" name="tambah"></td>
+    </tr>
+  </table>
     </form>
 
     
