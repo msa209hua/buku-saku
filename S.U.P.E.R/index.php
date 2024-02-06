@@ -84,7 +84,7 @@
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <span>S.U.P.E.R Administrator</span>
+                <span>S.U.P.E.R. Administrator</span>
                 <h2>Dashboard</h2>
             </div>
         </div>
