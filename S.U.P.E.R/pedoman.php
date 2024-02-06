@@ -98,16 +98,59 @@
     header('Location: index.php');
     }
     ?>
-    <ul>
-    <li><a class="active" href="index.php"><b>SUPER Administrator</b></a></li>
-    <li><a href="index.php">Dasboard</a></li>
-    <li><a href="admin-buksak.php">List Siswa</a></li>
-    <li><a href="data-kasus.php">Log Kasus</a></li>
-    <li><a href="kasus.php">Data Kasus</a></li>
-    <li><a href="pedoman.php">Pedoman</a></li>
-    <li><a href="hapus-pelanggaran.php">Hapus Pelanggaran</a></li>
-    <li><a href="credit-buksak.php">Tentang</a></li>
-  </ul>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="index.php">
+                    <img src="../img/dashboard.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin-buksak.php">
+                    <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
+                    <span>List</span>
+                </a>
+            </li>
+            <li>
+                <a href="data-kasus.php">
+                    <img src="../img/log.png" alt="" style="width: 33px; height: 30px;">
+                    <span>Log</span>
+                </a>
+            </li>
+            <li>
+                <a href="kasus.php">
+                    <img src="../img/data.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Kasus</span>
+                </a>
+            </li>
+            <li>
+                <a href="pedoman.php">
+                    <img src="../img/pedoman.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Pedoman</span>
+                </a>
+            </li>
+            <li>
+                <a href="hapus-pelanggaran.php">
+                    <img src="../img/hapus.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Hapus Pelanggaran</span>
+                </a>
+            </li>
+            <li>
+                <a href="credit-buksak.php">
+                    <img src="../img/about.png" alt="" style="width: 30px; height: 30px;"> 
+                    <span>Tentang</span>
+                </a>
+            </li>
+            <li class="logout">
+                <a href="../index.php">
+                    <img src="../img/logout.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <div class="pedoman" style="text-align: center;">
         <img src="../img/pedoman_1.png" alt=""><br>
