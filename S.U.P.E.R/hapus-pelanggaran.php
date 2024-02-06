@@ -181,8 +181,14 @@
             </li>
         </ul>
     </div>
-
-  <div style="margin-left:20%;padding:10px 16px;height:1000px;">
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Hapus Pelanggaran Siswa</h2>
+            </div>
+        </div>
+  <div>
     <form action="hapus-pelanggaran.php" method="GET">
       <table>
         <tr>
@@ -247,6 +253,7 @@
         ?>
       </table>
     </form>
+      </div>
 </body>
 
 </html>

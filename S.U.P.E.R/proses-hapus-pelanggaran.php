@@ -48,16 +48,6 @@
       border-bottom: 1px solid #b5b6b7;
     }
 
-    .table {
-      width: 80%;
-      margin-left: 273px;
-    }
-
-    .table-2 {
-      margin-top: -16px;
-      width: 80%;
-      margin-left: 273px;
-    }
 
     .row {
       margin-right: 0px;
@@ -206,6 +196,13 @@
         </ul>
     </div>
 
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Hapus Pelanggaran Siswa</h2>
+            </div>
+        </div>
   <div class="identitas">
     <table class="table table-secondary table-striped table-responsive-md">
       <?php
@@ -331,11 +328,7 @@
       </div>
     </div>
 
-  </div>
-
-  <div class="footer">
-    <p>&copy;TEFA RPL</p>
-  </div>
+    </div>
 </body>
 
 </html>

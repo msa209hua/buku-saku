@@ -131,13 +131,7 @@
     header('Location: index.php');
   }?>
 
-<div class="main--content">
-        <div class="header--wrapper">
-            <div class="header--title">
-                <span>S.U.P.E.R. Administrator</span>
-                <h2>List Siswa</h2>
-            </div>
-        </div>
+
 
 <div class="sidebar">
         <div class="logo"></div>
@@ -192,6 +186,13 @@
             </li>
         </ul>
     </div>
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Tentang</h2>
+            </div>
+        </div>
     <table align="center">
         <tr>
             <td align="center"><h1>Di Buat Oleh</h1></td>
