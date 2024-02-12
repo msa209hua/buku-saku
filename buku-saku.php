@@ -139,6 +139,7 @@
 
   // Terima id pengguna dari session
   $id = $_GET['id'];
+  $_SESSION['nis'] = $id;
 
   // Ambil data pengguna dari database
   $sql = "SELECT * FROM siswa WHERE nis = $id";
@@ -151,6 +152,9 @@
 
   <div class="nav">
     <h1>e-Buku Saku</h1>
+    <a href="help-buku-saku-2.php" style="justify-content: end;">
+      <img src="img/help.png" title="Help">
+    </a>
   </div>
 
   <div class="identitas">
