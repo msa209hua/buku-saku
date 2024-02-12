@@ -7,41 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="side-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+  font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: Arial;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 20%;
-      background-color: #181C24;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-      color: white;
-    }
-
-    li a {
-      display: block;
-      color: white;
-      padding: 5px 16px;
-      text-decoration: none;
-    }
-
-    li a.active {
-      background: linear-gradient(#181C24, #282c34);
-      font-size: 30px;
-      color: white;
-    }
-
-    li a:hover:not(.active) {
-      background-color: rgb(82, 28, 14);
-      color: white;
-      font-weight: bold;
     }
 
     table {
@@ -163,14 +135,50 @@
   include "koneksi.php";
 
   ?>
-  <ul>
-    <li><a class="active" href="admin-buksak.php"><b>Admin <br> Buku Saku</b></a></li>
-    <li><a href="admin-buksak.php">List Siswa</a></li>
-    <li><a href="data-kasus.php">Data Kasus</a></li>
-    <li><a href="pedoman.php">Pedoman</a></li>
-    <li><a href="credit-buksak.php">Tentang</a></li>
-  </ul>
-  <div style="margin-left:20%;padding:10px 16px;height:1000px;">
+  <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li>
+                <a href="admin-buksak.php">
+                    <img src="img/list.png" alt="" style="width: 30px; height: 30px;">
+                    <span>List</span>
+                </a>
+            </li>
+            <li>
+                <a href="data-kasus.php">
+                    <img src="img/log.png" alt="" style="width: 33px; height: 30px;">
+                    <span>Log</span>
+                </a>
+            </li>
+            <li>
+                <a href="pedoman.php">
+                    <img src="img/pedoman.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Pedoman</span>
+                </a>
+            </li>
+            <li>
+                <a href="credit-buksak.php">
+                    <img src="img/about.png" alt="" style="width: 30px; height: 30px;"> 
+                    <span>Tentang</span>
+                </a>
+            </li>
+            <li class="logout">
+                <a href="index.php">
+                    <img src="img/logout.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Administrator</span>
+                <h2>List Siswa</h2>
+            </div>
+        </div>
+  <div>
     <form action="admin-buksak.php" method="GET">
       <table>
         <tr>

@@ -195,6 +195,11 @@
     </div>
   </nav>
 
+  <div class="help" style="margin-bottom: 20px; margin-left: 20px;">
+    <a href="help-buku-saku.php">
+      <img src="img/help.png" style="width: 33px; height: 30px;" title="Help">
+    </a>
+  </div>
   
 </body>
 
