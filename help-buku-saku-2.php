@@ -38,13 +38,19 @@
         <br>
       <table>
         <tr>
-            <td><b>Tidak dapat memasukan Username dan Password?</b></td>
+            <td><b>Jika terdapat kesalahan seperti;</b></td>
         </tr>
         <tr>
-            <td>Username: Pastikan Username sama dengan nama panjang kalian.</td>
+            <td>
+                a. Report berulang pada hari yang sama <br>
+                b. Salah report kasus <br>
+                c. Ketidakcocokan pada 'nilai' poin pelanggaran dengan 'nilai' poin yang sebenarnya <br>
+                   (Contoh: Udin terlambat hari ini kesekolah, poinnya seharusnya dikurangi 10, tapi dalam aplikasi malah dikurangi 20.) <br>
+                d. Terdapat bug/kecacatan
+            </td>
         </tr>
         <tr>
-            <td>Password: Pastikan Password sama dengan NIS kalian.</td>
+            <td>Mohon untuk melapor kepada Admin.</td>
         </tr>
       </table>
         <br>
