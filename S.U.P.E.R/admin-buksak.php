@@ -115,7 +115,7 @@
                     <span>List</span>
                 </a>
             </li>
-            <li>
+            <li> 
                 <a href="data-kasus.php">
                     <img src="../img/log.png" alt="" style="width: 33px; height: 30px;">
                     <span>Log</span>

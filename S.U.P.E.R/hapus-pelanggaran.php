@@ -131,7 +131,7 @@
 <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
-            <li class="active">
+            <li>
                 <a href="admin-buksak.php">
                     <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
                     <span>List</span>
@@ -155,7 +155,7 @@
                     <span>Pedoman</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="hapus-pelanggaran.php">
                     <img src="../img/hapus.png" alt="" style="width: 30px; height: 30px;">
                     <span>Hapus Pelanggaran</span>

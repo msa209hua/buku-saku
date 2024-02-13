@@ -47,7 +47,7 @@ if (isset($_POST['batal'])) {
 <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
-            <li class="active">
+            <li>
                 <a href="admin-buksak.php">
                     <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
                     <span>List</span>
@@ -59,7 +59,7 @@ if (isset($_POST['batal'])) {
                     <span>Log</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="kasus.php">
                     <img src="../img/data.png" alt="" style="width: 30px; height: 30px;">
                     <span>Kasus</span>

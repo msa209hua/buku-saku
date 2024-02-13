@@ -7,9 +7,17 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css_style.css">
+    <link rel="stylesheet" href="css_style_new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
     font-awesome/6.4.0/css/all.min.css">
+    <style>
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    </style>
 </head>
 
 <body>
@@ -30,7 +38,7 @@
     <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
-            <li class="active">
+            <li>
                 <a href="admin-buksak.php">
                     <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
                     <span>List</span>
@@ -66,7 +74,7 @@
                     <span>Tentang</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="admin-settings.php">
                     <img src="../img/settings.png" alt="" style="width: 30px; height: 30px;">
                     <span>Settings</span>
@@ -85,50 +93,26 @@
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>Dashboard</h2>
+                <h2>Settings</h2>
             </div>
         </div>
 
-        <div class="card--container">
-            <h3 class="main--title">Today's Data</h3>
-            
-        </div>
-
-        <div class="tabular--wrapper">
-            <h3 class="main--title">
-                Riwayat Pelanggaran
-            </h3>
-            <div class="table--container">
-                <table>
-                    <tr>
-                        <th>Tanggal</th>
-                        <th>NIS</th>
-                        <th>Nama</th>
-                        <th>Kelas</th>
-                        <th>Pelanggaran</th>
-                        <th>Poin</th>
-                        <th>Keterangan</th>
-                    </tr>
-                    <?php foreach ($sql as $row) : ?>
-                        <tr>
-                        <td><?= $row["tanggal"]; ?></td>
-                        <td><?= $row["nis"]; ?></td>
-                        <td><?= $row["nama_siswa"] ?></td>
-                        <td><?= $row["kelas"] ?></td>
-                        <td><?= $row["pelanggaran"]; ?></td>
-                        <td>-<?= $row["poin_minus"] ?></td>
-                        <td><?= $row["keterangan"] ?></td>
-                        </tr>
-                        </tr>
-                    <?php
-                    endforeach;
-                    ?>
-                </table>
-            </div>
-        </div>
-        <div class="footer">
-            TEFA RPL &copy; 2024
-        </div>
+        <form action="admin-settings.php" method="post">
+            <table>
+                <tr>
+                    <td><b>Pilihan Settings</b></td>
+                    <td><b>Action</b></td>
+                </tr>
+                <tr>
+                    <td>Ganti Username & Password S.U.P.E.R. Admin</td>
+                    <td><a href="usr-pw-super-admin.php" class="btn btn-success">GO!</a></td>
+                </tr>
+                <tr>
+                    <td>Ganti Username & Password Admin</td>
+                    <td><a href="usr-pw-admin.php" class="btn btn-success">GO!</a></td>
+                </tr>
+            </table>
+        </form>
     </div>
 </body>
 

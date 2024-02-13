@@ -66,13 +66,13 @@
  <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
-            <li class="active">
+            <li>
                 <a href="admin-buksak.php">
                     <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
                     <span>List</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="data-kasus.php">
                     <img src="../img/log.png" alt="" style="width: 33px; height: 30px;">
                     <span>Log</span>
