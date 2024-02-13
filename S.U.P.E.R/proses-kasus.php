@@ -168,6 +168,10 @@ li a {
               <td><input type="text" name="keterangan"></td>
           </tr>
           <tr>
+            <td>Upload Gambar</td>
+            <td><input type="file" name="gambar"></td>
+          </tr>
+          <tr>
               <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
               <td><input type="submit" name="batalkan" value="Batalkan"></td>
           </tr>
@@ -193,6 +197,7 @@ li a {
           <td><?=$row["pelanggaran"]; ?></td>
           <td>-<?=$row["poin_minus"]; ?></td>
           <td><?=$row["keterangan"]; ?></td>
+          <td><?=$row["gambar"]; ?></td>
           </tr>
           <?php endforeach; ?>
       </table>

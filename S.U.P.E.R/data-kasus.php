@@ -134,6 +134,7 @@
         <th>Pelanggaran</th>
         <th>Poin</th>
         <th>Keterangan</th>
+        <th>Gambar</th>
       </tr>
       <?php foreach ($sql as $row) : ?>
         <tr>
@@ -144,6 +145,7 @@
           <td><?= $row["pelanggaran"]; ?></td>
           <td>-<?= $row["poin_minus"] ?></td>
           <td><?= $row["keterangan"] ?></td>
+          <td><img src="<?= $row["gambar"] ?>"></td>
         </tr>
         </tr>
       <?php
