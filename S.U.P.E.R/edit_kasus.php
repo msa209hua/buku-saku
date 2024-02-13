@@ -59,12 +59,6 @@ input[type=text]:focus {
 <div class="sidebar">
         <div class="logo"></div>
         <ul class="menu">
-            <li class="active">
-                <a href="index.php">
-                    <img src="../img/dashboard.png" alt="" style="width: 30px; height: 30px;">
-                    <span>Dashboard</span>
-                </a>
-            </li>
             <li>
                 <a href="admin-buksak.php">
                     <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
@@ -77,7 +71,7 @@ input[type=text]:focus {
                     <span>Log</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="kasus.php">
                     <img src="../img/data.png" alt="" style="width: 30px; height: 30px;">
                     <span>Kasus</span>
@@ -99,6 +93,12 @@ input[type=text]:focus {
                 <a href="credit-buksak.php">
                     <img src="../img/about.png" alt="" style="width: 30px; height: 30px;"> 
                     <span>Tentang</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin-settings.php">
+                    <img src="../img/settings.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Settings</span>
                 </a>
             </li>
             <li class="logout">

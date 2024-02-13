@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) == 1) {
 } else if ($username == "SUPER ADMIN" && $password == "SUPER") {
     session_start();
     $_SESSION["id_masuk"] = $password;
-    header("Location: S.U.P.E.R/index.php");
+    header("Location: S.U.P.E.R/admin-buksak.php");
 }
 
 else {
