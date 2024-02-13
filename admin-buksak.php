@@ -133,7 +133,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <?php
   include "koneksi.php";
-
+  $sql=mysqli_query($conn, "SELECT * FROM siswa");
   ?>
   <div class="sidebar">
         <div class="logo"></div>
@@ -180,65 +180,54 @@
         </div>
   <div>
     <form action="admin-buksak.php" method="GET">
-      <table>
-        <tr>
-          <td>
-          <div class="input-container">
-              <input type="text" name="search" class="input" placeholder="search...">
-              <span class="icon">
-                <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </g>
-                </svg>
-              </span>
-            </div>
-          </td>
-          <td>
-            
-          </td>
-          <td>
-            
-          </td>
-          <td></td>
-        </tr>
-        <?php
-          if (isset($_GET['search'])) {
-            $hasil = $_GET['search'];
-            $sql = mysqli_query($conn, "SELECT * FROM siswa
-        WHERE nama
-        like '%" . $hasil . "%'");
-        ?>
-          <tr>
-            <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
-            <td><b style="font-size: 20px; font-weight: 800;"></b></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+      <table id="myTable">
+          <tr class="header">
             <th>NIS</th>
             <th>Nama</th>
             <th>Kelas</th>
             <th>Laporkan</th>
           </tr>
-          <?php foreach ($sql as $row) : ?>
+          <?php
+          $jumlah_baris = 50;
+          $log = array();
+          while ($row = $sql->fetch_assoc()) {
+            $log[] = $row;
+          }
+          $log_terbaru = array_slice($log, -$jumlah_baris);
+           foreach ($log_terbaru as $row) : ?>
             <tr>
-              <td><?= $row["nis"]; ?></td>
-              <td><?= $row["nama"]; ?></td>
-              <td><?= $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
+              <td><?php echo $row["nis"]; ?></td>
+              <td><?php echo $row["nama"]; ?></td>
+              <td><?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
               <td><?php echo "
                         <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
             </tr>
         <?php
           endforeach;
-        }
+        
         ?>
       </table>
+      <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
     </form>
 </body>
 
