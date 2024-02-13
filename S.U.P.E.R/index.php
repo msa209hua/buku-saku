@@ -22,7 +22,7 @@
         session_start();
 
         if (!isset($_SESSION['id_masuk'])) {
-            header('Location: index.php');
+            header('Location: admin-buksak.php');
         }
         $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
         ?>
@@ -31,12 +31,6 @@
         <div class="logo"></div>
         <ul class="menu">
             <li class="active">
-                <a href="index.php">
-                    <img src="../img/dashboard.png" alt="" style="width: 30px; height: 30px;">
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
                 <a href="admin-buksak.php">
                     <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
                     <span>List</span>
@@ -70,6 +64,12 @@
                 <a href="credit-buksak.php">
                     <img src="../img/about.png" alt="" style="width: 30px; height: 30px;"> 
                     <span>Tentang</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin-settings.php">
+                    <img src="../img/settings.png" alt="" style="width: 30px; height: 30px;">
+                    <span>Settings</span>
                 </a>
             </li>
             <li class="logout">
