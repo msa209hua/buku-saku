@@ -17,7 +17,7 @@
       header("Content-Disposition: attachment; filename=Data Kasus.xls");
     
     ?>
-<table>
+<table border="1px solid black">
       <tr>
         <th>Tanggal</th>
         <th>NIS</th>

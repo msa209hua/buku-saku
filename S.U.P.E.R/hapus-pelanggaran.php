@@ -6,6 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="css_style_new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
     font-awesome/6.4.0/css/all.min.css">
@@ -123,7 +126,7 @@
   <?php
   include "koneksi.php";
   session_start();
-
+  $sql=mysqli_query($conn, "SELECT * FROM siswa");
   if (!isset($_SESSION['id_masuk'])) {
     header('Location: index.php');
   }
@@ -190,55 +193,18 @@
         </div>
   <div>
     <form action="hapus-pelanggaran.php" method="GET">
-      <table>
-        <tr>
-          <td>
-          <div class="input-container">
-              <input type="text" name="search" class="input" placeholder="search...">
-              <span class="icon">
-                <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </g>
-                </svg>
-              </span>
-            </div>
-          </td>
-          <td>
-            
-          </td>
-          <td>
-            
-          </td>
-          <td></td>
-        </tr>
-
-        <?php
-        
-          if (isset($_GET['search'])) {
-            $hasil = $_GET['search'];
-            $sql = mysqli_query($conn, "SELECT * FROM siswa
-        WHERE nama
-        like '%" . $hasil . "%'");
-          
-        ?>
-          <tr>
-            <td><b style="font-size: 20px; font-weight: 800;">KELAS</b></td>
-            <td><b style="font-size: 20px; font-weight: 800;"></b></td>
-            <td></td>
-            <td></td>
-          </tr>
+    <table id="table_kasus" class="display">
+        <thead>
           <tr>
             <th>NIS</th>
             <th>Nama</th>
             <th>Kelas</th>
             <th>Laporkan</th>
           </tr>
+          </thead>
+          <tbody>
+          
+          
           <?php foreach ($sql as $row) : ?>
             <tr>
               <td><?= $row["nis"]; ?></td>
@@ -249,9 +215,16 @@
             </tr>
         <?php
           endforeach;
-        }
         ?>
+        </tbody>
       </table>
+      
+      <script>
+        
+      $(document).ready(function() {
+  $('#table_kasus').DataTable();
+});
+      </script>
     </form>
       </div>
 </body>

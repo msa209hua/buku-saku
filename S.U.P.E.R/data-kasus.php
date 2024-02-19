@@ -152,15 +152,10 @@
       endforeach;
       ?>
       <tr>
-        <td><input type="submit" name="print" value="Print"></td>
+        <td><a href="../print-laporan.php">Print</a></td>
       </tr>
     </table>
-    <?php
-    if (isset($_POST['print'])) {
-      header("Content-type: application/vnd-ms-excel");
-      header("Content-Disposition: attachment; filename=Data Pegawai.xls");
-    }
-    ?>
+    
   </div>
   </div>
 </body>
