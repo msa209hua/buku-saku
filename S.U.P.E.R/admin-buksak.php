@@ -103,10 +103,11 @@
   <?php
   include "koneksi.php";
   session_start();
-  $sql=mysqli_query($conn, "SELECT * FROM siswa");
+
   if (!isset($_SESSION['id_masuk'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
   }
+  $sql=mysqli_query($conn, "SELECT * FROM siswa");
   ?>
   
   <div class="sidebar">

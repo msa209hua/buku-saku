@@ -7,10 +7,39 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 // Validasi username dan password
-$sql = "SELECT * FROM siswa WHERE nama = '$username' AND nis = '$password'";
+$sql = "SELECT * FROM siswa WHERE nis = '$username' AND password = '$password'";
+$sql_admin = "SELECT * FROM administrators WHERE username = '$username' AND password = '$password'";
 $result = mysqli_query($conn, $sql);
+$result_admin = mysqli_query($conn, $sql_admin);
 
 // Cek apakah username dan password valid
+if (mysqli_num_rows($result_admin) == 1) {
+    $row = mysqli_fetch_assoc($result_admin);
+    if ($username == $row["username"] && $password == $row["password"]) {
+        if ($row["role"] == 1) {
+            session_start();
+            $_SESSION["id_masuk"] = $row["password"];
+            header("Location: S.U.P.E.R/admin-buksak.php");
+        } elseif ($row["role"] == 2) {
+            session_start();
+            $_SESSION["id_masuk"] = $row["password"];
+            header("Location: admin-buksak.php");
+        }
+    } else {
+        echo "<script>
+        alert('Username atau Password salah');
+        window.location.href='index.php';
+    </script>";
+    }
+    
+} else {
+    // Username atau password tidak valid
+    echo "<script>
+        alert('Username atau Password salah');
+        window.location.href='index.php';
+    </script>";
+}
+
 if (mysqli_num_rows($result) == 1) {
     // Username dan password valid
     $row = mysqli_fetch_assoc($result);
@@ -21,18 +50,7 @@ if (mysqli_num_rows($result) == 1) {
 
     // Kirim data pengguna ke halaman data
     header("Location: buku-saku.php?id=" . $row["nis"]);
-} else if ($username == "LOWER ADMIN" && $password == "LOWER") {
-    session_start();
-    $_SESSION["id_masuk"] = $password;
-    header("Location: admin-buksak.php");
-
-} else if ($username == "SUPER ADMIN" && $password == "SUPER") {
-    session_start();
-    $_SESSION["id_masuk"] = $password;
-    header("Location: S.U.P.E.R/admin-buksak.php");
-}
-
-else {
+} else {
     // Username atau password tidak valid
     echo "<script>
         alert('Username atau Password salah');
