@@ -119,7 +119,7 @@ li a {
         </div>
 
 <div>
-<form action="proses.php" method="POST">
+<form action="proses.php" method="POST" enctype="multipart/form-data">
     <table>
     <tr>
                 <td></td>
@@ -147,6 +147,10 @@ li a {
         <tr>
             <td>Keterangan</td>
             <td><input type="text" name="keterangan"></td>
+        </tr>
+        <tr>
+          <td>Upload Gambar</td>
+          <td><input type="file" name="file"></td>
         </tr>
         <tr>
             <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?>></td>
