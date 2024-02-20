@@ -81,6 +81,7 @@
             echo "
             <script>
                 alert('Sandi berhasil diganti!');
+                window.location.href='buku-saku.php?id=$nis';
             </script>
             ";
         } else {
