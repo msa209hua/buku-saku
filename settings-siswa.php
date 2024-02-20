@@ -31,13 +31,13 @@
           <td><b>Ganti Sandi</b></td>
         </tr>
         <tr>
-          <td><input type="password" name="first" placeholder="Sandi baru"></td>
+          <td><input type="password" name="first" placeholder="Sandi baru" maxlength="20" minlength="8"></td>
         </tr>
         <tr>
             <td><b>Kekuatan sandi: </b><br> Gunakan setidaknya 8 karakter, maksimal 20 karakter. <br> Jangan gunakan sandi dari situs lain atau sesuatu yang <br> mudah ditebak, seperti nama hewan peliharaan Anda.</td>
         </tr>
         <tr>
-          <td><input type="password" name="second" placeholder="Konfirmasi sandi baru"></td>
+          <td><input type="password" name="second" placeholder="Konfirmasi sandi baru" maxlength="20" minlength="8"></td>
         </tr>
         <tr>
             <td><input type="submit" name="ganti" value="Ubah sandi"></td>
