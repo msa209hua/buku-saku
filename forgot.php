@@ -82,26 +82,11 @@
                     </select>
                 </td>
             </tr>
-        </table>
-        <br>
-        <table>
             <tr>
-                <td><b>Jika terdapat kesalahan seperti;</b></td>
-            </tr>
-            <tr>
-                <td>
-                    a. Report berulang pada hari yang sama <br>
-                    b. Salah report kasus <br>
-                    c. Ketidakcocokan pada 'nilai' poin pelanggaran dengan 'nilai' poin yang sebenarnya <br>
-                    (Contoh: Udin terlambat hari ini kesekolah, poinnya seharusnya dikurangi 10, tapi dalam aplikasi
-                    malah dikurangi 20.) <br>
-                    d. Terdapat bug/kecacatan
-                </td>
-            </tr>
-            <tr>
-                <td>Mohon untuk melapor kepada Admin.</td>
+                <td><button class="btn btn-primary" name="verif">Verifikasi</button></td>
             </tr>
         </table>
+        
         <br>
         <form action="help-buku-saku-2.php" method="post">
             <table>
