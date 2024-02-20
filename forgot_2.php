@@ -28,9 +28,10 @@
                 <h2>Lupa Sandi</h2>
             </div>
         </div>
+        <form action="forgot_2.php" method="post">
         <table>
             <tr>
-                <td><b>Verifikasi diri Anda sebelum mengubah sandi!</b></td>
+                <td colspan=2><b>Verifikasi diri Anda sebelum mengubah sandi!</b></td>
             </tr>
             <tr>
                 <td>Pilih Tingkat: </td>
@@ -80,7 +81,6 @@
         </table>
         
         <br>
-        <form action="forgot.php" method="post">
             <table>
                 <tr>
                     <td>
@@ -97,15 +97,42 @@
     }
 
     include "koneksi.php";
-    $sql=mysqli_query($conn, "SELECT * FROM siswa");
-    $data=mysqli_fetch_array($sql);
+    session_start();
+    $nis = $_SESSION['id_masuk'];
+
     if (isset($_POST['verif'])) {
-        $nama = $data['nama'];
-        $nis = $data['nis'];
-        $tingkat = $data['tingkat'];
-        $jurusan = $data['jurusan'];
-        $kelas = $data['kelas'];
-        $kelamin = $data['jenis_kelamin'];
+        // Terima input dari halaman login
+        $tingkat = $_POST["tingkat"];
+        $jurusan = $_POST["jurusan"];
+        $kelas = $_POST["kelas"];
+        $gender = $_POST["gender"];
+    
+        // Validasi username dan nis
+        $sql = "SELECT 'nis', 'tingkat', 'jurusan', 'kelas', 'jenis_kelamin' FROM siswa WHERE nis = $nis";
+        $result = mysqli_query($conn, $sql);
+        $data = mysqli_fetch_array($result);
+    
+        // Cek apakah username dan password valid
+        if ($tingkat == $data['tingkat'] && $jurusan == $data['jurusan'] && $kelas == $data['kelas'] && $gender == $data['jenis_kelamin']) {
+            // Username dan password valid
+            $row = mysqli_fetch_assoc($result);
+    
+            // Simpan data pengguna ke dalam session
+            session_start();
+            $_SESSION["id_masuk"] = $row["nis"];
+    
+            // Kirim data pengguna ke halaman data
+            header("Location: settings-siswa.php");
+        } else {
+            $row = mysqli_fetch_assoc($result);
+            // Username atau password tidak valid
+            echo "<script>
+                alert('Data tidak cocok.');
+                window.locarion.href='forgot_2.php?id='".$row["nis"]."'
+            </script>";
+        }
+    
+        mysqli_close($conn);
     }
     ?>
     </div>

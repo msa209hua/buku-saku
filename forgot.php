@@ -29,6 +29,12 @@
             </div>
         </div>
         <form action="forgot.php" method="post">
+            <table>
+            <tr>
+                <td>Jika Anda melupakan sandi Anda, Anda dapat mengganti sandi Anda.</td>
+            </tr>
+            </table>
+            <br>
         <table>
             <tr>
                 <td><b>Verifikasi diri Anda sebelum mengubah sandi!</b></td>
@@ -62,6 +68,7 @@
         header("Location: index.php");
     }
 
+    
     // Koneksi ke database MySQL
     include "koneksi.php";
 
