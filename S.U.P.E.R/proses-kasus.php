@@ -169,7 +169,7 @@ li a {
           </tr>
           <tr>
             <td>Upload Gambar</td>
-            <td><input type="file" name="gambar"></td>
+            <td><a href="ambil-foto.php">Ambil Foto</a></td>
           </tr>
           <tr>
               <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
