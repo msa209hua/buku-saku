@@ -152,7 +152,10 @@
 
   <div class="nav">
     <h1>e-Buku Saku</h1>
-    <a href="help-buku-saku-2.php" style="margin-left: 1000px; margin-top: 25px;">
+    <a href="settings-siswa.php">
+      <img src="img/settings.png" title="Settings">
+    </a>
+    <a href="help-buku-saku-2.php">
       <img src="img/help.png" title="Help">
     </a>
   </div>
