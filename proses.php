@@ -15,16 +15,7 @@ $ekstensi_diperbolehkan = array('png','jpg');
  
  move_uploaded_file($file_tmp, 'image/'.$gambar);
     foreach ($sql as $value) {
-      $id=$_POST['id'];
-$sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
-$ekstensi_diperbolehkan = array('png','jpg');
- $gambar = $_FILES['file']['name'];
- $x = explode('.', $gambar);
- $ekstensi = strtolower(end($x));
- $ukuran = $_FILES['file']['size'];
- $file_tmp = $_FILES['file']['tmp_name']; 
- 
- move_uploaded_file($file_tmp, 'image/'.$gambar);
+      
         $nis=$value["nis"];
         $nama=$value["nama"];
         $kelas=$value["tingkat"]." ".$value["jurusan"]." ".$value["kelas"];

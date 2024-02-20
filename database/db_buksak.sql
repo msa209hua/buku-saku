@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Feb 2024 pada 01.34
+-- Waktu pembuatan: 20 Feb 2024 pada 09.28
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -46,8 +46,8 @@ CREATE TABLE `administrators` (
 --
 
 INSERT INTO `administrators` (`role`, `username`, `password`) VALUES
-(1, 'SUPER ADMIN', 'SUPER'),
-(2, 'LOWER ADMIN', 'LOWER');
+(1, 'SUPER ADMIN', '12345678'),
+(2, 'LOWER ADMIN', 'APAWEH12');
 
 -- --------------------------------------------------------
 
@@ -1269,7 +1269,8 @@ CREATE TABLE `tb_pelanggaran` (
   `kelas` varchar(10) NOT NULL,
   `pelanggaran` varchar(50) NOT NULL,
   `poin_minus` varchar(10) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1347,7 +1348,7 @@ ALTER TABLE `tb_kasus`
 -- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
