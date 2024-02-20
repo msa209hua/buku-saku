@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>Input NIS Anda: </td>
-                <td><input type="password" name="pw"></td>
+                <td><input type="password" name="nis"></td>
             </tr>
             <tr>
                 <td>Pilih Tingkat: </td>
@@ -88,7 +88,7 @@
         </table>
         
         <br>
-        <form action="help-buku-saku-2.php" method="post">
+        <form action="forgot.php" method="post">
             <table>
                 <tr>
                     <td>
@@ -102,6 +102,18 @@
     <?php
     if (isset($_POST['Back'])) {
         header("Location: index.php");
+    }
+
+    include "koneksi.php";
+    $sql=mysqli_query($conn, "SELECT * FROM siswa");
+    $data=mysqli_fetch_array($sql);
+    if (isset($_POST['verif'])) {
+        $nama = $data['nama'];
+        $nis = $data['nis'];
+        $tingkat = $data['tingkat'];
+        $jurusan = $data['jurusan'];
+        $kelas = $data['kelas'];
+        $kelamin = $data['jenis_kelamin'];
     }
     ?>
     </div>
