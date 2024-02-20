@@ -28,59 +28,18 @@
                 <h2>Lupa Sandi</h2>
             </div>
         </div>
+        <form action="forgot.php" method="post">
         <table>
             <tr>
                 <td><b>Verifikasi diri Anda sebelum mengubah sandi!</b></td>
             </tr>
             <tr>
                 <td>Input nama lengkap Anda: </td>
-                <td><input type="text" name="user"></td>
+                <td><input type="text" name="nama"></td>
             </tr>
             <tr>
                 <td>Input NIS Anda: </td>
-                <td><input type="password" name="nis"></td>
-            </tr>
-            <tr>
-                <td>Pilih Tingkat: </td>
-                <td>
-                    <select name="tingkat">
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Pilih Jurusan: </td>
-                <td>
-                    <select name="jurusan">
-                        <option value="ANIMASI">ANIMASI</option>
-                        <option value="DKV">DKV</option>
-                        <option value="RPL">RPL</option>
-                        <option value="MEKATRONIKA">MEKATRONIKA</option>
-                        <option value="PEMESINAN">PEMESINAN</option>
-                        <option value="KIMIA">KIMIA</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Pilih Kelas: </td>
-                <td>
-                    <select name="kelas">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin: </td>
-                <td>
-                    <select name="gender">
-                        <option value="L">Laki-laki</option>
-                        <option value="P">Perempuan</option>
-                    </select>
-                </td>
+                <td><input type="text" name="nis"></td>
             </tr>
             <tr>
                 <td><button class="btn btn-primary" name="verif">Verifikasi</button></td>
@@ -88,7 +47,6 @@
         </table>
         
         <br>
-        <form action="forgot.php" method="post">
             <table>
                 <tr>
                     <td>
@@ -104,17 +62,39 @@
         header("Location: index.php");
     }
 
+    // Koneksi ke database MySQL
     include "koneksi.php";
-    $sql=mysqli_query($conn, "SELECT * FROM siswa");
-    $data=mysqli_fetch_array($sql);
+
     if (isset($_POST['verif'])) {
-        $nama = $data['nama'];
-        $nis = $data['nis'];
-        $tingkat = $data['tingkat'];
-        $jurusan = $data['jurusan'];
-        $kelas = $data['kelas'];
-        $kelamin = $data['jenis_kelamin'];
+        // Terima input dari halaman login
+        $username = $_POST["nama"];
+        $nis = $_POST["nis"];
+    
+        // Validasi username dan nis
+        $sql = "SELECT * FROM siswa WHERE nama = '$username' AND nis = '$nis'";
+        $result = mysqli_query($conn, $sql);
+    
+        // Cek apakah username dan password valid
+        if (mysqli_num_rows($result) == 1) {
+            // Username dan password valid
+            $row = mysqli_fetch_assoc($result);
+    
+            // Simpan data pengguna ke dalam session
+            session_start();
+            $_SESSION["id_masuk"] = $row["nis"];
+    
+            // Kirim data pengguna ke halaman data
+            header("Location: forgot_2.php?id=" . $row["nis"]);
+        } else {
+            // Username atau password tidak valid
+            echo "<script>
+                alert('Nama dan NIS tidak cocok.');
+            </script>";
+        }
+    
+        mysqli_close($conn);
     }
+        
     ?>
     </div>
 </body>
