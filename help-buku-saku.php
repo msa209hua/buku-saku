@@ -41,10 +41,10 @@
             <td><b>Tidak dapat memasukan Username dan Password?</b></td>
         </tr>
         <tr>
-            <td>Username: Pastikan Username sama dengan nama panjang kalian.</td>
+            <td>Username: Pastikan Username sama dengan NIS kalian.</td>
         </tr>
         <tr>
-            <td>Password: Pastikan Password sama dengan NIS kalian.</td>
+            <td>Password: Pastikan Password sama dengan NIS kalian. <br> Jika kalian sudah mengganti password, pastikan passwordnya sama dengan apa yang kalian ubah</td>
         </tr>
       </table>
         <br>

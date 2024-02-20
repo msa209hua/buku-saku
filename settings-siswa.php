@@ -42,6 +42,12 @@
         <tr>
             <td><input type="submit" name="ganti" value="Ubah sandi"></td>
         </tr>
+        <tr>
+            <td>
+                <b>*PENTING* <br>
+                Catat dan ingat baik-baik password Anda, agar Anda tidak kesulitan dikemudian hari!</b>
+            </td>
+        </tr>
       </table>
         <br>
       <table>
