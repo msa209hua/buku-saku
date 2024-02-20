@@ -176,7 +176,7 @@
       <label class="label" for="input">Masukan Username yang sesuai</label>
     </div>
     <div class="input-field">
-      <input required="" class="input" type="password" name="password" maxlength="9" />
+      <input required="" class="input" type="password" name="password" maxlength="20" minlength="8"/>
       <label class="label" for="input">Masukan Password yang sesuai</label>
     </div>
     <a href="forgot.php">Forgot your password?</a>
