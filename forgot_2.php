@@ -34,7 +34,7 @@
                 <td colspan=2><b>Verifikasi diri Anda sebelum mengubah sandi!</b></td>
             </tr>
             <tr>
-                <td>Pilih Tingkat: </td>
+                <td>Input Tingkatan Anda: </td>
                 <td>
                     <select name="tingkat">
                         <option value="10">10</option>
@@ -43,7 +43,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Pilih Jurusan: </td>
+                <td>Input Jurusan Anda: </td>
                 <td>
                     <select name="jurusan">
                         <option value="ANIMASI">ANIMASI</option>
@@ -56,7 +56,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Pilih Kelas: </td>
+                <td>Input Kelas Anda: </td>
                 <td>
                     <select name="kelas">
                         <option value="A">A</option>
@@ -67,7 +67,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Jenis Kelamin: </td>
+                <td>Input Jenis Kelamin Anda: </td>
                 <td>
                     <select name="gender">
                         <option value="L">Laki-laki</option>

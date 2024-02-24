@@ -40,7 +40,7 @@
                 <td><b>Verifikasi diri Anda sebelum mengubah sandi!</b></td>
             </tr>
             <tr>
-                <td>Input nama lengkap Anda: </td>
+                <td>Input nama lengkap Anda yang sesuai dengan di raport: </td>
                 <td><input type="text" name="nama"></td>
             </tr>
             <tr>

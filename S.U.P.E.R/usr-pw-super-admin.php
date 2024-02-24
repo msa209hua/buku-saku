@@ -32,6 +32,11 @@
         if (!isset($_SESSION['id_masuk'])) {
             header('Location: admin-buksak.php');
         }
+        
+        if (isset($_POST['back'])) {
+            header("Location: admin-settings.php");
+        }
+
         $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
         ?>
 
@@ -100,11 +105,99 @@
         <form action="usr-pw-super-admin.php" method="post">
             <table>
                 <tr>
-                    
+                    <td><b>Ganti Username</b></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="alpha" placeholder="Nama Pengguna baru" maxlength="20" minlength="8"></td>
+                </tr>
+                <tr>
+                    <td><b>Kekuatan Nama Pengguna: </b><br> Gunakan setidaknya 8 karakter, maksimal 20 karakter. <br> Jangan gunakan Nama Pengguna dari situs lain atau sesuatu yang <br> mudah ditebak, seperti <b>Administrator</b>.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>*PENTING* <br>
+                        Catat dan ingat baik-baik Nama Pengguna yang telah diubah, agar Anda tidak kesulitan dikemudian hari!</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="ganti-usr" value="Ubah Nama Pengguna"></td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td><b>Ganti Sandi</b></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="first" placeholder="Sandi baru" maxlength="20" minlength="8"></td>
+                </tr>
+                <tr>
+                    <td><b>Kekuatan sandi: </b><br> Gunakan setidaknya 8 karakter, maksimal 20 karakter. <br> Jangan gunakan sandi dari situs lain atau sesuatu yang <br> mudah ditebak, seperti <b>123456789</b>.</td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="second" placeholder="Konfirmasi sandi baru" maxlength="20" minlength="8"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>*PENTING* <br>
+                        Catat dan ingat baik-baik password yang telah diubah, agar Anda tidak kesulitan dikemudian hari!</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="ganti-pw" value="Ubah sandi"></td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary" name="back">Kembali</button>
+                    </td>
                 </tr>
             </table>
         </form>
     </div>
+
+    <?php
+    include "koneksi.php";
+    $nis = $_SESSION['id'];
+    $sql = mysqli_query($conn, "SELECT * FROM administrators WHERE role = 1");
+    
+    if (isset($_POST['ganti-pw'])) {
+        $new_password_1 = $_POST['first'];
+        $new_password_2 = $_POST['second'];
+
+        if ($new_password_2 == $new_password_1) {
+            $ganti_pw=mysqli_query($conn, "UPDATE administrators SET password = '$new_password_1' WHERE role = 1");
+    
+            echo "
+            <script>
+                alert('Sandi berhasil diganti!');
+                window.location.href='usr-pw-super-admin.php';
+            </script>
+            ";
+        } else {
+            echo "
+            <script>
+                alert('Sandi tidak sama!');
+            </script>
+            ";
+        }
+
+    }
+
+    if (isset($_POST['ganti-usr'])) {
+        $new_username = $_POST['alpha'];
+        $ganti_pw=mysqli_query($conn, "UPDATE administrators SET username = '$new_username' WHERE role = 1");
+            echo "
+            <script>
+                alert('Nama Pengguna berhasil diganti!');
+                window.location.href='usr-pw-super-admin.php';
+            </script>
+            ";
+        }
+
+    ?>
 </body>
 
 </html>
