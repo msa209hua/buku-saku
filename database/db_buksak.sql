@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Feb 2024 pada 09.28
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.29
+-- Generation Time: Feb 24, 2024 at 06:51 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 
 DELIMITER $$
 --
--- Prosedur
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `data_absen` ()   SELECT tb_absen.nis,tb_siswa.nama,tb_siswa.id_kelas,tb_kelas.tingkat,tb_kelas.jurusan,tb_kelas.kelas,MONTH(tb_absen.tanggal) Bulan, COUNT(CASE WHEN tb_absen.kehadiran ='H' THEN 1 END) AS 'Hadir', COUNT(CASE WHEN tb_absen.kehadiran ='S' THEN 1 END) AS 'Sakit', COUNT(CASE WHEN tb_absen.kehadiran ='I' THEN 1 END) AS 'Ijin', COUNT(CASE WHEN tb_absen.kehadiran ='A' THEN 1 END) AS 'tanpa_keterangan' FROM tb_kelas INNER JOIN tb_siswa ON tb_kelas.id_kelas=tb_siswa.id_kelas INNER JOIN tb_absen ON tb_siswa.nis=tb_absen.nis GROUP BY nis$$
 
@@ -32,17 +32,17 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `administrators`
+-- Table structure for table `administrators`
 --
 
 CREATE TABLE `administrators` (
   `role` int(1) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `administrators`
+-- Dumping data for table `administrators`
 --
 
 INSERT INTO `administrators` (`role`, `username`, `password`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `administrators` (`role`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -65,10 +65,10 @@ CREATE TABLE `siswa` (
   `jenis_kelamin` enum('L','P') NOT NULL,
   `poin` int(5) NOT NULL,
   `role` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `siswa`
+-- Dumping data for table `siswa`
 --
 
 INSERT INTO `siswa` (`nis`, `password`, `nama`, `tingkat`, `jurusan`, `kelas`, `jenis_kelamin`, `poin`, `role`) VALUES
@@ -324,7 +324,7 @@ INSERT INTO `siswa` (`nis`, `password`, `nama`, `tingkat`, `jurusan`, `kelas`, `
 (102206045, '102206045', 'YUMA AKIRA MAZIN ZIMRAAN', 11, 'ANIMASI', 'B', 'L', 100, 0),
 (102206046, '102206046', 'ZAINAL MUSTOFA', 11, 'ANIMASI', 'B', 'L', 100, 0),
 (102206047, '102206047', 'ZAKI RAFI DZIBAN', 11, 'ANIMASI', 'B', 'L', 100, 0),
-(102206048, '102206048', 'ZARLINDA RABI`ATUL ADAWIYAH', 11, 'ANIMASI', 'B', 'P', 100, 0),
+(102206048, '102206048', 'ZARLINDA RABI\'ATUL ADAWIYAH', 11, 'ANIMASI', 'B', 'P', 100, 0),
 (102206049, '102206049', 'ALVINO SYAH PUTRA', 11, 'KIMIA', 'A', 'L', 100, 0),
 (102206050, '102206050', 'ANDRI NUR RAMADHANI SUTARJA', 11, 'KIMIA', 'A', 'L', 100, 0),
 (102206051, '102206051', 'ANIS KHOIRUNNISA', 11, 'KIMIA', 'A', 'P', 100, 0),
@@ -1208,7 +1208,7 @@ INSERT INTO `siswa` (`nis`, `password`, `nama`, `tingkat`, `jurusan`, `kelas`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_guru`
+-- Table structure for table `tb_guru`
 --
 
 CREATE TABLE `tb_guru` (
@@ -1218,10 +1218,10 @@ CREATE TABLE `tb_guru` (
   `no_telp` varchar(15) NOT NULL,
   `email` varchar(70) NOT NULL,
   `pend_terakhir` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_guru`
+-- Dumping data for table `tb_guru`
 --
 
 INSERT INTO `tb_guru` (`nip`, `nama`, `jk`, `no_telp`, `email`, `pend_terakhir`) VALUES
@@ -1230,17 +1230,17 @@ INSERT INTO `tb_guru` (`nip`, `nama`, `jk`, `no_telp`, `email`, `pend_terakhir`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kasus`
+-- Table structure for table `tb_kasus`
 --
 
 CREATE TABLE `tb_kasus` (
   `id_kasus` int(3) NOT NULL,
   `jenis_kasus` varchar(50) NOT NULL,
   `poin` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_kasus`
+-- Dumping data for table `tb_kasus`
 --
 
 INSERT INTO `tb_kasus` (`id_kasus`, `jenis_kasus`, `poin`) VALUES
@@ -1258,7 +1258,7 @@ INSERT INTO `tb_kasus` (`id_kasus`, `jenis_kasus`, `poin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pelanggaran`
+-- Table structure for table `tb_pelanggaran`
 --
 
 CREATE TABLE `tb_pelanggaran` (
@@ -1271,12 +1271,12 @@ CREATE TABLE `tb_pelanggaran` (
   `poin_minus` varchar(10) NOT NULL,
   `keterangan` text NOT NULL,
   `gambar` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user`
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -1284,10 +1284,10 @@ CREATE TABLE `tb_user` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `role` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`nip`, `username`, `password`, `role`) VALUES
@@ -1299,53 +1299,53 @@ INSERT INTO `tb_user` (`nip`, `username`, `password`, `role`) VALUES
 --
 
 --
--- Indeks untuk tabel `administrators`
+-- Indexes for table `administrators`
 --
 ALTER TABLE `administrators`
   ADD PRIMARY KEY (`role`);
 
 --
--- Indeks untuk tabel `siswa`
+-- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`nis`);
 
 --
--- Indeks untuk tabel `tb_guru`
+-- Indexes for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD PRIMARY KEY (`nip`);
 
 --
--- Indeks untuk tabel `tb_kasus`
+-- Indexes for table `tb_kasus`
 --
 ALTER TABLE `tb_kasus`
   ADD PRIMARY KEY (`id_kasus`);
 
 --
--- Indeks untuk tabel `tb_pelanggaran`
+-- Indexes for table `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
   ADD PRIMARY KEY (`id_pelanggaran`);
 
 --
--- Indeks untuk tabel `tb_user`
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`nip`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kasus`
+-- AUTO_INCREMENT for table `tb_kasus`
 --
 ALTER TABLE `tb_kasus`
   MODIFY `id_kasus` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
+-- AUTO_INCREMENT for table `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
   MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
