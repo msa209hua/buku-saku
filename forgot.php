@@ -88,7 +88,7 @@
     
             // Simpan data pengguna ke dalam session
             session_start();
-            $_SESSION["id_masuk"] = $row["nis"];
+            $_SESSION["id"] = $row["nis"];
     
             // Kirim data pengguna ke halaman data
             header("Location: forgot_2.php?id=" . $row["nis"]);

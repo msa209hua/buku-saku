@@ -48,7 +48,7 @@
                     <select name="jurusan">
                         <option value="ANIMASI">ANIMASI</option>
                         <option value="DKV">DKV</option>
-                        <option value="RPL">RPL</option>
+                        <option value="PPLG">RPL</option>
                         <option value="MEKATRONIKA">MEKATRONIKA</option>
                         <option value="PEMESINAN">PEMESINAN</option>
                         <option value="KIMIA">KIMIA</option>
@@ -93,12 +93,12 @@
 
     <?php
     if (isset($_POST['Back'])) {
-        header("Location: index.php");
+        header("Location: forgot.php");
     }
 
     include "koneksi.php";
     session_start();
-    $nis = $_SESSION['id_masuk'];
+    $id = $_SESSION['id'];
 
     if (isset($_POST['verif'])) {
         // Terima input dari halaman login
@@ -107,30 +107,27 @@
         $kelas = $_POST["kelas"];
         $gender = $_POST["gender"];
     
-        // Validasi username dan nis
-        $sql = "SELECT 'nis', 'tingkat', 'jurusan', 'kelas', 'jenis_kelamin' FROM siswa WHERE nis = $nis";
+        $sql = "SELECT * FROM siswa WHERE nis = $id";
         $result = mysqli_query($conn, $sql);
-        $data = mysqli_fetch_array($result);
-    
-        // Cek apakah username dan password valid
-        if ($tingkat == $data['tingkat'] && $jurusan == $data['jurusan'] && $kelas == $data['kelas'] && $gender == $data['jenis_kelamin']) {
-            // Username dan password valid
-            $row = mysqli_fetch_assoc($result);
-    
-            // Simpan data pengguna ke dalam session
-            session_start();
-            $_SESSION["id_masuk"] = $row["nis"];
-    
-            // Kirim data pengguna ke halaman data
-            header("Location: settings-siswa.php");
-        } else {
-            $row = mysqli_fetch_assoc($result);
-            // Username atau password tidak valid
+
+        $row = mysqli_fetch_array($result);
+        $sql_tingkat = $row["tingkat"];
+        $sql_jurusan = $row["jurusan"];
+        $sql_kelas = $row["kelas"];
+        $sql_gender = $row["jenis_kelamin"];
+
+        if ($tingkat != $sql_tingkat ||
+            $jurusan != $sql_jurusan ||
+            $kelas != $sql_kelas ||
+            $gender != $sql_gender) {
             echo "<script>
-                alert('Data tidak cocok.');
-                window.locarion.href='forgot_2.php?id='".$row["nis"]."'
-            </script>";
+                alert('Data tidak cocok!');
+                window.location.href='forgot_2.php?id=$id';
+                </script>";
+        } else {
+            header("Location: forgot_3.php");
         }
+        
     
         mysqli_close($conn);
     }
