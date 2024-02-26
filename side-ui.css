@@ -108,3 +108,24 @@ table {
     width: 100%;
     background-color: white;
   }
+
+  /* Kode responsif untuk layar 400px kebawah */
+@media (max-width: 400px) {
+    .sidebar {
+        width: 80px; /* Sidebar lebih sempit*/
+        position: fixed; /* Sidebar tetap di posisi awalnya */
+        z-index: 1000; /* Pastikan di atas konten lain */
+    }
+
+    .sidebar:hover {
+        width: 160px; /* Lebar saat hover lebih kecil */
+    }
+
+    .menu a span {
+        display: none; /* Sembunyikan teks menu */
+    }
+
+    .main--content {
+       margin-left: 80px; /* Tambahkan margin untuk konten utama */
+    }
+}

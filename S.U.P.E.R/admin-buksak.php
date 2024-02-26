@@ -108,51 +108,59 @@
   <div class="sidebar">
     <div class="logo"></div>
     <ul class="menu">
+      <li>
+        <input type="checkbox" id="checkbox" name="burger">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
+      </li>
       <li class="active">
         <a href="admin-buksak.php">
-          <img src="../img/list.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../img/list.png" alt="">
           <span>List</span>
         </a>
       </li>
       <li>
         <a href="data-kasus.php">
-          <img src="../img/log.png" alt="" style="width: 33px; height: 30px;">
+          <img src="../img/log.png" alt="">
           <span>Log</span>
         </a>
       </li>
       <li>
         <a href="kasus.php">
-          <img src="../img/data.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../img/data.png" alt="">
           <span>Kasus</span>
         </a>
       </li>
       <li>
         <a href="pedoman.php">
-          <img src="../img/pedoman.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../img/pedoman.png" alt="">
           <span>Pedoman</span>
         </a>
       </li>
       <li>
         <a href="hapus-pelanggaran.php">
-          <img src="../img/hapus.png" alt="" style="width: 30px; height: 30px;">
-          <span>Hapus Pelanggaran</span>
+          <img src="../img/hapus.png" alt="">
+          <span>Hapus</span>
         </a>
       </li>
       <li>
         <a href="credit-buksak.php">
-          <img src="../img/about.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../img/about.png" alt="">
           <span>Tentang</span>
         </a>
       </li>
       <li>
         <a href="admin-settings.php">
-          <img src="../img/settings.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../img/settings.png" alt="">
           <span>Settings</span>
         </a>
       </li>
       <li class="logout">
         <a href="../index.php">
-          <img src="../img/logout.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../img/logout.png" alt="">
           <span>Logout</span>
         </a>
       </li>
