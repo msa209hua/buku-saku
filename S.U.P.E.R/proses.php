@@ -1,21 +1,21 @@
 <?php
-
-print_r($fileName);
 include "koneksi.php";
 $id=$_POST['id'];
 $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
 
 if (isset($_POST['lapor'])) {
-  $ekstensi_diperbolehkan = array('png','jpg');
+  $id=$_POST['id'];
+$sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
+$ekstensi_diperbolehkan = array('png','jpg');
  $gambar = $_FILES['file']['name'];
  $x = explode('.', $gambar);
  $ekstensi = strtolower(end($x));
  $ukuran = $_FILES['file']['size'];
  $file_tmp = $_FILES['file']['tmp_name']; 
  
- move_uploaded_file($file_tmp, 'image/'.$gambar);
-     
+ move_uploaded_file($file_tmp, '../image/'.$gambar);
     foreach ($sql as $value) {
+      
         $nis=$value["nis"];
         $nama=$value["nama"];
         $kelas=$value["tingkat"]." ".$value["jurusan"]." ".$value["kelas"];
@@ -28,7 +28,6 @@ if (isset($_POST['lapor'])) {
       $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,poin_minus,keterangan,gambar) VALUES
       ('$nis','$nama','$kelas','$kasus','$poin_kasus','$keterangan','$gambar')");
       }
-   
     //   echo "
     // <script>
     //     alert('Laporan Berhasil!');

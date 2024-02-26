@@ -168,9 +168,9 @@ li a {
               <td><input type="text" name="keterangan"></td>
           </tr>
           <tr>
-            <td>Upload Gambar</td>
-            <td><a href="ambil-foto.php">Ambil Foto</a></td>
-          </tr>
+          <td>Upload Gambar</td>
+          <td><input type="file" name="file"></td>
+        </tr>
           <tr>
               <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
               <td><input type="submit" name="batalkan" value="Batalkan"></td>
