@@ -138,7 +138,7 @@ li a {
             </div>
         </div>
   <div>
-  <form action="proses.php" method="POST">
+  <form action="proses.php" method="POST" enctype="multipart/form-data">
       <table>
       <tr>
                   <td></td>

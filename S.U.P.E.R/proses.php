@@ -13,7 +13,7 @@ $ekstensi_diperbolehkan = array('png','jpg');
  $ukuran = $_FILES['file']['size'];
  $file_tmp = $_FILES['file']['tmp_name']; 
  
- move_uploaded_file($file_tmp, '../image/'.$gambar);
+ move_uploaded_file($file_tmp, 'image/'.$gambar);
     foreach ($sql as $value) {
       
         $nis=$value["nis"];
