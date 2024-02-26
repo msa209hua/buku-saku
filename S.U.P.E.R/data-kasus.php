@@ -138,7 +138,7 @@
               <th>Pelanggaran</th>
               <th>Poin</th>
               <th>Keterangan</th>
-              <th>Gambar</th>
+              <th>Foto</th>
             </tr>
           </thead>
           <?php foreach ($sql as $row) : ?>
