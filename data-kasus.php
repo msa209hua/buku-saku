@@ -141,7 +141,7 @@
           endforeach;
             ?>
             <tr>
-              <td><a href="print-laporan.php">Print</a></td>
+              <td><a href="proses-print.php">Print</a></td>
             </tr>
             </tbody>
         </table>

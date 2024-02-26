@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +33,7 @@
             color: #fff;
             overflow: hidden;
             transition: all 0.5s linear;
-            background: linear-gradient(#181C24, #282c34);
+            background: linear-gradient(240deg, brown, chocolate);
         }
 
         .sidebar:hover {
@@ -196,10 +199,81 @@
     <div class="header--wrapper">
       <div class="header--title">
         <span>S.U.P.E.R. Administrator</span>
-        <h2>List Siswa</h2>
+        <h2>List Kelas</h2>
       </div>
     </div>
-
+    
+    <form action="proses-print.php" method="POST">
+    <select name="kelas">
+                    <option value="10 RPL A">10 RPL A</option>
+                    <option value="10 RPL B">10 RPL B</option>
+                    <option value="10 DKV A">10 DKV A</option>
+                    <option value="10 DKV B">10 DKV B</option>
+                    <option value="10 DKV C">10 DKV C</option>
+                    <option value="10 PEMESINAN A">10 PEMESINAN A</option>
+                    <option value="10 PEMESINAN B">10 PEMESINAN B</option>
+                    <option value="10 ANIMASI A">10 ANIMASI A</option>
+                    <option value="10 ANIMASI B">10 ANIMASI B</option>
+                    <option value="10 KIMIA A">10 KIMIA A</option>
+                    <option value="10 KIMIA B">10 KIMIA B</option>
+                    <option value="10 KIMIA C">10 KIMIA C</option>
+                    <option value="10 MEKATRONIKA A">10 MEKATRONIKA A</option>
+                    <option value="10 MEKATRONIKA B">10 MEKATRONIKA B</option>
+                    <option value="10 MEKATRONIKA C">10 MEKATRONIKA C</option>
+                    <option value="10 MEKATRONIKA D">10 MEKATRONIKA D</option>
+                    <option value="11 RPL A">11 RPL A</option>
+                    <option value="11 RPL B">11 RPL B</option>
+                    <option value="11 DKV A">11 DKV A</option>
+                    <option value="11 DKV B">11 DKV B</option>
+                    <option value="11 DKV C">11 DKV C</option>
+                    <option value="11 PEMESINAN A">11 PEMESINAN A</option>
+                    <option value="11 PEMESINAN B">11 PEMESINAN B</option>
+                    <option value="11 ANIMASI A">11 ANIMASI A</option>
+                    <option value="11 ANIMASI B">11 ANIMASI B</option>
+                    <option value="11 KIMIA A">11 KIMIA A</option>
+                    <option value="11 KIMIA B">11 KIMIA B</option>
+                    <option value="11 KIMIA C">11 KIMIA C</option>
+                    <option value="11 MEKATRONIKA A">11 MEKATRONIKA A</option>
+                    <option value="11 MEKATRONIKA B">11 MEKATRONIKA B</option>
+                    <option value="11 MEKATRONIKA C">11 MEKATRONIKA C</option>
+                    <option value="11 MEKATRONIKA D">11 MEKATRONIKA D</option>
+                </select>
+                <input type="submit" value="Lihat" name="lihat">
+            <?php
+            if (isset($_POST['lihat'])) {
+                $kelas=$_POST["kelas"];
+                $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas'");
+            ?>
+        <table>
+            <tr>
+        <th>Tanggal</th>
+        <th>NIS</th>
+        <th>Nama</th>
+        <th>Kelas</th>
+        <th>Pelanggaran</th>
+        <th>Poin</th>
+        <th>Keterangan</th>
+      </tr>
+      <?php foreach ($sql as $row) : ?>
+        <tr>
+          <td><?= $row["tanggal"]; ?></td>
+          <td><?= $row["nis"]; ?></td>
+          <td><?= $row["nama_siswa"] ?></td>
+          <td><?= $row["kelas"] ?></td>
+          <td><?= $row["pelanggaran"]; ?></td>
+          <td>-<?= $row["poin_minus"] ?></td>
+          <td><?= $row["keterangan"] ?></td>
+        </tr>
+        </tr>
+      <?php
+      endforeach;
+    
+      ?>
+        </table>
+    </form>
+    <?php
+            }
+    ?>
     </div>
 </body>
 </html>
