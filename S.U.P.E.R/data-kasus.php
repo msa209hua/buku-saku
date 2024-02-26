@@ -151,7 +151,7 @@
                 <td><?= $row["pelanggaran"]; ?></td>
                 <td>-<?= $row["poin_minus"] ?></td>
                 <td><?= $row["keterangan"] ?></td>
-                <td><img src="<?= $row["gambar"] ?>"></td>
+                <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="120"></td>
               </tr>
               </tr>
             <?php
