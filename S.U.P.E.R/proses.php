@@ -28,12 +28,12 @@ $ekstensi_diperbolehkan = array('png','jpg');
       $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,poin_minus,keterangan,gambar) VALUES
       ('$nis','$nama','$kelas','$kasus','$poin_kasus','$keterangan','$gambar')");
       }
-    //   echo "
-    // <script>
-    //     alert('Laporan Berhasil!');
-    //     window.location.href='admin-buksak.php';
-    // </script>
-    // ";
+      echo "
+    <script>
+        alert('Laporan Berhasil!');
+        window.location.href='admin-buksak.php';
+    </script>
+    ";
   }
   if (isset($_POST['batalkan'])) {
     header('Location: admin-buksak.php');
