@@ -99,6 +99,10 @@
         </div>
     </nav>
 
+    <section class="home">
+        <div class="text">Dashboard</div>
+    </section>
+
     <script src="script.js"></script>
 
 </body>
