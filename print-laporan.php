@@ -1,6 +1,7 @@
 <?php
   include "koneksi.php";
-  $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
+  $id=$_GET["id"];
+  $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$id'")
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
         
       header("Content-type: application/vnd-ms-excel");
       header("Content-Disposition: attachment; filename=Data Kasus.xls");
-    
+      
     ?>
 <table border="1px solid black">
       <tr>

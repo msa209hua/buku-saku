@@ -122,52 +122,95 @@
     <div class="header--wrapper">
       <div class="header--title">
         <span>S.U.P.E.R. Administrator</span>
-        <h2>Log History</h2>
+        <h2>Data Kasus</h2>
       </div>
     </div>
 
     <div>
-      <form action="data-kasus.php" method="get">
-        <table id="table_kasus" class="display">
-          <thead>
-            <tr>
-              <th>Tanggal</th>
-              <th>NIS</th>
-              <th>Nama</th>
-              <th>Kelas</th>
-              <th>Pelanggaran</th>
-              <th>Poin</th>
-              <th>Keterangan</th>
-              <th>Foto</th>
-            </tr>
-          </thead>
-          <?php foreach ($sql as $row) : ?>
-            <tbody>
-              <tr>
-                <td><?= $row["tanggal"]; ?></td>
-                <td><?= $row["nis"]; ?></td>
-                <td><?= $row["nama_siswa"] ?></td>
-                <td><?= $row["kelas"] ?></td>
-                <td><?= $row["pelanggaran"]; ?></td>
-                <td>-<?= $row["poin_minus"] ?></td>
-                <td><?= $row["keterangan"] ?></td>
-                <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100"></td>
-              </tr>
-              </tr>
-            <?php
-          endforeach;
-            ?>
-            <tr>
-              <td><a href="proses-print.php">Print</a></td>
-            </tr>
-            </tbody>
-        </table>
-        <script>
-          $(document).ready(function() {
-            $('#table_kasus').DataTable();
-          });
-        </script>
-      </form>
+    <form action="data-kasus.php" method="GET">
+ 
+ <table id="table_kasus" class="display" border="1px">
+     <tr>
+         <td>
+         <select name="kelas">
+             <option value="10 PPLG A">10 PPLG A</option>
+             <option value="10 PPLG B">10 PPLG B</option>
+             <option value="10 DKV A">10 DKV A</option>
+             <option value="10 DKV B">10 DKV B</option>
+             <option value="10 DKV C">10 DKV C</option>
+             <option value="10 PEMESINAN A">10 PEMESINAN A</option>
+             <option value="10 PEMESINAN B">10 PEMESINAN B</option>
+             <option value="10 ANIMASI A">10 ANIMASI A</option>
+             <option value="10 ANIMASI B">10 ANIMASI B</option>
+             <option value="10 KIMIA A">10 KIMIA A</option>
+             <option value="10 KIMIA B">10 KIMIA B</option>
+             <option value="10 KIMIA C">10 KIMIA C</option>
+             <option value="10 MEKATRONIKA A">10 MEKATRONIKA A</option>
+             <option value="10 MEKATRONIKA B">10 MEKATRONIKA B</option>
+             <option value="10 MEKATRONIKA C">10 MEKATRONIKA C</option>
+             <option value="10 MEKATRONIKA D">10 MEKATRONIKA D</option>
+             <option value="11 PPLG A">11 PPLG A</option>
+             <option value="11 PPLG B">11 PPLG B</option>
+             <option value="11 DKV A">11 DKV A</option>
+             <option value="11 DKV B">11 DKV B</option>
+             <option value="11 DKV C">11 DKV C</option>
+             <option value="11 PEMESINAN A">11 PEMESINAN A</option>
+             <option value="11 PEMESINAN B">11 PEMESINAN B</option>
+             <option value="11 ANIMASI A">11 ANIMASI A</option>
+             <option value="11 ANIMASI B">11 ANIMASI B</option>
+             <option value="11 KIMIA A">11 KIMIA A</option>
+             <option value="11 KIMIA B">11 KIMIA B</option>
+             <option value="11 KIMIA C">11 KIMIA C</option>
+             <option value="11 MEKATRONIKA A">11 MEKATRONIKA A</option>
+             <option value="11 MEKATRONIKA B">11 MEKATRONIKA B</option>
+             <option value="11 MEKATRONIKA C">11 MEKATRONIKA C</option>
+             <option value="11 MEKATRONIKA D">11 MEKATRONIKA D</option>
+         </select>
+         </td>
+         <td colspan="7">
+         <input type="submit" value="Lihat" name="lihat">
+         </td>
+     </tr>
+     <?php
+     if (isset($_GET['lihat'])) {
+         $kelas=$_GET["kelas"];
+         $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas'");
+     ?>
+     <tr align="center">
+         <th><?=$kelas;?></th>
+     </tr>
+     <tr>
+ <th>Tanggal</th>
+ <th>NIS</th>
+ <th>Nama</th>
+ <th>Kelas</th>
+ <th>Pelanggaran</th>
+ <th>Poin</th>
+ <th>Keterangan</th>
+ <th>Foto</th>
+</tr>
+<?php foreach ($sql as $row) : ?>
+ <tr>
+   <td><?= $row["tanggal"]; ?></td>
+   <td><?= $row["nis"]; ?></td>
+   <td><?= $row["nama_siswa"] ?></td>
+   <td><?= $row["kelas"] ?></td>
+   <td><?= $row["pelanggaran"]; ?></td>
+   <td>-<?= $row["poin_minus"] ?></td>
+   <td><?= $row["keterangan"] ?></td>
+   <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100"></td>
+ </tr>
+ </tr>
+<?php
+endforeach;
+$kelas_sql =mysqli_query($conn, "SELECT kelas FROM tb_pelanggaran WHERE kelas='$kelas'");
+        $sql_total=mysqli_fetch_array($kelas_sql);
+        $sql_kelas=$sql_total["kelas"];
+echo "<tr><td><a href='../print-laporan.php?id=$sql_kelas' class='css-button'>Print</a></td></tr>" ;
+     }
+?>
+ </table>
+</form>
     </div>
   </div>
 </body>

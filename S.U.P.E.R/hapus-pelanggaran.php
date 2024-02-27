@@ -126,7 +126,7 @@
   <?php
   include "koneksi.php";
   session_start();
-  $sql=mysqli_query($conn, "SELECT * FROM siswa");
+  $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran");
   if (!isset($_SESSION['id_masuk'])) {
     header('Location: index.php');
   }
@@ -194,30 +194,40 @@
   <div>
     <form action="hapus-pelanggaran.php" method="GET">
     <table id="table_kasus" class="display">
-        <thead>
-          <tr>
-            <th>NIS</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-            <th>Laporkan</th>
-          </tr>
-          </thead>
-          <tbody>
-          
-          
-          <?php foreach ($sql as $row) : ?>
+          <thead>
             <tr>
-              <td><?= $row["nis"]; ?></td>
-              <td><?= $row["nama"]; ?></td>
-              <td><?= $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
-              <td><?php echo "
-                        <a href='proses-hapus-pelanggaran.php?id=$row[nis]' class='css-button'>Lihat</a>" ?></td>
+              <th>Tanggal</th>
+              <th>NIS</th>
+              <th>Nama</th>
+              <th>Kelas</th>
+              <th>Pelanggaran</th>
+              <th>Poin</th>
+              <th>Keterangan</th>
+              <th>Action</th>
             </tr>
-        <?php
+          </thead>
+          <?php foreach ($sql as $row) : ?>
+            <tbody>
+              <tr>
+                <td><?= $row["tanggal"]; ?></td>
+                <td><?= $row["nis"]; ?></td>
+                <td><?= $row["nama_siswa"] ?></td>
+                <td><?= $row["kelas"] ?></td>
+                <td><?= $row["pelanggaran"]; ?></td>
+                <td>-<?= $row["poin_minus"] ?></td>
+                <td><?= $row["keterangan"] ?></td>
+                <td><?php echo "
+                        <a href='proses-hapus-pelanggaran.php?id=$row[nis]' class='css-button'>Lihat</a>" ?></td>
+              </tr>
+              </tr>
+            <?php
           endforeach;
-        ?>
-        </tbody>
-      </table>
+            ?>
+            <tr>
+              <td><a href="proses-print.php">Print</a></td>
+            </tr>
+            </tbody>
+        </table>
       
       <script>
         
