@@ -29,16 +29,16 @@
       text-decoration: none;
       color: white;
       padding: 5px;
-      background-color: red;
+      background-color: green;
       border-radius: 7px;
       font-weight: 700;
     }
 
     .css-button:hover {
-      color: red;
+      color: green;
       padding: 4px;
       background-color: white;
-      border: 1px solid red;
+      border: 1px solid green;
       transition: .2s;
     }
 
@@ -108,7 +108,15 @@
   <div class="sidebar">
     <div class="logo"></div>
     <ul class="menu">
-      <li class="active">
+      <li>
+        <input type="checkbox" id="checkbox" name="burger">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
+      </li>
+      <li>
         <a href="admin-buksak.php">
           <img src="../img/list.png" alt="">
           <span>List</span>
@@ -144,7 +152,7 @@
           <span>Tentang</span>
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="admin-settings.php">
           <img src="../img/settings.png" alt="">
           <span>Settings</span>
@@ -163,7 +171,7 @@
     <div class="header--wrapper">
       <div class="header--title">
         <span>S.U.P.E.R. Administrator</span>
-        <h2>List Siswa</h2>
+        <h2>Settings, lihat password</h2>
       </div>
     </div>
 
@@ -175,7 +183,7 @@
               <th>NIS</th>
               <th>Nama</th>
               <th>Kelas</th>
-              <th>Laporkan</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -187,7 +195,7 @@
                 <td><?php echo $row["nama"]; ?></td>
                 <td><?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
                 <td><?php echo "
-                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
+                        <a href='password-siswa.php?id=$row[nis]' class='css-button'>Lihat</a>" ?></td>
               </tr>
             <?php
             endforeach;

@@ -192,7 +192,6 @@ li a {
         <tr>
           <td><?=$row["tanggal"]; ?></td>
           <td><?=$row["nis"]; ?></td>
-          <td><?=$row["nama_siswa"]; ?></td>
           <td><?=$row["kelas"]; ?></td>
           <td><?=$row["pelanggaran"]; ?></td>
           <td>-<?=$row["poin_minus"]; ?></td>
