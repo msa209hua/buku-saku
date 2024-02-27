@@ -32,7 +32,7 @@
                 <li class="search-box">
                     <a href="#">
                         <i class='bx bx-search icon' ></i>
-                        <input type="search" name="" id="" placeholder="Search...">
+                        <input type="text" name="" id="" placeholder="Search...">
                     </a>
                 </li>
                 <ul class="menu-link">
