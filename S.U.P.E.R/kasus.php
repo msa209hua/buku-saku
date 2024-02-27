@@ -46,7 +46,7 @@ if (!isset($_SESSION['id_masuk'])) {
                 </a>
             </li>
             <li>
-                <a>
+                <a href="data-kasus.php">
                     <img src="../img/log.png" alt="" style="width: 33px; height: 30px;">
                     <span>Log</span>
                 </a>
