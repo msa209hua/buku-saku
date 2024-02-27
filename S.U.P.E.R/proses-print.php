@@ -113,11 +113,20 @@ include "koneksi.php";
         }
 
         table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            background-color: white;
-        }
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 
         /* Kode responsif untuk layar 400px kebawah */
         @media (max-width: 400px) {
@@ -203,10 +212,14 @@ include "koneksi.php";
       </div>
     </div>
     
-    <form action="proses-print.php" method="POST">
-    <select name="kelas">
-                    <option value="10 RPL A">10 RPL A</option>
-                    <option value="10 RPL B">10 RPL B</option>
+    <form action="proses-print.php" method="GET">
+ 
+        <table id="table_kasus" class="display" border="1px">
+            <tr>
+                <td>
+                <select name="kelas">
+                    <option value="10 PPLG A">10 PPLG A</option>
+                    <option value="10 PPLG B">10 PPLG B</option>
                     <option value="10 DKV A">10 DKV A</option>
                     <option value="10 DKV B">10 DKV B</option>
                     <option value="10 DKV C">10 DKV C</option>
@@ -221,8 +234,8 @@ include "koneksi.php";
                     <option value="10 MEKATRONIKA B">10 MEKATRONIKA B</option>
                     <option value="10 MEKATRONIKA C">10 MEKATRONIKA C</option>
                     <option value="10 MEKATRONIKA D">10 MEKATRONIKA D</option>
-                    <option value="11 RPL A">11 RPL A</option>
-                    <option value="11 RPL B">11 RPL B</option>
+                    <option value="11 PPLG A">11 PPLG A</option>
+                    <option value="11 PPLG B">11 PPLG B</option>
                     <option value="11 DKV A">11 DKV A</option>
                     <option value="11 DKV B">11 DKV B</option>
                     <option value="11 DKV C">11 DKV C</option>
@@ -238,13 +251,19 @@ include "koneksi.php";
                     <option value="11 MEKATRONIKA C">11 MEKATRONIKA C</option>
                     <option value="11 MEKATRONIKA D">11 MEKATRONIKA D</option>
                 </select>
+                </td>
+                <td colspan="6">
                 <input type="submit" value="Lihat" name="lihat">
+                </td>
+            </tr>
             <?php
-            if (isset($_POST['lihat'])) {
-                $kelas=$_POST["kelas"];
+            if (isset($_GET['lihat'])) {
+                $kelas=$_GET["kelas"];
                 $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas'");
             ?>
-        <table>
+            <tr align="center">
+                <th><?=$kelas;?></th>
+            </tr>
             <tr>
         <th>Tanggal</th>
         <th>NIS</th>
@@ -267,13 +286,10 @@ include "koneksi.php";
         </tr>
       <?php
       endforeach;
-    
+            }
       ?>
         </table>
     </form>
-    <?php
-            }
-    ?>
     </div>
 </body>
 </html>
