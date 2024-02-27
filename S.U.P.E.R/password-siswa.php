@@ -208,9 +208,6 @@ if (!isset($_SESSION['id_masuk'])) {
                             <?=$row["nis"]; ?>
                         </td>
                         <td>
-                            <?=$row["nama_siswa"]; ?>
-                        </td>
-                        <td>
                             <?=$row["kelas"]; ?>
                         </td>
                         <td>
@@ -223,7 +220,7 @@ if (!isset($_SESSION['id_masuk'])) {
                             <?=$row["keterangan"]; ?>
                         </td>
                         <td>
-                            <?=$row["gambar"]; ?>
+                            <img src="../image/<?= $row["gambar"] ?>" width="100" height="100">
                         </td>
                     </tr>
                     <?php endforeach; ?>

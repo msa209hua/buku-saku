@@ -108,14 +108,6 @@
   <div class="sidebar">
     <div class="logo"></div>
     <ul class="menu">
-      <li>
-        <input type="checkbox" id="checkbox" name="burger">
-        <label for="checkbox" class="toggle">
-            <div class="bars" id="bar1"></div>
-            <div class="bars" id="bar2"></div>
-            <div class="bars" id="bar3"></div>
-        </label>
-      </li>
       <li class="active">
         <a href="admin-buksak.php">
           <img src="../img/list.png" alt="">
