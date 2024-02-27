@@ -106,7 +106,7 @@
     <div class="header--wrapper">
       <div class="header--title">
         <span>Administrator</span>
-        <h2>Log History</h2>
+        <h2>Data Kasus</h2>
       </div>
     </div>
 
