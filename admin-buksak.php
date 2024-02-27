@@ -204,7 +204,10 @@
               <td><?php echo $row["nama"]; ?></td>
               <td><?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
               <td><?php echo "
-                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?></td>
+                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>
+                        <a href='print-siswa.php?id=$row[nis]' class='css-button'>Print</a>" 
+                        ?>
+                        </td>
             </tr>
         <?php
           endforeach;

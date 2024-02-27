@@ -1,7 +1,7 @@
 <?php
   include "koneksi.php";
   $id=$_GET["id"];
-  $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$id'")
+  $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$id'");
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,6 @@
           <td><?= $row["pelanggaran"]; ?></td>
           <td>-<?= $row["poin_minus"] ?></td>
           <td><?= $row["keterangan"] ?></td>
-        </tr>
         </tr>
       <?php
       endforeach;
