@@ -111,6 +111,10 @@
                     <td>Ganti Username & Password Admin</td>
                     <td><a href="usr-pw-admin.php" class="btn btn-success">GO!</a></td>
                 </tr>
+                <tr>
+                    <td>Lihat Password Siswa</td>
+                    <td><a href="view-password.php" class="btn btn-success">GO!</a></td>
+                </tr>
             </table>
         </form>
     </div>
