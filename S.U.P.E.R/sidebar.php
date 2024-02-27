@@ -30,10 +30,9 @@
         <div class="menu-bar">
             <div class="menu">
                 <li class="search-box">
-                    <a href="#">
                         <i class='bx bx-search icon' ></i>
                         <input type="text" name="" id="" placeholder="Search...">
-                    </a>
+                    
                 </li>
                 <ul class="menu-link">
                     <li class="nav-link">
