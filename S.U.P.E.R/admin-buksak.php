@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
+    <title>List Siswa</title>
     <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
@@ -76,11 +76,16 @@
 
         <div class="menu-bar">
             <div class="menu">
-                <li class="search-box">
+
+            <!-- Search under construction -->
+
+                <!-- <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <input type="text" name="" id="" placeholder="Search...">
 
-                </li>
+                </li> -->
+
+            <!-- Search under construction -->
                 <ul class="menu-link">
                     <li class="nav-link">
                         <a href="admin-buksak.php">
@@ -110,6 +115,12 @@
                         <a href="hapus-pelanggaran.php">
                             <i class='bx bx-trash icon'></i>
                             <span class="text nav-text">Hapus</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="credit-buksak.php">
+                        <i class='bx bx-info-circle icon'></i>
+                            <span class="text nav-text">Tentang</span>
                         </a>
                     </li>
                     <li class="nav-link">
