@@ -8,9 +8,56 @@
     <title>Sidebar</title>
     <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <style>
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .css-button {
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+            background-color: red;
+            border-radius: 7px;
+            font-weight: 700;
+        }
+
+        .css-button:hover {
+            color: red;
+            padding: 4px;
+            background-color: white;
+            border: 1px solid red;
+            transition: .2s;
+        }
+    </style>
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <?php
+  include "koneksi.php";
+  session_start();
+
+  if (!isset($_SESSION['id_masuk'])) {
+    header('Location: ../index.php');
+  }
+  $sql = mysqli_query($conn, "SELECT * FROM siswa");
+  ?>
+
     <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -30,45 +77,45 @@
         <div class="menu-bar">
             <div class="menu">
                 <li class="search-box">
-                        <i class='bx bx-search icon' ></i>
-                        <input type="text" name="" id="" placeholder="Search...">
-                    
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" name="" id="" placeholder="Search...">
+
                 </li>
                 <ul class="menu-link">
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
+                            <i class='bx bx-list-ul icon'></i>
+                            <span class="text nav-text">List Siswa</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Revenue</span>
+                            <i class='bx bx-history icon'></i>
+                            <span class="text nav-text">Data Pelanggaran</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bell icon' ></i>
-                            <span class="text nav-text">Notifications</span>
+                            <i class='bx bx-data icon'></i>
+                            <span class="text nav-text">Data Kasus</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
-                            <span class="text nav-text">Analystic</span>
+                            <i class='bx bx-book-bookmark icon'></i>
+                            <span class="text nav-text">Pedoman</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-heart icon' ></i>
-                            <span class="text nav-text">Likes</span>
+                            <i class='bx bx-trash icon'></i>
+                            <span class="text nav-text">Hapus</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-wallet icon' ></i>
-                            <span class="text nav-text">Wallets</span>
+                            <i class='bx bx-cog icon'></i>
+                            <span class="text nav-text">Settings</span>
                         </a>
                     </li>
                 </ul>
@@ -77,7 +124,7 @@
             <div class="bottom-content">
                 <li class="">
                     <a href="#">
-                        <i class='bx bx-log-out icon' ></i>
+                        <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Log Out</span>
                     </a>
                 </li>
@@ -98,9 +145,59 @@
         </div>
     </nav>
 
-    <section class="home">
-        <div class="text">Dashboard</div>
-    </section>
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>List Siswa</h2>
+            </div>
+        </div>
+
+        <div>
+            <form action="admin-buksak.php" method="GET">
+                <table id="table_kasus" class="display">
+                    <thead>
+                        <tr>
+                            <th>NIS</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Laporkan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        foreach ($sql as $row) : ?>
+                        <tr>
+                            <td>
+                                <?php echo $row["nis"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $row["nama"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?>
+                            </td>
+                            <td>
+                                <?php echo "
+                                    <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>" ?>
+                            </td>
+                        </tr>
+                        <?php
+                        endforeach;
+
+                        ?>
+                    </tbody>
+                </table>
+
+                <script>
+                    $(document).ready(function () {
+                        $('#table_kasus').DataTable();
+                    });
+                </script>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
