@@ -165,13 +165,13 @@ header .image-text .header-text {
     margin-top: 15px;
 }
 
-.sidebar .search-box {
+/* .sidebar .search-box {
     background: var(--primary-color-light);
     border-radius: 6px;
     transition: var(--tran-05);
-}
+} */
 
-.search-box input {
+/* .search-box input {
     height: 100%;
     width: 100%;
     outline: none;
@@ -182,7 +182,7 @@ header .image-text .header-text {
     background: var(--primary-color-light);
     transition: var(--tran-05);
     color: var(--text-color);
-}
+} */
 
 .sidebar li a {
     height: 100%;
@@ -334,3 +334,31 @@ table {
     width: 100%;
     background-color: white;
   }
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .sidebar .text {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--text-color);
+        transition: var(--tran-03);
+        white-space: nowrap;
+        opacity: 1;
+    }
+
+    .sidebar li {
+        margin-top: 5px;
+    }
+
+    .main--content {
+        font-size: 11px;
+        margin-left: 70px;
+    }
+
+    table {
+        font-size: 9px;
+    }
+}

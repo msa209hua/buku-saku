@@ -76,6 +76,7 @@
 
         <div class="menu-bar">
             <div class="menu">
+              <input type="hidden" class="search-box">
 
             <!-- Search under construction -->
 
@@ -96,7 +97,7 @@
                     <li class="nav-link">
                         <a href="data-kasus.php">
                             <i class='bx bx-history icon'></i>
-                            <span class="text nav-text">Data Pelanggaran</span>
+                            <span class="text nav-text">Pelanggaran</span>
                         </a>
                     </li>
                     <li class="nav-link">
@@ -172,7 +173,7 @@
                             <th>NIS</th>
                             <th>Nama</th>
                             <th>Kelas</th>
-                            <th>Laporkan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
