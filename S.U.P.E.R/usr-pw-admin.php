@@ -36,8 +36,6 @@
         if (isset($_POST['back'])) {
             header("Location: admin-settings.php");
         }
-
-        $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
         ?>
 
     <div class="sidebar">
@@ -98,7 +96,7 @@
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>Ganti Username & Password S.U.P.E.R. Admin</h2>
+                <h2>Ganti Username & Password Admin</h2>
             </div>
         </div>
 
@@ -160,7 +158,6 @@
 
     <?php
     include "koneksi.php";
-    $nis = $_SESSION['id'];
     $sql = mysqli_query($conn, "SELECT * FROM administrators WHERE role = 2");
     
     if (isset($_POST['ganti-pw'])) {
@@ -173,7 +170,7 @@
             echo "
             <script>
                 alert('Sandi berhasil diganti!');
-                window.location.href='usr-pw-super-admin.php';
+                window.location.href='usr-pw-admin.php';
             </script>
             ";
         } else {
@@ -192,7 +189,7 @@
             echo "
             <script>
                 alert('Nama Pengguna berhasil diganti!');
-                window.location.href='usr-pw-super-admin.php';
+                window.location.href='usr-pw-admin.php';
             </script>
             ";
         }

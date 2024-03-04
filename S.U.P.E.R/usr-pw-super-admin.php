@@ -36,8 +36,6 @@
         if (isset($_POST['back'])) {
             header("Location: admin-settings.php");
         }
-
-        $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
         ?>
 
     <div class="sidebar">
@@ -160,7 +158,6 @@
 
     <?php
     include "koneksi.php";
-    $nis = $_SESSION['id'];
     $sql = mysqli_query($conn, "SELECT * FROM administrators WHERE role = 1");
     
     if (isset($_POST['ganti-pw'])) {
