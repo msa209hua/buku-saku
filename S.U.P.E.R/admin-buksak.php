@@ -114,8 +114,8 @@
                     </li>
                     <li class="nav-link">
                         <a href="hapus-pelanggaran.php">
-                            <i class='bx bx-trash icon'></i>
-                            <span class="text nav-text">Hapus</span>
+                            <i class='bx bx-edit-alt icon'></i>
+                            <span class="text nav-text">Edit</span>
                         </a>
                     </li>
                     <li class="nav-link">
