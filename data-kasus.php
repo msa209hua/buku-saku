@@ -193,14 +193,42 @@
              <option value="11 MEKATRONIKA D">11 MEKATRONIKA D</option>
          </select>
          </td>
-         <td colspan="7">
+         <td>
+         <select name="hari">
+  <option value="">Pilih Hari</option>
+  <?php for ($i = 1; $i <= 31; $i++) { ?>
+    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+  <?php } ?>
+</select>
+         </td>
+         <td>
+         <select name="bulan">
+  <option value="">Pilih Bulan</option>
+  <?php for ($i = 1; $i <= 12; $i++) { ?>
+    <option value="<?php echo $i; ?>"><?php echo date('F', mktime(0, 0, 0, $i, 1)); ?></option>
+  <?php } ?>
+</select>
+         </td>
+         <td>
+         <select name="tahun">
+  <option value="">Pilih Tahun</option>
+  <?php for ($i = 2023; $i <= 2030; $i++) { ?>
+    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+  <?php } ?>
+</select>
+         </td>
+         <td>
          <input type="submit" value="Lihat" name="lihat">
          </td>
      </tr>
      <?php
      if (isset($_GET['lihat'])) {
          $kelas=$_GET["kelas"];
-         $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas'");
+         $tanggal=$_GET["hari"];
+         $bulan=$_GET["bulan"];
+         $tahun=$_GET["tahun"];
+         $gabung=sprintf("$tahun-$bulan-$tanggal");
+         $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas' and tanggal like'%2024%'");
      ?>
      <tr align="center">
          <th><?=$kelas;?></th>
