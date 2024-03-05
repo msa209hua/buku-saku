@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Mar 2024 pada 04.28
+-- Waktu pembuatan: 05 Mar 2024 pada 08.30
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -1268,7 +1268,10 @@ CREATE TABLE `tb_pelanggaran` (
   `nama_siswa` varchar(50) NOT NULL,
   `kelas` varchar(10) NOT NULL,
   `pelanggaran` varchar(50) NOT NULL,
+  `kebaikan` varchar(50) NOT NULL,
+  `ket_poin` varchar(1) NOT NULL,
   `poin_minus` varchar(10) NOT NULL,
+  `poin_plus` varchar(10) NOT NULL,
   `keterangan` text NOT NULL,
   `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -1348,7 +1351,7 @@ ALTER TABLE `tb_kasus`
 -- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

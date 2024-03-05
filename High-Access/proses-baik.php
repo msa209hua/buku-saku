@@ -107,7 +107,7 @@ li a {
         </header>
 
         <div class="menu-bar">
-            <div class="menu">
+        <div class="menu">
               <input type="hidden" class="search-box">
 
             <!-- Search under construction -->
@@ -133,21 +133,9 @@ li a {
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="kasus.php">
-                            <i class='bx bx-data icon'></i>
-                            <span class="text nav-text">Data Kasus</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
                         <a href="pedoman.php">
                             <i class='bx bx-book-bookmark icon'></i>
                             <span class="text nav-text">Pedoman</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="hapus-pelanggaran.php">
-                            <i class='bx bx-edit-alt icon'></i>
-                            <span class="text nav-text">Edit</span>
                         </a>
                     </li>
                     <li class="nav-link">
@@ -193,11 +181,11 @@ li a {
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>Report Pelanggaran Siswa</h2>
+                <h2>Report Kebaikan Siswa</h2>
             </div>
         </div>
   <div>
-  <form action="proses.php" method="POST" enctype="multipart/form-data">
+  <form action="proses-plus.php" method="POST" enctype="multipart/form-data">
       <table>
       <tr>
                   <td></td>
@@ -212,19 +200,12 @@ li a {
               <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
           </tr>
           <tr>
-              <td>Total Poin</td>
-              <td><?php foreach ($sql as $poin) :?><?=$poin["poin"]; ?><?php endforeach;?></td>
+              <td>Perbuatan Baik Yang Dilakukan</td>
+              <td><input type="text" name="kebaikan"></td>
           </tr>
           <tr>
-              <td>Pilih Kasus</td>
-              <td>
-              <select name="kasus">
-                      <?php foreach ($sql_kasus as $row) :?>
-                          <option value=<?= $row["jenis_kasus"];?>><?= $row["jenis_kasus"];?></option>
-                          
-                          <?php endforeach;?>
-                      </select>
-              </td>
+              <td>Inputkan Pemberian Poin</td>
+              <td><input type="number" name="poin_plus" max=20 min=1><b> *Maksimal 20 poin</b></td>
           </tr>
           <tr>
               <td>Keterangan</td>
@@ -235,7 +216,7 @@ li a {
           <td><input type="file" name="file"></td>
         </tr>
           <tr>
-              <td><input type="submit" name="lapor" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
+              <td><input type="submit" name="lapor_2" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
               <td><input type="submit" name="batalkan" value="Batalkan"></td>
           </tr>
       </table><br>

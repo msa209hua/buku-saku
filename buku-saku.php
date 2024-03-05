@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>e - Buku Saku</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
   <style>
     .nav {
       list-style-type: none;
@@ -242,12 +245,17 @@
   <div class="catatan">
     <p class="judul">Catatan Kasus</p>
     <table class="table-2 table table-striped">
-      <tr>
-        <td><b>NO</b></td>
-        <td><b>TANGGAL/WAKTU</b></td>
-        <td><b>PELANGGARAN</b></td>
-        <td><b>POIN</b></td>
-      </tr>
+      <thead>
+        <tr>
+          <td><b>NO</b></td>
+          <td><b>TANGGAL/WAKTU</b></td>
+          <td><b>PELANGGARAN <br> & KEBAIKAN</b></td>
+          <td><b>KETERANGAN</b></td>
+          <td><b>FOTO BUKTI</b></td>
+          <td><b>POIN</b></td>
+        </tr>
+      </thead>
+      <tbody>
       <?php
       $nomor = 1;
       foreach ($pelanggaran as $row) {
@@ -255,17 +263,20 @@
           <tr>
             <td>" . $nomor . "</td>
             <td>" . $row["tanggal"] . "</td>
-            <td>" . $row["pelanggaran"] . "</td>
-            <td>-" . $row["poin_minus"] . "</td>
+            <td>" . $row["pelanggaran"], $row["kebaikan"] . "</td>
+            <td>" . $row["keterangan"] . "</td>
+            <td><img src='image/".$row['gambar']."' width='100' height='100' alt='foto tidak ada' title='Foto Bukti'></td>
+            <td>" .$row["ket_poin"], $row["poin_minus"], $row["poin_plus"] . "</td>
           <tr/>
           ";
         $nomor++;
       }
 
       ?>
-
       <tr>
         <td><b>TOTAL POIN</b></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <?php
@@ -277,6 +288,7 @@
         ";
         ?>
       </tr>
+      </tbody>
     </table>
   </div>
   <?php
@@ -307,6 +319,7 @@
             <?php endforeach; ?>
           </tbody>
           </table>
+          
         </div>
       </div>
 
@@ -350,6 +363,7 @@
   <div class="footer">
     <p>&copy;TEFA RPL</p>
   </div>
+
 </body>
 
 </html>

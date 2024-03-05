@@ -25,8 +25,8 @@ $ekstensi_diperbolehkan = array('png','jpg');
         $poin_total=mysqli_fetch_array($kasus_sql);
         $poin_kasus=$poin_total["poin"];
         $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin - $poin_kasus WHERE nis=$nis");
-      $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,poin_minus,keterangan,gambar) VALUES
-      ('$nis','$nama','$kelas','$kasus','$poin_kasus','$keterangan','$gambar')");
+      $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,ket_poin,poin_minus,keterangan,gambar) VALUES
+      ('$nis','$nama','$kelas','$kasus','-','$poin_kasus','$keterangan','$gambar')");
       }
       echo "
     <script>
@@ -36,6 +36,6 @@ $ekstensi_diperbolehkan = array('png','jpg');
     ";
   }
   if (isset($_POST['batalkan'])) {
-    header('Location: admin-buksak.php');
+    header('Location: choose-report.php?id='.$id.'');
   }
 ?>

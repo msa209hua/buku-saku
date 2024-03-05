@@ -27,6 +27,7 @@
       padding: 8px;
     }
 
+
     @media screen and (max-width: 600px) {
       li a.active {
         background: linear-gradient(#181C24, #282c34);
@@ -62,7 +63,7 @@
   }
   $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
   ?>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
@@ -83,7 +84,7 @@
         </header>
 
         <div class="menu-bar">
-            <div class="menu">
+        <div class="menu">
               <input type="hidden" class="search-box">
 
             <!-- Search under construction -->
@@ -163,7 +164,8 @@
     <div>
     <form action="data-kasus.php" method="GET">
  
- <table id="table_kasus" class="display" border="1px">
+ <table id="table_kasus" class="display" id="table_kasus" border="1px">
+  <thead>
      <tr>
          <td>
          <select name="kelas">
@@ -251,6 +253,8 @@
  <th>Keterangan</th>
  <th>Foto</th>
 </tr>
+</thead>
+<tbody>
 <?php foreach ($sql as $row) : ?>
  <tr>
    <td><?= $row["tanggal"]; ?></td>
@@ -260,7 +264,7 @@
    <td><?= $row["pelanggaran"], $row["kebaikan"]; ?></td>
    <td><?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
    <td><?= $row["keterangan"]; ?></td>
-   <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100"></td>
+   <td><img src="../image/<?= $row["gambar"]?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
  </tr>
  </tr>
 <?php
@@ -275,10 +279,16 @@ endforeach;
         }
      }
 ?>
+</tbody>
  </table>
 </form>
     </div>
   </div>
+  <script>
+                    $(document).ready(function () {
+                        $('#table_kasus').DataTable();
+                    });
+                </script>
   <script src="script.js"></script>
 </body>
 

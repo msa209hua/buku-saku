@@ -21,6 +21,7 @@
             padding: 8px;
         }
 
+
         .css-button {
             text-decoration: none;
             color: white;
@@ -38,37 +39,13 @@
             transition: .2s;
         }
 
-        .judul {
-      background-color: #d7d8da;
-      text-align: center;
-      font-weight: 900;
-      font-size: 25px;
-      margin-top: 100px;
-      margin-bottom: -1px;
-      border-top: 1px solid #b5b6b7;
-      border-bottom: 1px solid #b5b6b7;
-    }
-@media screen and (max-width: 600px)
-{
-  li a.active {
-  background: linear-gradient(#181C24, #282c34);
-  font-size: 20px;
-  color: white;
-}
-li a {
-  display: block;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 10px;
-}
-  table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 9px;
-}
-}
+        .btn {
+            text-decoration: none;
+            padding: 5px;
+            color: white;
+            background-color: green;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -79,15 +56,14 @@ li a {
         <?php
         include "koneksi.php";
         session_start();
-        $id=$_GET['id'];
         
-        $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
-        $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus");
-        $sql_pelanggaran=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE nis=$id");
+        $id=$_GET['id'];
 
         if (!isset($_SESSION['id_masuk'])) {
-        header('Location: ../index.php');
+            header('Location: admin-buksak.php');
         }
+        $sql = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = $id")
+        
         ?>
 
     <nav class="sidebar close">
@@ -107,7 +83,7 @@ li a {
         </header>
 
         <div class="menu-bar">
-            <div class="menu">
+        <div class="menu">
               <input type="hidden" class="search-box">
 
             <!-- Search under construction -->
@@ -133,21 +109,9 @@ li a {
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="kasus.php">
-                            <i class='bx bx-data icon'></i>
-                            <span class="text nav-text">Data Kasus</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
                         <a href="pedoman.php">
                             <i class='bx bx-book-bookmark icon'></i>
                             <span class="text nav-text">Pedoman</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="hapus-pelanggaran.php">
-                            <i class='bx bx-edit-alt icon'></i>
-                            <span class="text nav-text">Edit</span>
                         </a>
                     </li>
                     <li class="nav-link">
@@ -193,111 +157,30 @@ li a {
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>Report Kebaikan Siswa</h2>
+                <h2>Report Siswa</h2>
             </div>
         </div>
-  <div>
-  <form action="proses-plus.php" method="POST" enctype="multipart/form-data">
-      <table>
-      <tr>
-                  <td></td>
-                  <td><input type="hidden" name="id" value=<?=$id?>></td>
-              </tr>
-      <tr>
-              <td>NIS</td>
-              <td><?php foreach ($sql as $nis) :?><?=$nis["nis"]; ?><?php endforeach;?></td>
-          </tr>
-          <tr>
-              <td>Nama Siswa</td>
-              <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
-          </tr>
-          <tr>
-              <td>Perbuatan Baik Yang Dilakukan</td>
-              <td><input type="text" name="kebaikan"></td>
-          </tr>
-          <tr>
-              <td>Inputkan Pemberian Poin</td>
-              <td><input type="number" name="poin_plus" max=20 min=1><b> *Maksimal 20 poin</b></td>
-          </tr>
-          <tr>
-              <td>Keterangan</td>
-              <td><input type="text" name="keterangan"></td>
-          </tr>
-          <tr>
-          <td>Upload Gambar</td>
-          <td><input type="file" name="file"></td>
-        </tr>
-          <tr>
-              <td><input type="submit" name="lapor_2" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
-              <td><input type="submit" name="batalkan" value="Batalkan"></td>
-          </tr>
-      </table><br>
-      
-      <table>
-        <tr>
-          <td><b>Riwayat Pelanggaran & Kebaikan</b></td>
-        </tr>
-        <tr>
-            <td><b>Tanggal</b></td>
-            <td><b>NIS</b></td>
-            <td><b>Kelas</b></td>
-            <td><b>Pelanggaran <br> & Kebaikan</b></td>
-            <td><b>Poin</b></td>
-            <td><b>Keterangan</b></td>
-            <td><b>Foto Bukti</b></td>
-        </tr>
-        <?php 
-        $jumlah_baris = 3;
-        $log = array();
-        while ($row = $sql_pelanggaran->fetch_assoc()) {
-          $log[] = $row;
-        }
-        $log_terbaru = array_slice($log, -$jumlah_baris);
-        foreach ($log_terbaru as $row) : ?>
-        <tr>
-          <td><?=$row["tanggal"]; ?></td>
-          <td><?=$row["nis"]; ?></td>
-          <td><?=$row["kelas"]; ?></td>
-          <td><?=$row["pelanggaran"], $row["kebaikan"]; ?></td>
-          <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
-          <td><?=$row["keterangan"]; ?></td>
-          <td><img src="../image/<?=$row["gambar"]; ?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
-          </tr>
-          <?php endforeach; ?>
-      </table>
-      <?php
-    include 'koneksi.php';
 
-    $sql = "SELECT * FROM tb_kasus";
-    $pelanggaran = mysqli_query($conn, $sql);
-    ?>
-      <div class="jenis-kasus">
-      <p class="judul">Jenis Pelanggaran</p>
-      <div class="row">
-        <div>
-          <table class="table-3 table table-striped" style="width: 100%;">
-          <thead>
-            <tr style="font-size: 20px;">
-              <td><b>No.</b></td>
-              <td><b>Kasus</b></td>
-              <td><b>Poin Minus</b></td>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($pelanggaran as $item) : ?>
+        <form action="choose-report.php" method="post">
+            <table>
                 <tr>
-                    <td><?= $item["id_kasus"];  ?></td>
-                    <td><?= $item["jenis_kasus"];  ?></td>
-                    <td>-<?= $item["poin"];  ?></td>
+                    <td><b>Pilihan Report</b></td>
+                    <td><b>Aksi</b></td>
                 </tr>
-            <?php endforeach; ?>
-          </tbody>
-          </table>
-        </div>
-      </div>
-  </form>
-  </div>
-        </div>
+                <tr>
+                    <td>Laporkan pelanggaran Siswa (-)</td>
+                    <td><a href="proses-kasus.php?id=<?php echo $id; ?>" class="btn">GO!</a></td>
+                </tr>
+                <tr>
+                    <td>Laporkan kebaikan Siswa (+)</td>
+                    <td><a href="proses-baik.php?id=<?php echo $id; ?>" class="btn">GO!</a></td>
+                </tr>
+                <tr>
+                    <td><a href="admin-buksak.php" class="btn">Kembali</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-  <link rel="stylesheet" href="styleBar.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Siswa</title>
+    <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
     font-awesome/6.4.0/css/all.min.css">
@@ -20,6 +19,10 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
         }
 
         .css-button {
@@ -42,19 +45,20 @@
 </head>
 
 <body>
-<?php
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <?php
+  include "koneksi.php";
   session_start();
 
   if (!isset($_SESSION['id_masuk'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
   }
-?>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <?php
-  include "koneksi.php";
-  $sql=mysqli_query($conn, "SELECT * FROM siswa");
+  $sql = mysqli_query($conn, "SELECT * FROM siswa");
   ?>
-  <nav class="sidebar close">
+
+    <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="image">
@@ -62,7 +66,7 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">Buku Saku</span>
+                    <span class="name">S.U.P.E.R.</span>
                     <span class="profession">Administrators</span>
                 </div>
             </div>
@@ -109,7 +113,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="settings-admin-2.php">
+                        <a href="admin-settings.php">
                             <i class='bx bx-cog icon'></i>
                             <span class="text nav-text">Settings</span>
                         </a>
@@ -140,55 +144,64 @@
 
         </div>
     </nav>
-    
+
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <span>Administrator</span>
+                <span>S.U.P.E.R. Administrator</span>
                 <h2>List Siswa</h2>
             </div>
         </div>
-  <div>
-    <form action="admin-buksak.php" method="GET">
-    
-      <table id="table_kasus" class="display">
-        <thead>
-          <tr>
-            <th>NIS</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-            <th>Laporkan</th>
-          </tr>
-          </thead>
-          <tbody>
-          <?php
-          
-           foreach ($sql as $row) : ?>
-            <tr>
-              <td><?php echo $row["nis"]; ?></td>
-              <td><?php echo $row["nama"]; ?></td>
-              <td><?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
-              <td><?php echo "
-                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>
+
+        <div>
+            <form action="admin-buksak.php" method="GET">
+                <table id="table_kasus" class="display">
+                    <thead>
+                        <tr>
+                            <th>NIS</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        foreach ($sql as $row) : ?>
+                        <tr>
+                            <td>
+                                <?php echo $row["nis"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $row["nama"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?>
+                            </td>
+                            <td><?php echo "
+                        <a href='choose-report.php?id=$row[nis]' class='css-button'>Report</a>
                         <a href='print-siswa.php?id=$row[nis]' class='css-button'>Print</a>" 
                         ?>
                         </td>
-            </tr>
-        <?php
-          endforeach;
-        
-        ?>
-        </tbody>
-      </table>
-      
-      <script>
-        
-      $(document).ready(function() {
-  $('#table_kasus').DataTable();
-});
-      </script>
-    </form>
+                        </tr>
+                        <?php
+                        endforeach;
+
+                        ?>
+                    </tbody>
+                </table>
+
+                <script>
+                    $(document).ready(function () {
+                        $('#table_kasus').DataTable();
+                    });
+                </script>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+
 </body>
 
 </html>
