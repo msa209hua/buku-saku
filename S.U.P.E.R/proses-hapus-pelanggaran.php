@@ -382,7 +382,7 @@
             <td><?=$nomor; ?></td>
             <td><?=$row["tanggal"]; ?></td>
             <td><?=$row["pelanggaran"], $row["kebaikan"]; ?></td>
-            <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100" alt="foto bukti"></td>
+            <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
             <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
             <input type="hidden" name="key" href="<?=$row['ket_poin']?>">
             <td><a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
