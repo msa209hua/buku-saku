@@ -290,7 +290,7 @@
               </svg>
             </div>
             <p class="name-client"> Artoria
-              <span>XI - RPL - C
+              <span>XI - RPL - Z
               </span>
             </p>
             <div class="social-media">
@@ -339,7 +339,7 @@
               </svg>
             </div>
             <p class="name-client">Welt Yang
-              <span>XI - RPL - C
+              <span>XI - RPL - Z
               </span>
             </p>
             <div class="social-media">
