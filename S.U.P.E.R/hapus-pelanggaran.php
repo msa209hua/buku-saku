@@ -21,10 +21,6 @@
             padding: 8px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
         .css-button {
             text-decoration: none;
             color: white;
@@ -41,6 +37,8 @@
             border: 1px solid red;
             transition: .2s;
         }
+
+        
     </style>
 </head>
 
@@ -48,8 +46,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <?php
+    <?php
   include "koneksi.php";
   session_start();
   $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran");
@@ -76,9 +73,9 @@
 
         <div class="menu-bar">
             <div class="menu">
-              <input type="hidden" class="search-box">
+                <input type="hidden" class="search-box">
 
-            <!-- Search under construction -->
+                <!-- Search under construction -->
 
                 <!-- <li class="search-box">
                     <i class='bx bx-search icon'></i>
@@ -86,7 +83,7 @@
 
                 </li> -->
 
-            <!-- Search under construction -->
+                <!-- Search under construction -->
                 <ul class="menu-link">
                     <li class="nav-link">
                         <a href="admin-buksak.php">
@@ -120,7 +117,7 @@
                     </li>
                     <li class="nav-link">
                         <a href="credit-buksak.php">
-                        <i class='bx bx-info-circle icon'></i>
+                            <i class='bx bx-info-circle icon'></i>
                             <span class="text nav-text">Tentang</span>
                         </a>
                     </li>
@@ -135,7 +132,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                <a href="../index.php">
+                    <a href="../index.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Log Out</span>
                     </a>
@@ -164,54 +161,65 @@
                 <h2>Hapus Pelanggaran Siswa</h2>
             </div>
         </div>
-  <div>
-    <form action="hapus-pelanggaran.php" method="GET">
-    <table id="table_kasus" class="display">
-          <thead>
-            <tr>
-              <th>Tanggal</th>
-              <th>NIS</th>
-              <th>Nama</th>
-              <th>Kelas</th>
-              <th>Pelanggaran</th>
-              <th>Poin</th>
-              <th>Keterangan</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <?php foreach ($sql as $row) : ?>
-            <tbody>
-                <tr>
-                <td><?= $row["tanggal"]; ?></td>
-                <td><?= $row["nis"]; ?></td>
-                <td><?= $row["nama_siswa"]; ?></td>
-                <td><?= $row["kelas"] ?></td>
-                <td><?= $row["pelanggaran"], $row["kebaikan"]; ?></td>
-                <td><?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
-                <td><?= $row["keterangan"]; ?></td>
-                <td><?php echo "
-                        <a href='proses-hapus-pelanggaran.php?id=$row[nis]' class='css-button'>Lihat</a>" ?></td>
-              </tr>
-              </tr>
-            <?php
-          endforeach;
-            ?>
-            <tr>
-              <td><a href="proses-print.php">Print</a></td>
-            </tr>
-            </tbody>
-        </table>
-      
-      <script>
-        
-      $(document).ready(function() {
-  $('#table_kasus').DataTable();
-});
-      </script>
-    </form>
-      </div>
+        <div>
+            <form action="hapus-pelanggaran.php" method="GET">
+                <table class="display" id="table_kasus">
+                    <thead>
+                        <tr>
+                            <td>Tanggal</td>
+                            <td>NIS</td>
+                            <td>Nama</td>
+                            <td>Kelas</td>
+                            <td>Pelanggaran</td>
+                            <td>Poin</td>
+                            <td>Keterangan</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($sql as $row) : ?>
+                        <tr>
+                            <td>
+                                <?= $row["tanggal"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["nis"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["nama_siswa"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["kelas"] ?>
+                            </td>
+                            <td>
+                                <?= $row["pelanggaran"], $row["kebaikan"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["keterangan"]; ?>
+                            </td>
+                            <td>
+                                <?php echo "
+                        <a href='proses-hapus-pelanggaran.php?id=$row[nis]' class='css-button'>Lihat</a>" ?>
+                            </td>
+                        </tr>
+                        <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+                </table>
+                
+            </form>
+        </div>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#table_kasus').DataTable();
+            });
+        </script>
 
 </body>
 

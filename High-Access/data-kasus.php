@@ -63,7 +63,7 @@
   }
   $sql = mysqli_query($conn, "SELECT * FROM tb_pelanggaran")
   ?>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
@@ -164,7 +164,8 @@
     <div>
     <form action="data-kasus.php" method="GET">
  
- <table id="table_kasus" class="display" border="1px">
+ <table id="table_kasus" class="display" id="table_kasus" border="1px">
+  <thead>
      <tr>
          <td>
          <select name="kelas">
@@ -252,6 +253,8 @@
  <th>Keterangan</th>
  <th>Foto</th>
 </tr>
+</thead>
+<tbody>
 <?php foreach ($sql as $row) : ?>
  <tr>
    <td><?= $row["tanggal"]; ?></td>
@@ -276,10 +279,16 @@ endforeach;
         }
      }
 ?>
+</tbody>
  </table>
 </form>
     </div>
   </div>
+  <script>
+                    $(document).ready(function () {
+                        $('#table_kasus').DataTable();
+                    });
+                </script>
   <script src="script.js"></script>
 </body>
 
