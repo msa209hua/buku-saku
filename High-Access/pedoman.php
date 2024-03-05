@@ -193,29 +193,29 @@
         </div>
 
     <div class="pedoman" style="text-align: center;">
-        <img src="img/pedoman_1.png" alt=""><br>
-        <img src="img/pedoman_2.png" alt=""><br>
-        <img src="img/pedoman_3.png" alt=""><br>
-        <img src="img/pedoman_4.png" alt=""><br>
-        <img src="img/pedoman_5.png" alt=""><br>
-        <img src="img/pedoman_6.png" alt=""><br>
-        <img src="img/pedoman_7.png" alt=""><br>
-        <img src="img/pedoman_8.png" alt=""><br>
-        <img src="img/pedoman_9.png" alt=""><br>
-        <img src="img/pedoman_10.png" alt=""><br>
-        <img src="img/pedoman_11.png" alt=""><br>
-        <img src="img/pedoman_12.png" alt=""><br>
-        <img src="img/pedoman_13.png" alt=""><br>
-        <img src="img/pedoman_14.png" alt=""><br>
-        <img src="img/pedoman_15.png" alt=""><br>
-        <img src="img/pedoman_16.png" alt=""><br>
-        <img src="img/pedoman_17.png" alt=""><br>
-        <img src="img/pedoman_18.png" alt=""><br>
-        <img src="img/pedoman_19.png" alt=""><br>
-        <img src="img/pedoman_20.png" alt=""><br>
-        <img src="img/pedoman_21.png" alt=""><br>
-        <img src="img/pedoman_22.png" alt=""><br>
-        <img src="img/pedoman_23.png" alt=""><br>
+        <img src="../img/pedoman_1.png" alt=""><br>
+        <img src="../img/pedoman_2.png" alt=""><br>
+        <img src="../img/pedoman_3.png" alt=""><br>
+        <img src="../img/pedoman_4.png" alt=""><br>
+        <img src="../img/pedoman_5.png" alt=""><br>
+        <img src="../img/pedoman_6.png" alt=""><br>
+        <img src="../img/pedoman_7.png" alt=""><br>
+        <img src="../img/pedoman_8.png" alt=""><br>
+        <img src="../img/pedoman_9.png" alt=""><br>
+        <img src="../img/pedoman_10.png" alt=""><br>
+        <img src="../img/pedoman_11.png" alt=""><br>
+        <img src="../img/pedoman_12.png" alt=""><br>
+        <img src="../img/pedoman_13.png" alt=""><br>
+        <img src="../img/pedoman_14.png" alt=""><br>
+        <img src="../img/pedoman_15.png" alt=""><br>
+        <img src="../img/pedoman_16.png" alt=""><br>
+        <img src="../img/pedoman_17.png" alt=""><br>
+        <img src="../img/pedoman_18.png" alt=""><br>
+        <img src="../img/pedoman_19.png" alt=""><br>
+        <img src="../img/pedoman_20.png" alt=""><br>
+        <img src="../img/pedoman_21.png" alt=""><br>
+        <img src="../img/pedoman_22.png" alt=""><br>
+        <img src="../img/pedoman_23.png" alt=""><br>
     </div>
     <form action='pedoman.php' method='post'>
         <button class="button" style="margin-left: 45%; margin-top: 40px; margin-bottom: -40px;">Kembali Ke Atas</button>

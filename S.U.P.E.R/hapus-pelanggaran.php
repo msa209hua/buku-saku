@@ -181,14 +181,14 @@
           </thead>
           <?php foreach ($sql as $row) : ?>
             <tbody>
-              <tr>
+                <tr>
                 <td><?= $row["tanggal"]; ?></td>
                 <td><?= $row["nis"]; ?></td>
-                <td><?= $row["nama_siswa"] ?></td>
+                <td><?= $row["nama_siswa"]; ?></td>
                 <td><?= $row["kelas"] ?></td>
-                <td><?= $row["pelanggaran"]; ?></td>
-                <td>-<?= $row["poin_minus"] ?></td>
-                <td><?= $row["keterangan"] ?></td>
+                <td><?= $row["pelanggaran"], $row["kebaikan"]; ?></td>
+                <td><?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
+                <td><?= $row["keterangan"]; ?></td>
                 <td><?php echo "
                         <a href='proses-hapus-pelanggaran.php?id=$row[nis]' class='css-button'>Lihat</a>" ?></td>
               </tr>

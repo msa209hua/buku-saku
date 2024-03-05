@@ -27,9 +27,6 @@
       padding: 8px;
     }
 
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
 
     @media screen and (max-width: 600px) {
       li a.active {
@@ -281,10 +278,14 @@
  </tr>
 <?php
 endforeach;
-$kelas_sql =mysqli_query($conn, "SELECT kelas FROM tb_pelanggaran WHERE kelas='$kelas'");
+        $kelas_sql =mysqli_query($conn, "SELECT kelas FROM tb_pelanggaran WHERE kelas='$kelas'");
         $sql_total=mysqli_fetch_array($kelas_sql);
-        $sql_kelas=$sql_total["kelas"];
-echo "<tr><td><a href='../print-laporan.php?id=$sql_kelas' class='css-button'>Print</a></td></tr>" ;
+        if (isset($sql_total)) {
+            $sql_kelas=$sql_total["kelas"];    
+            echo "<tr><td><a href='../print-laporan.php?id=$sql_kelas' class='css-button'>Print</a></td></tr>" ;
+        } else {
+            echo "<b>Data tidak ada.</b>";
+        }
      }
 ?>
  </table>
