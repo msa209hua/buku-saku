@@ -259,7 +259,7 @@
             <td>" . $row["tanggal"] . "</td>
             <td>" . $row["pelanggaran"], $row["kebaikan"] . "</td>
             <td>" . $row["keterangan"] . "</td>
-            <td><img src='../image/" . $row["gambar"] . "' width='100' height='100' alt='foto bukti'></td>
+            <td><img src='image/".$row['gambar']."' width='100' height='100' alt='foto bukti'></td>
             <td>" .$row["ket_poin"], $row["poin_minus"], $row["poin_plus"] . "</td>
           <tr/>
           ";
@@ -267,7 +267,6 @@
       }
 
       ?>
-
       <tr>
         <td><b>TOTAL POIN</b></td>
         <td></td>

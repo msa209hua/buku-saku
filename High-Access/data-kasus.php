@@ -261,7 +261,7 @@
    <td><?= $row["pelanggaran"], $row["kebaikan"]; ?></td>
    <td><?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
    <td><?= $row["keterangan"]; ?></td>
-   <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100" alt="foto bukti"></td>
+   <td><img src="../image/<?= $row["gambar"]?>" width="100" height="100" alt="foto bukti"></td>
  </tr>
  </tr>
 <?php
