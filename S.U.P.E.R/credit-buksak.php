@@ -295,8 +295,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <p class="name-client"> Tanszah
-                            <span>-
+                        <p class="name-client"> Artoria
+                            <span>XI - RPL - C
                             </span>
                         </p>
                         <div class="social-media">
@@ -344,8 +344,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <p class="name-client"> Bintang
-                            <span>-
+                        <p class="name-client"> Welt Yang
+                            <span>XI - RPL - C
                             </span>
                         </p>
                         <div class="social-media">
