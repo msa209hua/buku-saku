@@ -252,7 +252,6 @@
          $bulan=$_GET["bulan"];
          $tahun=$_GET["tahun"];
          $gabung=sprintf("$tahun-$bulan-$tanggal");
-         echo"$gabung";
          $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas' and tanggal like'%2024%'");
      ?>
      <tr align="center">
