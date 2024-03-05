@@ -21,10 +21,6 @@
             padding: 8px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
         .css-button {
             text-decoration: none;
             color: white;
@@ -242,7 +238,16 @@ li a {
       
       <table>
         <tr>
-          <td><b>Riwayat Pelanggaran</b></td>
+          <td><b>Riwayat Pelanggaran & Kebaikan</b></td>
+        </tr>
+        <tr>
+            <td><b>Tanggal</b></td>
+            <td><b>NIS</b></td>
+            <td><b>Kelas</b></td>
+            <td><b>Pelanggaran <br> & Kebaikan</b></td>
+            <td><b>Poin</b></td>
+            <td><b>Keterangan</b></td>
+            <td><b>Foto Bukti</b></td>
         </tr>
         <?php 
         $jumlah_baris = 3;
@@ -256,10 +261,10 @@ li a {
           <td><?=$row["tanggal"]; ?></td>
           <td><?=$row["nis"]; ?></td>
           <td><?=$row["kelas"]; ?></td>
-          <td><?=$row["pelanggaran"]; ?></td>
-          <td>-<?=$row["poin_minus"]; ?></td>
+          <td><?=$row["pelanggaran"], $row["kebaikan"]; ?></td>
+          <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
           <td><?=$row["keterangan"]; ?></td>
-          <td><?=$row["gambar"]; ?></td>
+          <td><img src="../image/<?=$row["gambar"]; ?>" width="100" height="100"></td>
           </tr>
           <?php endforeach; ?>
       </table>

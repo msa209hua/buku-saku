@@ -21,9 +21,6 @@
             padding: 8px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
 
         .css-button {
             text-decoration: none;
