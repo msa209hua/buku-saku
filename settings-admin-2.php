@@ -54,10 +54,7 @@
   }
 ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <?php
-  include "koneksi.php";
-  $sql=mysqli_query($conn, "SELECT * FROM siswa");
-  ?>
+  
   <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -149,49 +146,12 @@
         <div class="header--wrapper">
             <div class="header--title">
                 <span>Administrator</span>
-                <h2>List Siswa</h2>
+                <h2>Settings</h2>
             </div>
         </div>
-  <div>
-    <form action="admin-buksak.php" method="GET">
-    
-      <table id="table_kasus" class="display">
-        <thead>
-          <tr>
-            <th>NIS</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-            <th>Laporkan</th>
-          </tr>
-          </thead>
-          <tbody>
-          <?php
-          
-           foreach ($sql as $row) : ?>
-            <tr>
-              <td><?php echo $row["nis"]; ?></td>
-              <td><?php echo $row["nama"]; ?></td>
-              <td><?php echo $row["tingkat"] . " " . $row["jurusan"] . " " . $row["kelas"]; ?></td>
-              <td><?php echo "
-                        <a href='proses-kasus.php?id=$row[nis]' class='css-button'>Report</a>
-                        <a href='print-siswa.php?id=$row[nis]' class='css-button'>Print</a>" 
-                        ?>
-                        </td>
-            </tr>
-        <?php
-          endforeach;
-        
-        ?>
-        </tbody>
-      </table>
-      
-      <script>
-        
-      $(document).ready(function() {
-  $('#table_kasus').DataTable();
-});
-      </script>
-    </form>
+
+    </div>
+  
     <script src="script.js"></script>
 </body>
 
