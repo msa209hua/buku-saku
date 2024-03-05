@@ -23,7 +23,7 @@ if (mysqli_num_rows($result_admin) == 1) {
         } elseif ($row["role"] == 2) {
             session_start();
             $_SESSION["id_masuk"] = $row["password"];
-            header("Location: admin-buksak.php");
+            header("Location: High-Access/admin-buksak.php");
         }
     } else {
         echo "<script>
