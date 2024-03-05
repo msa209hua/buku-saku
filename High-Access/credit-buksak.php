@@ -8,265 +8,267 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
   <link rel="stylesheet" href="styleBar.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
     font-awesome/6.4.0/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <style>
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+  <style>
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
 
-        .css-button {
-            text-decoration: none;
-            color: white;
-            padding: 5px;
-            background-color: red;
-            border-radius: 7px;
-            font-weight: 700;
-        }
+    .css-button {
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+      background-color: red;
+      border-radius: 7px;
+      font-weight: 700;
+    }
 
-        .css-button:hover {
-            color: red;
-            padding: 4px;
-            background-color: white;
-            border: 1px solid red;
-            transition: .2s;
-        }
+    .css-button:hover {
+      color: red;
+      padding: 4px;
+      background-color: white;
+      border: 1px solid red;
+      transition: .2s;
+    }
 
-        .td-2,
+    .td-2,
     .th-2 {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
 
-  .card-client {
-    background: #2cb5a0;
-    width: 13rem;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 4px solid #7cdacc;
-    box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
-    transition: all 0.3s ease;
-  }
+    .card-client {
+      background: #2cb5a0;
+      width: 13rem;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 4px solid #7cdacc;
+      box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+      border-radius: 10px;
+      text-align: center;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      transition: all 0.3s ease;
+    }
 
-  .card-client:hover {
-    transform: translateY(-10px);
-  }
+    .card-client:hover {
+      transform: translateY(-10px);
+    }
 
-  .user-picture {
-    overflow: hidden;
-    object-fit: cover;
-    width: 5rem;
-    height: 5rem;
-    border: 4px solid #7cdacc;
-    border-radius: 999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
+    .user-picture {
+      overflow: hidden;
+      object-fit: cover;
+      width: 5rem;
+      height: 5rem;
+      border: 4px solid #7cdacc;
+      border-radius: 999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
 
-  .user-picture svg {
-    width: 2.5rem;
-    fill: currentColor;
-  }
+    .user-picture svg {
+      width: 2.5rem;
+      fill: currentColor;
+    }
 
-  .name-client {
-    margin: 0;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 18px;
-  }
+    .name-client {
+      margin: 0;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 18px;
+    }
 
-  .name-client span {
-    display: block;
-    font-weight: 200;
-    font-size: 16px;
-  }
+    .name-client span {
+      display: block;
+      font-weight: 200;
+      font-size: 16px;
+    }
 
-  .social-media:before {
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 2px;
-    margin: 20px 0;
-    background: #7cdacc;
-  }
+    .social-media:before {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin: 20px 0;
+      background: #7cdacc;
+    }
 
-  .social-media a {
-    position: relative;
-    margin-right: 15px;
-    text-decoration: none;
-    color: inherit;
-  }
+    .social-media a {
+      position: relative;
+      margin-right: 15px;
+      text-decoration: none;
+      color: inherit;
+    }
 
-  .social-media a:last-child {
-    margin-right: 0;
-  }
+    .social-media a:last-child {
+      margin-right: 0;
+    }
 
-  .social-media a svg {
-    width: 1.1rem;
-    fill: currentColor;
-  }
+    .social-media a svg {
+      width: 1.1rem;
+      fill: currentColor;
+    }
 
-  /*-- Tooltip Social Media --*/
-  .tooltip-social {
-    background: #262626;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    padding: 0.5rem 0.4rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -90%);
-    transition: all 0.2s ease;
-    z-index: 1;
-  }
+    /*-- Tooltip Social Media --*/
+    .tooltip-social {
+      background: #262626;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      padding: 0.5rem 0.4rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -90%);
+      transition: all 0.2s ease;
+      z-index: 1;
+    }
 
-  .tooltip-social:after {
-    content: " ";
-    position: absolute;
-    bottom: 1px;
-    left: 50%;
-    border: solid;
-    border-width: 10px 10px 0 10px;
-    border-color: transparent;
-    transform: translate(-50%, 100%);
-  }
+    .tooltip-social:after {
+      content: " ";
+      position: absolute;
+      bottom: 1px;
+      left: 50%;
+      border: solid;
+      border-width: 10px 10px 0 10px;
+      border-color: transparent;
+      transform: translate(-50%, 100%);
+    }
 
-  .social-media a .tooltip-social:after {
-    border-top-color: #262626;
-  }
+    .social-media a .tooltip-social:after {
+      border-top-color: #262626;
+    }
 
-  .social-media a:hover .tooltip-social {
-    opacity: 1;
-    transform: translate(-50%, -130%);
-  }
-    </style>
+    .social-media a:hover .tooltip-social {
+      opacity: 1;
+      transform: translate(-50%, -130%);
+    }
+  </style>
 </head>
 
 <body>
-<?php
+  <?php
   session_start();
 
   if (!isset($_SESSION['id_masuk'])) {
     header('Location: index.php');
   }
 ?>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <?php
   include "koneksi.php";
   $sql=mysqli_query($conn, "SELECT * FROM siswa");
   ?>
   <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="img/smkn2cmi.png" alt="logo">
-                </span>
+    <header>
+      <div class="image-text">
+        <span class="image">
+          <img src="../img/smkn2cmi.png" alt="logo">
+        </span>
 
-                <div class="text header-text">
-                    <span class="name">Buku Saku</span>
-                    <span class="profession">Administrators</span>
-                </div>
-            </div>
+        <div class="text header-text">
+          <span class="name">Buku Saku</span>
+          <span class="profession">Administrators</span>
+        </div>
+      </div>
 
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
+      <i class='bx bx-chevron-right toggle'></i>
+    </header>
 
-        <div class="menu-bar">
-            <div class="menu">
-              <input type="hidden" class="search-box">
+    <div class="menu-bar">
+      <div class="menu">
+        <input type="hidden" class="search-box">
 
-            <!-- Search under construction -->
+        <!-- Search under construction -->
 
-                <!-- <li class="search-box">
+        <!-- <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <input type="text" name="" id="" placeholder="Search...">
 
                 </li> -->
 
-            <!-- Search under construction -->
-                <ul class="menu-link">
-                    <li class="nav-link">
-                        <a href="admin-buksak.php">
-                            <i class='bx bx-list-ul icon'></i>
-                            <span class="text nav-text">List Siswa</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="data-kasus.php">
-                            <i class='bx bx-history icon'></i>
-                            <span class="text nav-text">Pelanggaran</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="pedoman.php">
-                            <i class='bx bx-book-bookmark icon'></i>
-                            <span class="text nav-text">Pedoman</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="credit-buksak.php">
-                        <i class='bx bx-info-circle icon'></i>
-                            <span class="text nav-text">Tentang</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="settings-admin-2.php">
-                            <i class='bx bx-cog icon'></i>
-                            <span class="text nav-text">Settings</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <!-- Search under construction -->
+        <ul class="menu-link">
+          <li class="nav-link">
+            <a href="admin-buksak.php">
+              <i class='bx bx-list-ul icon'></i>
+              <span class="text nav-text">List Siswa</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="data-kasus.php">
+              <i class='bx bx-history icon'></i>
+              <span class="text nav-text">Pelanggaran</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="pedoman.php">
+              <i class='bx bx-book-bookmark icon'></i>
+              <span class="text nav-text">Pedoman</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="credit-buksak.php">
+              <i class='bx bx-info-circle icon'></i>
+              <span class="text nav-text">Tentang</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="settings-admin-2.php">
+              <i class='bx bx-cog icon'></i>
+              <span class="text nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-            <div class="bottom-content">
-                <li class="">
-                    <a href="index.php">
-                        <i class='bx bx-log-out icon'></i>
-                        <span class="text nav-text">Log Out</span>
-                    </a>
-                </li>
+      <div class="bottom-content">
+        <li class="">
+          <a href="../index.php">
+            <i class='bx bx-log-out icon'></i>
+            <span class="text nav-text">Log Out</span>
+          </a>
+        </li>
 
-                <li class="mode">
-                    <div class="moon-sun">
-                        <i class='bx bx-moon icon moon'></i>
-                        <i class='bx bx-sun icon sun'></i>
-                    </div>
-                    <span class="mode-text text">Dark Mode</span>
+        <li class="mode">
+          <div class="moon-sun">
+            <i class='bx bx-moon icon moon'></i>
+            <i class='bx bx-sun icon sun'></i>
+          </div>
+          <span class="mode-text text">Dark Mode</span>
 
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
-                    </div>
-                </li>
-            </div>
+          <div class="toggle-switch">
+            <span class="switch"></span>
+          </div>
+        </li>
+      </div>
 
-        </div>
-    </nav>
-    
-    <div class="main--content">
+    </div>
+  </nav>
+
+  <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
         <span>Administrator</span>
@@ -382,26 +384,26 @@
     </table>
   </div>
 
-    <div class="main--content">
-      <div class="header--wrapper">
-        <div class="header--title">
-          <h2>Help</h2>
-        </div>
+  <div class="main--content">
+    <div class="header--wrapper">
+      <div class="header--title">
+        <h2>Help</h2>
       </div>
-      <table>
-        <tr>
-          <td class="td-2">Ada kendala? Silahkan hubungi nomor di bawah ini.</td>
-        </tr>
-        <tr>
-          <td class="td-2">+62 821-5555-7777 (Kesiswaan/Admin)</td>
-        </tr>
-        <tr>
-          <td class="td-2">+62 822-3333-4444 (Kesiswaan/Admin)</td>
-        </tr>
-      </table>
+    </div>
+    <table>
+      <tr>
+        <td class="td-2">Ada kendala? Silahkan hubungi nomor di bawah ini.</td>
+      </tr>
+      <tr>
+        <td class="td-2">+62 821-5555-7777 (Kesiswaan/Admin)</td>
+      </tr>
+      <tr>
+        <td class="td-2">+62 822-3333-4444 (Kesiswaan/Admin)</td>
+      </tr>
+    </table>
   </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

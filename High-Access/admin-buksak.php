@@ -62,7 +62,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="img/smkn2cmi.png" alt="logo">
+                    <img src="../img/smkn2cmi.png" alt="logo">
                 </span>
 
                 <div class="text header-text">
@@ -123,7 +123,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="index.php">
+                    <a href="../index.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Log Out</span>
                     </a>
