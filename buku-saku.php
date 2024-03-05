@@ -245,7 +245,9 @@
       <tr>
         <td><b>NO</b></td>
         <td><b>TANGGAL/WAKTU</b></td>
-        <td><b>PELANGGARAN</b></td>
+        <td><b>PELANGGARAN <br> & KEBAIKAN</b></td>
+        <td><b>KETERANGAN</b></td>
+        <td><b>FOTO BUKTI</b></td>
         <td><b>POIN</b></td>
       </tr>
       <?php
@@ -255,8 +257,10 @@
           <tr>
             <td>" . $nomor . "</td>
             <td>" . $row["tanggal"] . "</td>
-            <td>" . $row["pelanggaran"] . "</td>
-            <td>-" . $row["poin_minus"] . "</td>
+            <td>" . $row["pelanggaran"], $row["kebaikan"] . "</td>
+            <td>" . $row["keterangan"] . "</td>
+            <td><img src='../image/" . $row["gambar"] . "' width='100' height='100' alt='foto bukti'></td>
+            <td>" .$row["ket_poin"], $row["poin_minus"], $row["poin_plus"] . "</td>
           <tr/>
           ";
         $nomor++;
@@ -266,6 +270,8 @@
 
       <tr>
         <td><b>TOTAL POIN</b></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <?php

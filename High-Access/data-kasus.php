@@ -27,6 +27,7 @@
       padding: 8px;
     }
 
+
     @media screen and (max-width: 600px) {
       li a.active {
         background: linear-gradient(#181C24, #282c34);
@@ -83,7 +84,7 @@
         </header>
 
         <div class="menu-bar">
-            <div class="menu">
+        <div class="menu">
               <input type="hidden" class="search-box">
 
             <!-- Search under construction -->
@@ -260,7 +261,7 @@
    <td><?= $row["pelanggaran"], $row["kebaikan"]; ?></td>
    <td><?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
    <td><?= $row["keterangan"]; ?></td>
-   <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100"></td>
+   <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100" alt="foto bukti"></td>
  </tr>
  </tr>
 <?php
