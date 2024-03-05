@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Siswa</title>
-    <link rel="stylesheet" href="styleBar.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+  <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
     font-awesome/6.4.0/css/all.min.css">
@@ -45,64 +46,24 @@
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <?php
-  include "koneksi.php";
+<?php
   session_start();
 
   if (!isset($_SESSION['id_masuk'])) {
-    header('Location: ../index.php');
+    header('Location: index.php');
   }
-  $sql = mysqli_query($conn, "SELECT * FROM siswa");
-  ?>
-  <?php
-
-if (!isset($_SESSION['id_masuk'])) {
-  header('Location: index.php');
-}
 ?>
-<?php
-
-require 'koneksi.php';
-
-if (isset($_POST['tambah'])) {
-    $jenis = $_POST['jenis'];
-    $poin = $_POST['poin'];
-
-    $query = "INSERT INTO tb_kasus (jenis_kasus, poin) VALUES ('$jenis','$poin')";
-    $proses =  mysqli_query($conn, $query);
-
-    if ($proses) {
-        echo "
-        <script>
-            alert('Data berhasil ditambah');
-            window.location.href='kasus.php';
-        </script>";
-    } else {
-        echo "
-        <script>
-            alert('Data gagal ditambah');
-            window.location.href='tambah_kasus.php';
-        </script>";
-    }
-}
-
-if (isset($_POST['batal'])) {
-  header("Location: kasus.php");
-}
-?>
-
-    <nav class="sidebar close">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="../img/smkn2cmi.png" alt="logo">
+                    <img src="img/smkn2cmi.png" alt="logo">
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
+                    <span class="name">Buku Saku</span>
                     <span class="profession">Administrators</span>
                 </div>
             </div>
@@ -137,21 +98,9 @@ if (isset($_POST['batal'])) {
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="kasus.php">
-                            <i class='bx bx-data icon'></i>
-                            <span class="text nav-text">Data Kasus</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
                         <a href="pedoman.php">
                             <i class='bx bx-book-bookmark icon'></i>
                             <span class="text nav-text">Pedoman</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="hapus-pelanggaran.php">
-                            <i class='bx bx-edit-alt icon'></i>
-                            <span class="text nav-text">Edit</span>
                         </a>
                     </li>
                     <li class="nav-link">
@@ -161,7 +110,7 @@ if (isset($_POST['batal'])) {
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="admin-settings.php">
+                        <a href="settings-admin-2.php">
                             <i class='bx bx-cog icon'></i>
                             <span class="text nav-text">Settings</span>
                         </a>
@@ -171,7 +120,7 @@ if (isset($_POST['batal'])) {
 
             <div class="bottom-content">
                 <li class="">
-                <a href="../index.php">
+                    <a href="index.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Log Out</span>
                     </a>
@@ -192,41 +141,18 @@ if (isset($_POST['batal'])) {
 
         </div>
     </nav>
-
+    
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <span>S.U.P.E.R. Administrator</span>
-                <h2>Tambah Kasus</h2>
+                <span>Administrator</span>
+                <h2>Settings</h2>
             </div>
         </div>
-<div>
-<form action="tambah_kasus.php" method="post">
-  <table>
-    <tr>
-      <td>Jenis Kasus</td>
-      <td><input type="text" name="jenis"></td>
-    </tr>
-    <tr>
-      <td>Poin Minus</td>
-      <td><input type="text" name="poin"></td>
-    </tr>
-  </table>
 
-  <table style="width: 0px;">
-  <tr>
-    <td><input type="submit" value="Batalkan" name="batal"></td>
-    <td><input type="submit" value="Tambahkan" name="tambah"></td>
-    </tr>
-  </table>
-    </form>
-
-    
-</div>
-</div>
-
+    </div>
+  
     <script src="script.js"></script>
-
 </body>
 
 </html>
