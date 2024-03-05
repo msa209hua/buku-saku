@@ -212,6 +212,10 @@ li a {
               <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
           </tr>
           <tr>
+              <td>Total Poin</td>
+              <td><?php foreach ($sql as $poin) :?><?=$poin["poin"]; ?><?php endforeach;?></td>
+          </tr>
+          <tr>
               <td>Pilih Kasus</td>
               <td>
               <select name="kasus">

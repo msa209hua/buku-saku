@@ -380,8 +380,8 @@
           <tr>
             <td><?=$nomor; ?></td>
             <td><?=$row["tanggal"]; ?></td>
-            <td><?=$row["pelanggaran"]; ?></td>
-            <td>-<?=$row["poin_minus"]; ?></td>
+            <td><?=$row["pelanggaran"], $row["kebaikan"]; ?></td>
+            <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
             <td><a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
           </tr>
           
