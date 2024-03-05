@@ -171,7 +171,7 @@ if (isset($_POST['batal'])) {
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="index.php">
+                <a href="../index.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Log Out</span>
                     </a>
