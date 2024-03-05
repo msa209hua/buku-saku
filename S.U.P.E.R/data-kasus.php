@@ -332,7 +332,7 @@ endforeach;
 ?>
           </tbody>
         </table>
-        <a href="proses-print.php" class="print">Print</a>
+        <a href="../proses-print.php" class="print">Print</a>
       </form>
     </div>
   </div>
