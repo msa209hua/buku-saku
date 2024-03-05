@@ -31,17 +31,12 @@
             transition: .2s;
         }
 
-        table {
-        border-collapse: collapse;
-        width: 100%;
-        }
-
         th, td {
         text-align: left;
         padding: 8px;
         }
 
-        tr:nth-child(even){background-color: #f2f2f2}
+       
 
         th {
         background: linear-gradient(brown, chocolate);
@@ -204,7 +199,7 @@
                     <td>-<?= $row["poin"];  ?></td>
                     <td>
                     <?php
-                    echo "<a href='edit_kasus.php?id=$row[id_kasus]'>Edit</a>";
+                    echo "<a href='edit_kasus.php?id=$row[id_kasus]' >Edit</a>";
                     ?>
                     |
                     <a href="hapus_kasus.php?id=<?= $row['id_kasus']; ?>" onclick="return confirm ('yakin hapus?');">Hapus</a>
