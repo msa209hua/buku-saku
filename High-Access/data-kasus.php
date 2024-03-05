@@ -22,10 +22,6 @@
             padding: 8px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
         .css-button {
             text-decoration: none;
             color: white;
@@ -230,14 +226,14 @@
                         </td>
                     </tr>
                     <?php
-     if (isset($_GET['lihat'])) {
-         $kelas=$_GET["kelas"];
-         $tanggal=$_GET["hari"];
-         $bulan=$_GET["bulan"];
-         $tahun=$_GET["tahun"];
-         $gabung=sprintf("$tahun-$bulan-$tanggal");
-         $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas' and tanggal like'%2024%'");
-     ?>
+                        if (isset($_GET['lihat'])) {
+                            $kelas=$_GET["kelas"];
+                            $tanggal=$_GET["hari"];
+                            $bulan=$_GET["bulan"];
+                            $tahun=$_GET["tahun"];
+                            $gabung=sprintf("$tahun-$bulan-$tanggal");
+                            $sql= mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE kelas='$kelas' and tanggal like'%2024%'");
+                        ?>
                     <tr align="center">
                         <th>
                             <?=$kelas;?>
@@ -276,22 +272,22 @@
                         <td>
                             <?= $row["keterangan"] ?>
                         </td>
-                        <td><img src="../image/<?= $row[" gambar"] ?>" width="100" height="100"></td>
+                        <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100"></td>
                     </tr>
                     </tr>
                     <?php
-endforeach;
-$kelas_sql =mysqli_query($conn, "SELECT kelas FROM tb_pelanggaran WHERE kelas='$kelas'");
-        $sql_total=mysqli_fetch_array($kelas_sql);
-        if (isset($sql_total)) {
-            $sql_kelas=$sql_total["kelas"];    
-            echo "<tr><td><a href='../print-laporan.php?id=$sql_kelas' class='css-button'>Print</a></td></tr>" ;
-        } else {
-            echo "<b>Data tidak ada.</b>";
-        }
-    
-     }
-?>
+                    endforeach;
+                    $kelas_sql =mysqli_query($conn, "SELECT kelas FROM tb_pelanggaran WHERE kelas='$kelas'");
+                            $sql_total=mysqli_fetch_array($kelas_sql);
+                            if (isset($sql_total)) {
+                                $sql_kelas=$sql_total["kelas"];    
+                                echo "<tr><td><a href='../print-laporan.php?id=$sql_kelas' class='css-button'>Print</a></td></tr>" ;
+                            } else {
+                                echo "<b>Data tidak ada.</b>";
+                            }
+                        
+                        }
+                    ?>
                 </table>
             </form>
         </div>
