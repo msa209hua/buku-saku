@@ -42,106 +42,37 @@
             transition: .2s;
         }
 
-        .nav {
-      list-style-type: none;
-      height: 80px;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #181c24;
-      ;
-    }
-
-    h1 {
-      color: white;
-      background-color: #282C34;
-      padding: 10px 20px 35px 20px;
-    }
-
-    .judul {
+        .judul {
       background-color: #d7d8da;
       text-align: center;
       font-weight: 900;
-      font-size: 30px;
+      font-size: 25px;
       margin-top: 100px;
+      margin-bottom: -1px;
       border-top: 1px solid #b5b6b7;
       border-bottom: 1px solid #b5b6b7;
     }
-
-    .footer {
-      background-color: #d7d8da;
-      text-align: center;
-      height: 25px;
-      font-weight: 700;
-      font-size: 14px;
-      margin-top: 100px;
-      border-top: 1px solid #b5b6b7;
-      border-bottom: 1px solid #b5b6b7;
-    }
-
-
-    .row {
-      margin-right: 0px;
-      padding: 0px;
-      margin-top: -16px;
-    }
-
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      outline: none;
-      cursor: pointer;
-      width: 150px;
-      height: 50px;
-      background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
-      border-radius: 30px;
-      border: 1px solid #8F9092;
-      transition: all 0.2s ease;
-      font-family: "Source Sans Pro", sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #606060;
-      text-shadow: 0 1px #fff;
-    }
-
-    button:hover {
-      box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
-    }
-
-    button:active {
-      box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-    }
-
-    button:focus {
-      box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        padding-top: 23px;
-      }
-
-      .judul {
-        font-size: 25px;
-      }
-
-      .table-2,
-      .table-3,
-      .table-4 {
-        font-size: 12px;
-      }
-
-      .pedoman img {
-        width: 400px;
-        height: 600px;
-      }
-
-      .button {
-        margin-left: 33%;
-      }
-    }
+@media screen and (max-width: 600px)
+{
+  li a.active {
+  background: linear-gradient(#181C24, #282c34);
+  font-size: 20px;
+  color: white;
+}
+li a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 10px;
+}
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 9px;
+}
+}
     </style>
 </head>
 
@@ -149,34 +80,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <?php
-  include "koneksi.php";
-  session_start();
+        <?php
+        include "koneksi.php";
+        session_start();
+        $id=$_GET['id'];
+        
+        $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
+        $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus");
+        $sql_pelanggaran=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE nis=$id");
 
-  if (!isset($_SESSION['id_masuk'])) {
-    header('Location: ../index.php');
-  }
-  $sql = mysqli_query($conn, "SELECT * FROM siswa");
-  ?>
-    <?php
-  // Definisikan variabel session
-  
-
-  // Koneksi ke database MySQL
-  include "koneksi.php";
-
-  // Terima id pengguna dari session
-  $id = $_GET['id'];
-
-  // Ambil data pengguna dari database
-  $sql = "SELECT * FROM siswa WHERE nis = $id";
-  $sql_2 = "SELECT * FROM tb_pelanggaran WHERE nis = $id";
-  
-  $result = mysqli_query($conn, $sql);
-  $pelanggaran = mysqli_query($conn, $sql_2);
-
-
-  ?>
+        if (!isset($_SESSION['id_masuk'])) {
+        header('Location: ../index.php');
+        }
+        ?>
 
     <nav class="sidebar close">
         <header>
@@ -281,135 +197,102 @@
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>Hapus Pelanggaran Siswa</h2>
+                <h2>Report Kebaikan Siswa</h2>
             </div>
         </div>
-  <div class="identitas">
-    <table class="table table-secondary table-striped table-responsive-md">
-      <?php
-      // Tampilkan data pengguna
-      if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_assoc($result);
-
-        // Cek apakah nama ada di database
-        if (empty($row["nama"])) {
-          // Nama tidak ada
-          echo "
-          <tr>
-            <td><b>Nama Lengkap</b></td>
-            <td><b>:
-               - 
-              </b></td>
-          </tr>
-          ";
-        } else {
-          // Nama ada
-          echo "
-          <tr>
-            <td><b>Nama Lengkap</b></td>
-            <td><b>: " .
-            $row["nama"]
-            . "</b></td>
-          </tr>
-          ";
-        }
-
-        // Tampilkan NIS
-        echo "
-          <tr>
-            <td><b>NIS</b></td>
-            <td><b>: " .
-          $row["nis"]
-          . "</b></td>
-          </tr>
-          ";
-
-        // Tampilkan kelas
-        echo "
-          <tr>
-            <td><b>Kelas</b></td>
-            <td><b>: " .
-          $row["tingkat"] . " - " . $row["jurusan"] . " - " . $row["kelas"]
-          . "</b></td>
-          </tr>
-          ";
-
-        // Tampilkan poin
-        if (empty($row["poin"])) {
-          // Poin tidak ada
-          echo "
-          <tr>
-            <td><b>Poin</b></td>
-            <td><b>:
-               - 
-              </b></td>
-          </tr>
-          ";
-        } else {
-          // Poin ada
-          echo "
-          <tr>
-            <td><b>Poin</b></td>
-            <td><b>: " .
-            $row["poin"]
-            . "</b></td>
-          </tr>
-          ";
-        }
-      } else {
-        echo "Data pengguna tidak ditemukan";
-      }
-      ?>
-    </table>
-  </div>
-
-  <div class="catatan">
-    <p class="judul">Catatan Kasus</p>
-    <form action="delete-pelanggaran.php" method="GET">
-    <table class="table-2 table table-striped">
+  <div>
+  <form action="proses-plus.php" method="POST" enctype="multipart/form-data">
+      <table>
       <tr>
-        <td><b>NO</b></td>
-        <td><b>TANGGAL/WAKTU</b></td>
-        <td><b>PELANGGARAN</b></td>
-        <td><b>POIN</b></td>
-        <td><b>ACTION</b></td>
-      </tr>
-      <?php
-      $nomor = 1;
-      foreach ($pelanggaran as $row) : ?>
-          <tr>
-            <td><?=$nomor; ?></td>
-            <td><?=$row["tanggal"]; ?></td>
-            <td><?=$row["pelanggaran"]; ?></td>
-            <td>-<?=$row["poin_minus"]; ?></td>
-            <td><a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
-          </tr>
-          
-        <?php $nomor++; ?>
-        <?php endforeach; ?>
+                  <td></td>
+                  <td><input type="hidden" name="id" value=<?=$id?>></td>
+              </tr>
       <tr>
-        <td><b>TOTAL POIN</b></td>
-        <td></td>
-        <td></td>
-        <?php
-        $sql = "SELECT * FROM siswa WHERE nis = $id";
-        $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($result);
-        echo "
-        <td><b>" . $row["poin"] . "</b></td>
-        <td></td>
-        ";
-        ?>
-      </tr>
-    </table>
-    </form>
-  </div>
+              <td>NIS</td>
+              <td><?php foreach ($sql as $nis) :?><?=$nis["nis"]; ?><?php endforeach;?></td>
+          </tr>
+          <tr>
+              <td>Nama Siswa</td>
+              <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
+          </tr>
+          <tr>
+              <td>Perbuatan Baik Yang Dilakukan</td>
+              <td><input type="text" name="kebaikan"></td>
+          </tr>
+          <tr>
+              <td>Inputkan Pemberian Poin</td>
+              <td><input type="number" name="poin_plus" max=20 min=1><b> *Maksimal 20 poin</b></td>
+          </tr>
+          <tr>
+              <td>Keterangan</td>
+              <td><input type="text" name="keterangan"></td>
+          </tr>
+          <tr>
+          <td>Upload Gambar</td>
+          <td><input type="file" name="file"></td>
+        </tr>
+          <tr>
+              <td><input type="submit" name="lapor_2" value="Laporkan" ?id=<?= $id?> onclick="return confirm ('Yakin untuk melaporkan?');"></td>
+              <td><input type="submit" name="batalkan" value="Batalkan"></td>
+          </tr>
+      </table><br>
+      
+      <table>
+        <tr>
+          <td><b>Riwayat Kebaikan</b></td>
+        </tr>
+        <?php 
+        $jumlah_baris = 3;
+        $log = array();
+        while ($row = $sql_pelanggaran->fetch_assoc()) {
+          $log[] = $row;
+        }
+        $log_terbaru = array_slice($log, -$jumlah_baris);
+        foreach ($log_terbaru as $row) : ?>
+        <tr>
+          <td><?=$row["tanggal"]; ?></td>
+          <td><?=$row["nis"]; ?></td>
+          <td><?=$row["kelas"]; ?></td>
+          <td><?=$row["pelanggaran"]; ?></td>
+          <td>+<?=$row["poin_plus"]; ?></td>
+          <td><?=$row["keterangan"]; ?></td>
+          <td><?=$row["gambar"]; ?></td>
+          </tr>
+          <?php endforeach; ?>
+      </table>
+      <?php
+    include 'koneksi.php';
+
+    $sql = "SELECT * FROM tb_kasus";
+    $pelanggaran = mysqli_query($conn, $sql);
+    ?>
+      <div class="jenis-kasus">
+      <p class="judul">Jenis Pelanggaran</p>
+      <div class="row">
+        <div>
+          <table class="table-3 table table-striped" style="width: 100%;">
+          <thead>
+            <tr style="font-size: 20px;">
+              <td><b>No.</b></td>
+              <td><b>Kasus</b></td>
+              <td><b>Poin Minus</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($pelanggaran as $item) : ?>
+                <tr>
+                    <td><?= $item["id_kasus"];  ?></td>
+                    <td><?= $item["jenis_kasus"];  ?></td>
+                    <td>-<?= $item["poin"];  ?></td>
+                </tr>
+            <?php endforeach; ?>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
-    </div>
-
-    </div>
+  </form>
+  </div>
+        </div>
 
     <script src="script.js"></script>
 

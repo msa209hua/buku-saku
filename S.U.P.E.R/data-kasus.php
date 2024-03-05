@@ -262,7 +262,7 @@
  <th>NIS</th>
  <th>Nama</th>
  <th>Kelas</th>
- <th>Pelanggaran</th>
+ <th>Pelanggaran <br> & Kebaikan</th>
  <th>Poin</th>
  <th>Keterangan</th>
  <th>Foto</th>
@@ -271,11 +271,11 @@
  <tr>
    <td><?= $row["tanggal"]; ?></td>
    <td><?= $row["nis"]; ?></td>
-   <td><?= $row["nama_siswa"] ?></td>
+   <td><?= $row["nama_siswa"]; ?></td>
    <td><?= $row["kelas"] ?></td>
-   <td><?= $row["pelanggaran"]; ?></td>
-   <td>-<?= $row["poin_minus"] ?></td>
-   <td><?= $row["keterangan"] ?></td>
+   <td><?= $row["pelanggaran"], $row["kebaikan"]; ?></td>
+   <td><?= $row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
+   <td><?= $row["keterangan"]; ?></td>
    <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100"></td>
  </tr>
  </tr>
