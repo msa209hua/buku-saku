@@ -336,9 +336,15 @@ table {
     background-color: white;
   }
 
-@media (max-width: 400px) {
+  @media (max-width: 400px) {
     .sidebar {
-        width: 180px;
+        width: 210px;
+    }
+
+    .sidebar.close {
+        padding-right: 0;
+        padding-left: 0;
+        width: 63px;
     }
 
     .sidebar .text {
@@ -356,10 +362,29 @@ table {
 
     .main--content {
         font-size: 11px;
-        margin-left: 70px;
+        margin-left: 40px;
+        margin-right: 0;
+        padding-right: 0;
     }
 
     table {
         font-size: 9px;
+    }
+
+    .wrap-table {
+        overflow-x: scroll;
+    }
+
+    .sidebar header .toggle {
+        height: 20px;
+        width: 20px;
+    }
+
+    .sidebar.close header .toggle {
+        right: -10px;
+    }
+
+    .pedoman {
+        width: 100%;
     }
 }
