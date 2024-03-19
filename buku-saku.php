@@ -33,6 +33,7 @@
       font-weight: 900;
       font-size: 30px;
       margin-top: 100px;
+      margin-bottom: 0;
       border-top: 1px solid #b5b6b7;
       border-bottom: 1px solid #b5b6b7;
     }
@@ -47,14 +48,16 @@
       border-top: 1px solid #b5b6b7;
       border-bottom: 1px solid #b5b6b7;
     }
+    table {
+      overflow-x: scroll;
+    }
 
     .table-2 {
-      margin-top: -16px;
+      overflow-x: auto;
     }
 
     .table-3 {
       border: 1px solid #b5b6b7;
-      border-top: 0;
     }
 
     .table-4 {
@@ -85,6 +88,9 @@
       font-weight: 600;
       color: #606060;
       text-shadow: 0 1px #fff;
+      margin-left: 45%;
+      margin-top: 40px;
+      margin-bottom: -40px;
     }
 
     button:hover {
@@ -99,7 +105,23 @@
       box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
     }
 
-    @media screen and (max-width: 600px) {
+    @media (max-width: 400px) {
+      .catatan {
+        max-width: 400px;
+        max-height: 400px;
+        overflow-x: scroll;
+        overflow-y: scroll;
+      }
+      .jenis-kasus {
+        overflow-y: scroll;
+      }
+      .row>* {
+        text-align: left;
+        padding-right: 0;
+      }
+      .jenis-kasus th {
+        font-size: 16px;
+      }
       h1 {
         padding-top: 23px;
       }
@@ -112,6 +134,8 @@
       .table-3,
       .table-4 {
         font-size: 12px;
+        width: 200%;
+        height: 150%;
       }
 
       .pedoman img {
@@ -120,7 +144,7 @@
       }
 
       .button {
-        margin-left: 33%;
+        margin-left: 30%;
       }
     }
   </style>
@@ -156,10 +180,10 @@
   <div class="nav">
     <h1>e-Buku Saku</h1>
     <a href="settings-siswa.php">
-      <img src="img/settings.png" title="Settings">
+      <img src="img/settings.png" title="Settings" width="25" height="25">
     </a>
     <a href="help-buku-saku-2.php">
-      <img src="img/help.png" title="Help">
+      <img src="img/help.png" title="Help" width="25" height="25">
     </a>
   </div>
 
@@ -242,14 +266,14 @@
     </table>
   </div>
 
+  <p class="judul">Catatan Kasus</p>
   <div class="catatan">
-    <p class="judul">Catatan Kasus</p>
     <table class="table-2 table table-striped">
       <thead>
         <tr>
           <td><b>NO</b></td>
           <td><b>TANGGAL/WAKTU</b></td>
-          <td><b>PELANGGARAN <br> & KEBAIKAN</b></td>
+          <td><b>PELANGGARAN & KEBAIKAN</b></td>
           <td><b>KETERANGAN</b></td>
           <td><b>FOTO BUKTI</b></td>
           <td><b>POIN</b></td>
@@ -297,16 +321,16 @@
     $sql = "SELECT * FROM tb_kasus";
     $pelanggaran = mysqli_query($conn, $sql);
     ?>
-      <div class="jenis-kasus">
       <p class="judul">Jenis Pelanggaran</p>
+      <div class="jenis-kasus">
       <div class="row">
         <div>
           <table class="table-3 table table-striped" style="width: 100%;">
           <thead>
             <tr style="font-size: 20px;">
-              <td style="text-align: center;"><b>No.</b></td>
-              <td style="width: 10%;"><b>Kasus</b></td>
-              <td style="text-align: center;"><b>Poin Minus</b></td>
+              <th style="text-align: center;"><b>No.</b></th>
+              <th style="width: 10%;"><b>Kasus</b></th>
+              <th style="text-align: center;"><b>Poin Minus</b></th>
             </tr>
           </thead>
           <tbody>
@@ -357,7 +381,7 @@
   <?php
   echo "<form action='buku-saku.php?id=$id' method='post'>"
   ?>
-  <button class="button" style="margin-left: 45%; margin-top: 40px; margin-bottom: -40px;">Kembali Ke Atas</button>
+  <button class="button">Kembali Ke Atas</button>
   </form>
 
   <div class="footer">

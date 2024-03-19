@@ -41,6 +41,14 @@
             border: 1px solid red;
             transition: .2s;
         }
+
+        @media (max-width: 400px) {
+            .css-button {
+                padding: 2px;
+                border-radius: 3;
+                border: 1px solid black;
+            }
+        }
     </style>
 </head>
 
@@ -155,6 +163,7 @@
 
         <div>
             <form action="admin-buksak.php" method="GET">
+                <div class="wrap-table">
                 <table id="table_kasus" class="display">
                     <thead>
                         <tr>
@@ -190,6 +199,7 @@
                         ?>
                     </tbody>
                 </table>
+                </div>
 
                 <script>
                     $(document).ready(function () {
