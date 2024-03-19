@@ -32,7 +32,9 @@
       color: white;
       background-color: green;
       padding: 5px;
+      margin-left: 10px;
       border-radius: 5px;
+
     }
 
     .print:hover {
@@ -41,30 +43,6 @@
       background-color: white;
       color: green;
       transition: .2s;
-    }
-
-
-    @media screen and (max-width: 600px) {
-      li a.active {
-        background: linear-gradient(#181C24, #282c34);
-        font-size: 20px;
-        color: white;
-      }
-
-      li a {
-        display: block;
-        color: white;
-        padding: 8px 16px;
-        text-decoration: none;
-        font-size: 10px;
-      }
-
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        font-size: 9px;
-      }
     }
   </style>
 </head>
@@ -83,104 +61,104 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <nav class="sidebar close">
-    <header>
-      <div class="image-text">
-        <span class="image">
-          <img src="../img/smkn2cmi.png" alt="logo">
-        </span>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../img/smkn2cmi.png" alt="logo">
+                </span>
 
-        <div class="text header-text">
-          <span class="name">S.U.P.E.R.</span>
-          <span class="profession">Administrators</span>
-        </div>
-      </div>
+                <div class="text header-text">
+                    <span class="name">S.U.P.E.R.</span>
+                    <span class="profession">Administrators</span>
+                </div>
+            </div>
 
-      <i class='bx bx-chevron-right toggle'></i>
-    </header>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
 
-    <div class="menu-bar">
-      <div class="menu">
-        <input type="hidden" class="search-box">
+        <div class="menu-bar">
+            <div class="menu">
+              <input type="hidden" class="search-box">
 
-        <!-- Search under construction -->
+            <!-- Search under construction -->
 
-        <!-- <li class="search-box">
+                <!-- <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <input type="text" name="" id="" placeholder="Search...">
 
                 </li> -->
 
-        <!-- Search under construction -->
-        <ul class="menu-link">
-          <li class="nav-link">
-            <a href="admin-buksak.php">
-              <i class='bx bx-list-ul icon'></i>
-              <span class="text nav-text">List Siswa</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="data-kasus.php">
-              <i class='bx bx-history icon'></i>
-              <span class="text nav-text">Pelanggaran</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="kasus.php">
-              <i class='bx bx-data icon'></i>
-              <span class="text nav-text">Data Kasus</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="pedoman.php">
-              <i class='bx bx-book-bookmark icon'></i>
-              <span class="text nav-text">Pedoman</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="hapus-pelanggaran.php">
-              <i class='bx bx-edit-alt icon'></i>
-              <span class="text nav-text">Edit</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="credit-buksak.php">
-              <i class='bx bx-info-circle icon'></i>
-              <span class="text nav-text">Tentang</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="admin-settings.php">
-              <i class='bx bx-cog icon'></i>
-              <span class="text nav-text">Settings</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+            <!-- Search under construction -->
+                <ul class="menu-link">
+                    <li class="nav-link">
+                        <a href="admin-buksak.php">
+                            <i class='bx bx-list-ul icon'></i>
+                            <span class="text nav-text">List Siswa</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="data-kasus.php">
+                            <i class='bx bx-history icon'></i>
+                            <span class="text nav-text">Pelanggaran</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="kasus.php">
+                            <i class='bx bx-data icon'></i>
+                            <span class="text nav-text">Data Kasus</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="pedoman.php">
+                            <i class='bx bx-book-bookmark icon'></i>
+                            <span class="text nav-text">Pedoman</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="hapus-pelanggaran.php">
+                            <i class='bx bx-edit-alt icon'></i>
+                            <span class="text nav-text">Edit</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="credit-buksak.php">
+                        <i class='bx bx-info-circle icon'></i>
+                            <span class="text nav-text">Tentang</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admin-settings.php">
+                            <i class='bx bx-cog icon'></i>
+                            <span class="text nav-text">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-      <div class="bottom-content">
-        <li class="">
-          <a href="../index.php">
-            <i class='bx bx-log-out icon'></i>
-            <span class="text nav-text">Log Out</span>
-          </a>
-        </li>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="../index.php">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Log Out</span>
+                    </a>
+                </li>
 
-        <li class="mode">
-          <div class="moon-sun">
-            <i class='bx bx-moon icon moon'></i>
-            <i class='bx bx-sun icon sun'></i>
-          </div>
-          <span class="mode-text text">Dark Mode</span>
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
 
-          <div class="toggle-switch">
-            <span class="switch"></span>
-          </div>
-        </li>
-      </div>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
 
-    </div>
-  </nav>
+        </div>
+    </nav>
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
@@ -191,7 +169,7 @@
 
     <div>
       <form action="data-kasus.php" method="GET">
-
+      <div class="wrap-table">
         <table id="table_kasus" class="display" id="table_kasus" border="1px">
           <thead>
             <tr>
@@ -332,7 +310,8 @@ endforeach;
 ?>
           </tbody>
         </table>
-        <a href="../print-laporan.php" class="print">Print</a>
+      </div>
+      <a href="../print-laporan.php" class="print">Print</a>
       </form>
     </div>
   </div>

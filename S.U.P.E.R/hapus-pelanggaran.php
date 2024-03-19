@@ -163,6 +163,7 @@
         </div>
         <div>
             <form action="hapus-pelanggaran.php" method="GET">
+            <div class="wrap-table">
                 <table class="display" id="table_kasus">
                     <thead>
                         <tr>
@@ -210,7 +211,7 @@
                         ?>
                     </tbody>
                 </table>
-                
+                </div>
             </form>
         </div>
 
