@@ -3,8 +3,8 @@
     
     $id_kasus_1 = $_GET['id_pelanggaran'];
     $sql_2=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE id_pelanggaran='$id_kasus_1'");
-    $ket_poin=$_GET['key'];
     foreach ($sql_2 as $row) {
+        $ket_poin=$row["ket_poin"];
         if ($ket_poin == "-") {
             $kasus_id=$row["pelanggaran"];
             $nis=$row["nis"];
