@@ -204,6 +204,9 @@ if (isset($_POST['batal'])) {
 <form action="tambah_kasus.php" method="post">
   <table>
     <tr>
+    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi pada nama kasus, mengguanakan spasi secara langsung dilarang!</td>
+    </tr>
+    <tr>
       <td>Jenis Kasus</td>
       <td><input type="text" name="jenis"></td>
     </tr>

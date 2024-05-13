@@ -213,6 +213,9 @@
         <form action="edit_Kasus.php" name="update_Kasus" method="GET">
             <table border="0">
                 <tr>
+                    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi pada nama kasus, mengguanakan spasi secara langsung dilarang!</td>
+                </tr>
+                <tr>
                     <td>Jenis Kasus</td>
                     <td>
                         <input type="text" name="jenis" value=<?php echo $jenis; ?>>
