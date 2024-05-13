@@ -98,7 +98,7 @@ li a {
                 </span>
 
                 <div class="text header-text">
-                <span class="name">E - Buku Saku</span>
+                    <span class="name">E - Buku Saku</span>
                     <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
@@ -195,6 +195,7 @@ li a {
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>Report Kebaikan Siswa</h2>
             </div>
+
             <div class="header--title">
                 <span>E - Buku Saku</span>
             </div>
