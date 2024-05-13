@@ -181,8 +181,8 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
-                    <span class="profession">Administrators</span>
+                    <span class="name">E - Buku Saku</span>
+                    <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
 
@@ -277,6 +277,10 @@
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>Tentang</h2>
+            </div>
+
+            <div class="header--title">
+                <span>E - Buku Saku</span>
             </div>
         </div>
         <table align="center">

@@ -111,8 +111,8 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
-                    <span class="profession">Administrators</span>
+                    <span class="name">E - Buku Saku</span>
+                    <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
 
@@ -208,12 +208,16 @@
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>Edit Kasus</h2>
             </div>
+
+            <div class="header--title">
+                <span>E - Buku Saku</span>
+            </div>
         </div>
       <div>
         <form action="edit_Kasus.php" name="update_Kasus" method="GET">
             <table border="0">
                 <tr>
-                    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi pada nama kasus, mengguanakan spasi secara langsung dilarang!</td>
+                    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi, menggunakan spasi secara langsung dilarang!</td>
                 </tr>
                 <tr>
                     <td>Jenis Kasus</td>
