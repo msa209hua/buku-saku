@@ -336,7 +336,7 @@
                 </path>
               </svg>
             </div>
-            <p class="name-client">Welt Yang
+            <p class="name-client">Nuada Nokianvirtanen
               <span>XI - RPL - Z
               </span>
             </p>
