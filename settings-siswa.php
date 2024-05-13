@@ -40,7 +40,7 @@
           <td><input type="password" name="second" placeholder="Konfirmasi sandi baru" required maxlength="20" minlength="8"></td>
         </tr>
         <tr>
-            <td><input type="submit" name="ganti" value="Ubah sandi"></td>
+            <td><button class="btn btn-primary" name="ganti">Ubah sandi</button></td>
         </tr>
         <tr>
             <td>
