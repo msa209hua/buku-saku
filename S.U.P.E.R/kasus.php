@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kasus</title>
+    <title>List Kasus</title>
     <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
@@ -28,6 +28,37 @@
             padding: 4px;
             background-color: white;
             border: 1px solid red;
+            transition: .2s;
+        }
+
+        .edit, .hapus {
+            text-decoration: none;
+            color: white;
+            padding: 6px;
+            border-radius: 7px;
+        }
+
+        .edit {
+            background-color: green;
+        }
+
+        .hapus {
+            background-color: red;
+        }
+
+        .edit:hover {
+            padding: 3px;
+            border: 3px solid green;
+            background-color: white;
+            color: green;
+            transition: .2s;
+        }
+
+        .hapus:hover {
+            padding: 3px;
+            border: 3px solid red;
+            background-color: white;
+            color: red;
             transition: .2s;
         }
 
@@ -72,8 +103,8 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
-                    <span class="profession">Administrators</span>
+                    <span class="name">E - Buku Saku</span>
+                    <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
 
@@ -169,6 +200,10 @@
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>List Kasus</h2>
             </div>
+
+            <div class="header--title">
+                <span>E - Buku Saku</span>
+            </div>
         </div>
 <div>
     <?php
@@ -199,10 +234,10 @@
                     <td>-<?= $row["poin"];  ?></td>
                     <td>
                     <?php
-                    echo "<a href='edit_kasus.php?id=$row[id_kasus]' >Edit</a>";
+                    echo "<a href='edit_kasus.php?id=$row[id_kasus]' class='edit'>Edit</a>";
                     ?>
                     |
-                    <a href="hapus_kasus.php?id=<?= $row['id_kasus']; ?>" onclick="return confirm ('yakin hapus?');">Hapus</a>
+                    <a href="hapus_kasus.php?id=<?= $row['id_kasus']; ?>" onclick="return confirm ('yakin hapus?');" class='hapus'>Hapus</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

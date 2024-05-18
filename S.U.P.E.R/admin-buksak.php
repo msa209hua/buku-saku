@@ -28,7 +28,7 @@
         .css-button {
             text-decoration: none;
             color: white;
-            padding: 5px;
+            padding: 6px;
             background-color: red;
             border-radius: 7px;
             font-weight: 700;
@@ -36,9 +36,9 @@
 
         .css-button:hover {
             color: red;
-            padding: 4px;
+            padding: 3px;
             background-color: white;
-            border: 1px solid red;
+            border: 3px solid red;
             transition: .2s;
         }
 
@@ -74,8 +74,8 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
-                    <span class="profession">Administrators</span>
+                    <span class="name">E - Buku Saku</span>
+                    <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
 
@@ -170,6 +170,9 @@
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>List Siswa</h2>
+            </div>
+            <div class="header--title">
+                <span>E - Buku Saku</span>
             </div>
         </div>
 

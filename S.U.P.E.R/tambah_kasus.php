@@ -102,8 +102,8 @@ if (isset($_POST['batal'])) {
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
-                    <span class="profession">Administrators</span>
+                    <span class="name">E - Buku Saku</span>
+                    <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
 
@@ -199,10 +199,17 @@ if (isset($_POST['batal'])) {
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>Tambah Kasus</h2>
             </div>
+
+            <div class="header--title">
+                <span>E - Buku Saku</span>
+            </div>
         </div>
 <div>
 <form action="tambah_kasus.php" method="post">
   <table>
+    <tr>
+    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi pada nama kasus, mengguanakan spasi secara langsung dilarang!</td>
+    </tr>
     <tr>
       <td>Jenis Kasus</td>
       <td><input type="text" name="jenis"></td>
