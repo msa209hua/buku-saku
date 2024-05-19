@@ -1,6 +1,5 @@
 <?php
     include 'koneksi.php';
-
     $id = $_GET['id'];
     $sql = "DELETE FROM tb_kasus WHERE id_kasus = $id";
     $hapus = mysqli_query($conn, $sql);

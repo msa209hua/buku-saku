@@ -157,7 +157,7 @@
     <div>
       <form action="data-kasus.php" method="GET">
       <div class="wrap-table">
-        <table id="table_kasus" class="display" id="table_kasus" border="1px">
+        <table border="1px">
           <thead>
             <tr>
               <td>
@@ -279,8 +279,7 @@
               <td>
                 <?= $row["keterangan"]; ?>
               </td>
-              <td><img src="../image/<?= $row[" gambar"]?>" width="100" height="100" alt='foto tidak ada' title="Foto
-                Bukti"></td>
+              <td><img src="../image/<?= $row["gambar"]?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
             </tr>
             </tr>
             <?php
