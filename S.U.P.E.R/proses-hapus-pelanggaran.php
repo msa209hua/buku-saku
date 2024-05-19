@@ -373,6 +373,7 @@
         <td><b>PELANGGARAN</b></td>
         <td><b>FOTO BUKTI</b></td>
         <td><b>POIN</b></td>
+        <td><b>Alasan Hapus</b></td>
         <td><b>ACTION</b></td>
       </tr>
       <?php
@@ -384,7 +385,8 @@
             <td><?=$row["pelanggaran"], $row["kebaikan"]; ?></td>
             <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
             <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
-            <td><a href="delete-pelanggaran.php?id_pelanggaran=<?=$row["id_pelanggaran"];?>" onclick="return confirm ('yakin hapus?');">Hapus</a></b><td>
+            <td><input type="text" name="alasan"></td>
+            <td><input type="submit" name="hapus" value="hapus"><td>
           </tr>
           
         <?php $nomor++; ?>
