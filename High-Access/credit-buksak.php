@@ -186,8 +186,8 @@
         </span>
 
         <div class="text header-text">
-          <span class="name">Buku Saku</span>
-          <span class="profession">Administrators</span>
+                    <span class="name">E - Buku Saku</span>
+                    <span class="profession">Administrators</span>
         </div>
       </div>
 
@@ -271,7 +271,19 @@
         <span>Administrator</span>
         <h2>Tentang</h2>
       </div>
+
+      <div class="header--title">
+                <span>E - Buku Saku</span>
+            </div>
     </div>
+    <table>
+      <tr>
+        <td><b>Aplikasi E - Buku Saku</b></td>
+      </tr>
+      <tr>
+        <td><b>Version 2.1</b></td>
+      </tr>
+    </table>
     <table align="center">
       <tr>
         <td align="center">

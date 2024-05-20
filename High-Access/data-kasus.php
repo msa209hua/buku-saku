@@ -68,7 +68,7 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">S.U.P.E.R.</span>
+                    <span class="name">E - Buku Saku</span>
                     <span class="profession">Administrators</span>
                 </div>
             </div>
@@ -149,9 +149,12 @@
   <div class="main--content">
     <div class="header--wrapper">
       <div class="header--title">
-        <span>S.U.P.E.R. Administrator</span>
+        <span>Administrator</span>
         <h2>Data Kasus</h2>
       </div>
+            <div class="header--title">
+                <span>E - Buku Saku</span>
+            </div>
     </div>
 
     <div>
