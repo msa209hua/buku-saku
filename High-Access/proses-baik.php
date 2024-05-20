@@ -82,7 +82,7 @@ li a {
         $id=$_GET['id'];
         
         $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$id");
-        $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus");
+        $sql_kasus=mysqli_query($conn, "SELECT * FROM tb_kasus_plus");
         $sql_pelanggaran=mysqli_query($conn, "SELECT * FROM tb_pelanggaran WHERE nis=$id");
 
         if (!isset($_SESSION['id_masuk'])) {
@@ -203,16 +203,27 @@ li a {
               <td><?php foreach ($sql as $nama) :?><?=$nama["nama"]; ?><?php endforeach;?></td>
           </tr>
           <tr>
-              <td>Perbuatan Baik Yang Dilakukan</td>
-              <td><input type="text" name="kebaikan"></td>
+              <td>Total Poin</td>
+              <td><?php foreach ($sql as $poin) :?><?=$poin["poin"]; ?><?php endforeach;?></td>
           </tr>
           <tr>
-              <td>Inputkan Pemberian Poin</td>
-              <td><input type="number" name="poin_plus" max=20 min=1><b> *Maksimal 20 poin</b></td>
+              <td>Pilih Kasus</td>
+              <td>
+              <select name="kasus">
+                      <?php foreach ($sql_kasus as $row) :?>
+                          <option value=<?= $row["jenis_kasus"];?>><?= $row["jenis_kasus"];?></option>
+                          
+                          <?php endforeach;?>
+                      </select>
+              </td>
           </tr>
           <tr>
               <td>Keterangan</td>
               <td><input type="text" name="keterangan"></td>
+          </tr>
+          <tr>
+              <td>Pelapor</td>
+              <td><input type="text" name="pelapor"></td>
           </tr>
           <tr>
           <td>Upload Gambar</td>
@@ -271,7 +282,7 @@ li a {
             <tr style="font-size: 20px;">
               <td><b>No.</b></td>
               <td><b>Kasus</b></td>
-              <td><b>Poin Minus</b></td>
+              <td><b>Poin Plus</b></td>
             </tr>
           </thead>
           <tbody>
@@ -279,7 +290,7 @@ li a {
                 <tr>
                     <td><?= $item["id_kasus"];  ?></td>
                     <td><?= $item["jenis_kasus"];  ?></td>
-                    <td>-<?= $item["poin"];  ?></td>
+                    <td>+<?= $item["poin"];  ?></td>
                 </tr>
             <?php endforeach; ?>
           </tbody>
