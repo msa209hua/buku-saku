@@ -77,7 +77,7 @@
                 echo "
                 <script>
                     alert('Data berhasil diedit');
-                    window.location.href='kasus.php';
+                    window.location.href='list_kasus_minus.php';
                 </script>";
             } else {
                 echo "

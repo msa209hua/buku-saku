@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilih Kasus</title>
+    <title>Tambah Kasus</title>
     <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
@@ -21,6 +21,9 @@
             padding: 8px;
         }
 
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
 
         .css-button {
             text-decoration: none;
@@ -38,14 +41,6 @@
             border: 1px solid red;
             transition: .2s;
         }
-
-        .btn {
-            text-decoration: none;
-            padding: 5px;
-            color: white;
-            background-color: green;
-            border-radius: 10px;
-        }
     </style>
 </head>
 
@@ -53,15 +48,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <?php
-        include "koneksi.php";
-        session_start();
+    <?php
+  include "koneksi.php";
+  session_start();
 
-        if (!isset($_SESSION['id_masuk'])) {
-            header('Location: ../index.php');
-        }
-        $sql = mysqli_query($conn, "SELECT * FROM siswa");
-        ?>
+  if (!isset($_SESSION['id_masuk'])) {
+    header('Location: ../index.php');
+  }
+  $sql = mysqli_query($conn, "SELECT * FROM siswa");
+  ?>
+  <?php
+
+if (!isset($_SESSION['id_masuk'])) {
+  header('Location: index.php');
+}
+?>
+<?php
+
+require 'koneksi.php';
+
+if (isset($_POST['tambah'])) {
+    $jenis = $_POST['jenis'];
+    $poin = $_POST['poin'];
+
+    $query = "INSERT INTO tb_kasus_plus (jenis_kasus, poin) VALUES ('$jenis','$poin')";
+    $proses =  mysqli_query($conn, $query);
+
+    if ($proses) {
+        echo "
+        <script>
+            alert('Data berhasil ditambah');
+            window.location.href='list_kasus_plus.php';
+        </script>";
+    } else {
+        echo "
+        <script>
+            alert('Data gagal ditambah');
+            window.location.href='tambah_kasus_plus.php';
+        </script>";
+    }
+}
+
+if (isset($_POST['batal'])) {
+  header("Location: list_kasus_plus.php");
+}
+?>
 
     <nav class="sidebar close">
         <header>
@@ -71,7 +102,7 @@
                 </span>
 
                 <div class="text header-text">
-                <span class="name">E - Buku Saku</span>
+                    <span class="name">E - Buku Saku</span>
                     <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
@@ -166,33 +197,40 @@
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>List Kasus</h2>
+                <h2>Tambah Kasus Plus</h2>
             </div>
+
             <div class="header--title">
                 <span>E - Buku Saku</span>
             </div>
         </div>
+<div>
+<form action="tambah_kasus_plus.php" method="post">
+  <table>
+    <tr>
+    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi pada nama kasus, mengguanakan spasi secara langsung dilarang!</td>
+    </tr>
+    <tr>
+      <td>Jenis Kasus</td>
+      <td><input type="text" name="jenis"></td>
+    </tr>
+    <tr>
+      <td>Poin Plus</td>
+      <td><input type="text" name="poin"></td>
+    </tr>
+  </table>
 
-        <form action="kasus.php" method="post">
-            <table>
-                <tr>
-                    <td><b>Pilihan Kasus</b></td>
-                    <td><b>Aksi</b></td>
-                </tr>
-                <tr>
-                    <td>List Kasus Minus (-)</td>
-                    <td><a href="list_kasus_minus.php" class="btn">GO!</a></td>
-                </tr>
-                <tr>
-                    <td>List Kasus Plus (+)</td>
-                    <td><a href="list_kasus_plus.php" class="btn">GO!</a></td>
-                </tr>
-                <tr>
-                    <td><a href="admin-buksak.php" class="btn">Kembali</a></td>
-                </tr>
-            </table>
-        </form>
-    </div>
+  <table style="width: 0px;">
+  <tr>
+    <td><input type="submit" value="Batalkan" name="batal"></td>
+    <td><input type="submit" value="Tambahkan" name="tambah"></td>
+    </tr>
+  </table>
+    </form>
+
+    
+</div>
+</div>
 
     <script src="script.js"></script>
 

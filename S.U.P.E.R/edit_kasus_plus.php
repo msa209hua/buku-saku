@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilih Kasus</title>
+    <title>Edit Kasus</title>
     <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
@@ -14,6 +14,10 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <style>
+        input[type=text]:focus {
+        border: 3px solid #555;
+        }
+
         td,
         th {
             border: 1px solid #dddddd;
@@ -21,6 +25,9 @@
             padding: 8px;
         }
 
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
 
         .css-button {
             text-decoration: none;
@@ -38,14 +45,6 @@
             border: 1px solid red;
             transition: .2s;
         }
-
-        .btn {
-            text-decoration: none;
-            padding: 5px;
-            color: white;
-            background-color: green;
-            border-radius: 10px;
-        }
     </style>
 </head>
 
@@ -53,14 +52,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <?php
-        include "koneksi.php";
-        session_start();
+    <?php
+  include "koneksi.php";
+  session_start();
+
+  if (!isset($_SESSION['id_masuk'])) {
+    header('Location: ../index.php');
+  }
+  $sql = mysqli_query($conn, "SELECT * FROM siswa");
+  ?>
+  <?php
+        include 'koneksi.php';
 
         if (!isset($_SESSION['id_masuk'])) {
-            header('Location: ../index.php');
+          header('Location: index.php');
         }
-        $sql = mysqli_query($conn, "SELECT * FROM siswa");
+        if (isset($_GET['update'])) {
+            $id = $_GET['id'];
+            $jenis = $_GET['jenis'];
+            $poin = $_GET['poin'];
+
+            $result = mysqli_query($conn, "UPDATE tb_kasus_plus SET jenis_kasus='$jenis', poin='$poin' WHERE id_kasus=$id");
+            if ($result) {
+                echo "
+                <script>
+                    alert('Data berhasil diedit');
+                    window.location.href='list_kasus_plus.php';
+                </script>";
+            } else {
+                echo "
+                <script>
+                    alert('Data gagal diedit');
+                    window.location.href='edit_kasus_plus.php';
+                </script>";
+            }
+        }
+
+        if (isset($_GET['batal'])) {
+          header("Location: kasus.php");
+        }
+
+        $id = $_GET['id'];
+
+        $result = mysqli_query($conn, "SELECT * FROM tb_kasus_plus WHERE id_kasus = $id");
+        
+
+        while ($user_data = mysqli_fetch_array($result)) {
+            $jenis = $user_data['jenis_kasus'];
+            $poin = $user_data['poin'];
+        }
         ?>
 
     <nav class="sidebar close">
@@ -71,7 +111,7 @@
                 </span>
 
                 <div class="text header-text">
-                <span class="name">E - Buku Saku</span>
+                    <span class="name">E - Buku Saku</span>
                     <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
@@ -166,33 +206,48 @@
         <div class="header--wrapper">
             <div class="header--title">
                 <span>S.U.P.E.R. Administrator</span>
-                <h2>List Kasus</h2>
+                <h2>Edit Kasus Plus</h2>
             </div>
+
             <div class="header--title">
                 <span>E - Buku Saku</span>
             </div>
         </div>
-
-        <form action="kasus.php" method="post">
-            <table>
+      <div>
+        <form action="edit_kasus_plus.php" name="update_Kasus" method="GET">
+            <table border="0">
                 <tr>
-                    <td><b>Pilihan Kasus</b></td>
-                    <td><b>Aksi</b></td>
+                    <td>*Gunakanlah Underscore(_) jika ingin menggunakan spasi, menggunakan spasi secara langsung dilarang!</td>
                 </tr>
                 <tr>
-                    <td>List Kasus Minus (-)</td>
-                    <td><a href="list_kasus_minus.php" class="btn">GO!</a></td>
+                    <td>Jenis Kasus</td>
+                    <td>
+                        <input type="text" name="jenis" value=<?php echo $jenis; ?>>
+                    </td>
                 </tr>
                 <tr>
-                    <td>List Kasus Plus (+)</td>
-                    <td><a href="list_kasus_plus.php" class="btn">GO!</a></td>
+                    <td>Poin Plus</td>
+                    <td>
+                        <input type="number" name="poin" value=<?php echo $poin; ?>>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="admin-buksak.php" class="btn">Kembali</a></td>
+                    <td>
+                        <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
+                    </td>
                 </tr>
             </table>
+
+            <table style="width: 0px;">
+  <tr>
+    <td><input type="submit" value="Batalkan" name="batal"></td>
+    <td><input type="submit" value="Update" name="update"></td>
+    </tr>
+  </table>
         </form>
-    </div>
+
+</div>
+      </div>
 
     <script src="script.js"></script>
 
