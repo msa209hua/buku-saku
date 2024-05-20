@@ -283,6 +283,14 @@
                 <span>E - Buku Saku</span>
             </div>
         </div>
+        <table>
+      <tr>
+        <td><b>Aplikasi E - Buku Saku</b></td>
+      </tr>
+      <tr>
+        <td><b>Version 2.1</b></td>
+      </tr>
+    </table>
         <table align="center">
             <tr>
                 <td align="center">
