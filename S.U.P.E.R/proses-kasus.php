@@ -234,6 +234,10 @@ li a {
               <td><input type="text" name="keterangan"></td>
           </tr>
           <tr>
+              <td>Pelapor</td>
+              <td><input type="text" name="pelapor"></td>
+          </tr>
+          <tr>
           <td>Upload Gambar</td>
           <td><input type="file" name="file"></td>
         </tr>
