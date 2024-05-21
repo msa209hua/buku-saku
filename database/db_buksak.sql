@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 20 Bulan Mei 2024 pada 06.53
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 21 Bulan Mei 2024 pada 03.54
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `administrators` (
   `role` int(1) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `administrators`
@@ -57,14 +57,14 @@ CREATE TABLE `siswa` (
   `jenis_kelamin` enum('L','P') NOT NULL,
   `poin` int(5) NOT NULL,
   `role` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `siswa`
 --
 
 INSERT INTO `siswa` (`nis`, `password`, `nama`, `tingkat`, `jurusan`, `kelas`, `jenis_kelamin`, `poin`, `role`) VALUES
-(102105270, '102105270', 'ARI RIVALDI', 11, 'PPLG', 'B', 'L', 90, 0),
+(102105270, '102105270', 'ARI RIVALDI', 11, 'PPLG', 'B', 'L', 100, 0),
 (102105381, '102105381', 'KEISHA RAFA WARDANA', 11, 'DKV', 'A', 'P', 100, 0),
 (102105504, '102105504', 'FRASCA AKHIRA', 11, 'KIMIA', 'A', 'L', 100, 0),
 (102105522, '102105522', 'HAIKAL PUTRA', 11, 'KIMIA', 'B', 'L', 100, 0),
@@ -1210,7 +1210,7 @@ CREATE TABLE `tb_guru` (
   `no_telp` varchar(15) NOT NULL,
   `email` varchar(70) NOT NULL,
   `pend_terakhir` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_guru`
@@ -1229,7 +1229,7 @@ CREATE TABLE `tb_kasus` (
   `id_kasus` int(3) NOT NULL,
   `jenis_kasus` varchar(50) NOT NULL,
   `poin` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_kasus`
@@ -1257,7 +1257,7 @@ CREATE TABLE `tb_kasus_plus` (
   `id_kasus` int(4) NOT NULL,
   `jenis_kasus` varchar(50) NOT NULL,
   `poin` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_kasus_plus`
@@ -1284,8 +1284,24 @@ CREATE TABLE `tb_pelanggaran` (
   `poin_minus` varchar(10) NOT NULL,
   `poin_plus` varchar(10) NOT NULL,
   `keterangan` text NOT NULL,
-  `gambar` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `gambar` varchar(100) NOT NULL,
+  `pelapor` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_riwayat`
+--
+
+CREATE TABLE `tb_riwayat` (
+  `id_pelanggaran` int(11) NOT NULL,
+  `nis` int(11) NOT NULL,
+  `nama_siswa` varchar(50) NOT NULL,
+  `kelas` varchar(10) NOT NULL,
+  `pelanggaran` varchar(50) NOT NULL,
+  `alasan_hapus` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -1298,7 +1314,7 @@ CREATE TABLE `tb_user` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `role` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_user`
@@ -1349,6 +1365,12 @@ ALTER TABLE `tb_pelanggaran`
   ADD PRIMARY KEY (`id_pelanggaran`);
 
 --
+-- Indeks untuk tabel `tb_riwayat`
+--
+ALTER TABLE `tb_riwayat`
+  ADD PRIMARY KEY (`id_pelanggaran`);
+
+--
 -- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
@@ -1374,7 +1396,7 @@ ALTER TABLE `tb_kasus_plus`
 -- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
