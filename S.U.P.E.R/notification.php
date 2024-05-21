@@ -178,6 +178,7 @@
                             <td>Tingkat</td>
                             <td>Jurusan</td>
                             <td>Poin</td>
+                            <td>Aksi</td>
                         </tr>
                     </thead>
                     <tbody>
