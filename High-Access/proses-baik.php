@@ -274,7 +274,7 @@ li a {
     $pelanggaran = mysqli_query($conn, $sql);
     ?>
       <div class="jenis-kasus">
-      <p class="judul">Jenis Pelanggaran</p>
+      <p class="judul">Jenis Kebaikan</p>
       <div class="row">
         <div>
           <table class="table-3 table table-striped" style="width: 100%;">
