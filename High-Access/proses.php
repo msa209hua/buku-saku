@@ -21,12 +21,13 @@ $ekstensi_diperbolehkan = array('png','jpg');
         $kelas=$value["tingkat"]." ".$value["jurusan"]." ".$value["kelas"];
         $kasus=$_POST["kasus"];
         $keterangan=$_POST["keterangan"];
+        $pelapor=$_POST["pelapor"];
         $kasus_sql =mysqli_query($conn, "SELECT poin FROM tb_kasus WHERE jenis_kasus='$kasus'");
         $poin_total=mysqli_fetch_array($kasus_sql);
         $poin_kasus=$poin_total["poin"];
         $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin - $poin_kasus WHERE nis=$nis");
-      $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,ket_poin,poin_minus,keterangan,gambar) VALUES
-      ('$nis','$nama','$kelas','$kasus','-','$poin_kasus','$keterangan','$gambar')");
+        $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,ket_poin,poin_minus,keterangan,gambar,pelapor) VALUES
+        ('$nis','$nama','$kelas','$kasus','-','$poin_kasus','$keterangan','$gambar','$pelapor')");
       }
       echo "
     <script>

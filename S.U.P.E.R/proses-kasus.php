@@ -259,6 +259,7 @@ li a {
             <td><b>Poin</b></td>
             <td><b>Keterangan</b></td>
             <td><b>Foto Bukti</b></td>
+            <td><b>Pelapor</b></td>
         </tr>
         <?php 
         $jumlah_baris = 3;
@@ -276,7 +277,8 @@ li a {
           <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
           <td><?=$row["keterangan"]; ?></td>
           <td><img src="../image/<?=$row["gambar"]; ?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
-          </tr>
+          <td><?=$row["pelapor"]; ?></td>
+        </tr>
           <?php endforeach; ?>
       </table>
       <?php
