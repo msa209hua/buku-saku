@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedoman</title>
+    <title>Notifikasi Batas Poin</title>
     <link rel="stylesheet" href="styleBar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
@@ -38,57 +38,7 @@
             transition: .2s;
         }
 
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            outline: none;
-            cursor: pointer;
-            width: 150px;
-            height: 50px;
-            background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
-            border-radius: 30px;
-            border: 1px solid #8F9092;
-            transition: all 0.2s ease;
-            font-family: "Source Sans Pro", sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: #606060;
-            text-shadow: 0 1px #fff;
-            margin-left: 45%; 
-            margin-top: 40px; 
-            margin-bottom: -40px;
-        }
-
-        button:hover {
-            box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
-        }
-
-        button:active {
-            box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-        }
-
-        button:focus {
-            box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-        }
-
-        .footer {
-            background-color: #d7d8da;
-            text-align: center;
-            height: 20px;
-            font-weight: 700;
-            font-size: 14px;
-            margin-top: 100px;
-            padding-bottom: 20px;
-            border-top: 1px solid #b5b6b7;
-            border-bottom: 1px solid #b5b6b7;
-        }
-
-        @media (max-width: 400px) {
-            button {
-                margin-left: 25%;
-            }
-        }
+        
     </style>
 </head>
 
@@ -99,11 +49,10 @@
     <?php
   include "koneksi.php";
   session_start();
-
+  $sql = mysqli_query($conn, "SELECT * FROM tb_batas_poin");
   if (!isset($_SESSION['id_masuk'])) {
-    header('Location: ../index.php');
+    header('Location: index.php');
   }
-  $sql = mysqli_query($conn, "SELECT * FROM siswa");
   ?>
 
     <nav class="sidebar close">
@@ -124,9 +73,9 @@
 
         <div class="menu-bar">
             <div class="menu">
-              <input type="hidden" class="search-box">
+                <input type="hidden" class="search-box">
 
-            <!-- Search under construction -->
+                <!-- Search under construction -->
 
                 <!-- <li class="search-box">
                     <i class='bx bx-search icon'></i>
@@ -134,7 +83,7 @@
 
                 </li> -->
 
-            <!-- Search under construction -->
+                <!-- Search under construction -->
                 <ul class="menu-link">
                     <li class="nav-link">
                         <a href="admin-buksak.php">
@@ -168,7 +117,7 @@
                     </li>
                     <li class="nav-link">
                         <a href="credit-buksak.php">
-                        <i class='bx bx-info-circle icon'></i>
+                            <i class='bx bx-info-circle icon'></i>
                             <span class="text nav-text">Tentang</span>
                         </a>
                     </li>
@@ -183,7 +132,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                <a href="../index.php">
+                    <a href="../index.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Log Out</span>
                     </a>
@@ -208,50 +157,73 @@
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <span>Administrator</span>
-                <h2>Pedoman Sekolah</h2>
+                <span>S.U.P.E.R. Administrator</span>
+                <h2>Notifikasi Batas Poin</h2>
             </div>
 
             <div class="header--title">
                 <span>E - Buku Saku</span>
             </div>
         </div>
+        <div>
+            <form action="hapus-pelanggaran.php" method="GET">
+            <div class="wrap-table">
+                <table class="display" id="table_kasus">
+                    <thead>
+                        <tr>
+                            <td>Tanggal</td>
+                            <td>NIS</td>
+                            <td>Nama</td>
+                            <td>Kelas</td>
+                            <td>Tingkat</td>
+                            <td>Jurusan</td>
+                            <td>Poin</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($sql as $row) : ?>
+                        <tr>
+                            <td>
+                                <?= $row["tanggal"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["nis"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["nama"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["kelas"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["tingkat"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["jurusan"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["poin"]; ?>
+                            </td>
+                            <td>
+                                <?php echo "
+                        <a href='proses-hapus-pelanggaran.php?id=$row[nis]' class='css-button'>Lihat</a>" ?>
+                            </td>
+                        </tr>
+                        <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+                </table>
+                </div>
+            </form>
+        </div>
 
-    <div class="pedoman" style="text-align: center;">
-        <img class="pedoman" src="../img/pedoman_1.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_2.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_3.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_4.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_5.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_6.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_7.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_8.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_9.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_10.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_11.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_12.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_13.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_14.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_15.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_16.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_17.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_18.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_19.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_20.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_21.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_22.png" alt=""><br>
-        <img class="pedoman" src="../img/pedoman_23.png" alt=""><br>
-    </div>
-    <form action='pedoman.php' method='post'>
-        <button class="button">Kembali Ke Atas</button>
-    </form>
-    
-    <div class="footer">
-        <p>&copy;TEFA RPL</p>
-    </div>
-    </div>
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#table_kasus').DataTable();
+            });
+        </script>
 
 </body>
 

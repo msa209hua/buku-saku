@@ -171,10 +171,10 @@
   // Ambil data pengguna dari database
   $sql = "SELECT * FROM siswa WHERE nis = $id";
   $sql_2 = "SELECT * FROM tb_pelanggaran WHERE nis = $id";
+  $sql_3 = "SELECT * FROM tb_batas_poin";
   $result = mysqli_query($conn, $sql);
   $pelanggaran = mysqli_query($conn, $sql_2);
-
-
+  $warning = mysqli_query($conn, $sql_3);
   ?>
 
   <div class="nav">
@@ -259,9 +259,13 @@
           </tr>
           ";
         }
+        
+        
+
       } else {
         echo "Data pengguna tidak ditemukan";
       }
+
       ?>
     </table>
   </div>
