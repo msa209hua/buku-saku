@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -165,67 +164,5 @@
                 <span>E - Buku Saku</span>
             </div>
         </div>
-        <div>
-            <form action="hapus-pelanggaran.php" method="GET">
-            <div class="wrap-table">
-                <table class="display" id="table_kasus">
-                    <thead>
-                        <tr>
-                            <td>Tanggal</td>
-                            <td>NIS</td>
-                            <td>Nama</td>
-                            <td>Tingkat</td>
-                            <td>Jurusan</td>
-                            <td>Kelas</td>
-                            <td>Poin</td>
-                            <td>Aksi</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($sql as $row) : ?>
-                        <tr>
-                            <td>
-                                <?= $row["tanggal"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["nis"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["nama"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["tingkat"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["jurusan"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["kelas"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["poin"]; ?>
-                            </td>
-                            <td>
-                                <?php echo "
-                        <a href='tindak_siswa.php?id=$row[nis]' class='css-button'>Tindak</a>" ?>
-                            </td>
-                        </tr>
-                        <?php
-                        endforeach;
-                        ?>
-                    </tbody>
-                </table>
-                </div>
-            </form>
-        </div>
-
-        <script src="script.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#table_kasus').DataTable();
-            });
-        </script>
-
 </body>
-
 </html>

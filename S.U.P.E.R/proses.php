@@ -39,7 +39,7 @@ $ekstensi_diperbolehkan = array('png','jpg');
 
         if ($cek_poin <= 25) {
           $query = "INSERT INTO tb_batas_poin (nis, nama, tingkat, jurusan, kelas, poin) VALUES 
-          ('$nis','$nama','$tingkat','$jurusan','$kelas','$cek_poin')";
+          ('$nis','$nama','$tingkat','$jurusan','$kelas_2','$cek_poin')";
           $proses =  mysqli_query($conn, $query);
         }
       }

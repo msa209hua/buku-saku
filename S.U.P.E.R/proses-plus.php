@@ -26,8 +26,21 @@ if (isset($_POST['lapor_2'])) {
         $poin_total=mysqli_fetch_array($kasus_sql);
         $poin_kasus=$poin_total["poin"];
         $poin_sql=mysqli_query($conn,"UPDATE siswa SET poin = poin + $poin_kasus WHERE nis=$nis");
-      $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,ket_poin,poin_minus,keterangan,gambar,pelapor) VALUES
-      ('$nis','$nama','$kelas','$kasus','+','$poin_kasus','$keterangan','$gambar','$pelapor')");
+        $tambah_sql = mysqli_query($conn, "INSERT INTO tb_pelanggaran (nis,nama_siswa,kelas,pelanggaran,ket_poin,poin_minus,keterangan,gambar,pelapor) VALUES
+        ('$nis','$nama','$kelas','$kasus','+','$poin_kasus','$keterangan','$gambar','$pelapor')");
+
+        $sql_poin = mysqli_query($conn,"SELECT poin FROM siswa WHERE nis=$nis");
+        $poin_sekarang = mysqli_fetch_array($sql_poin);
+        $cek_poin = $poin_sekarang["poin"];
+
+        $tingkat = $value['tingkat'];
+        $kelas_2 = $value['kelas'];
+        $jurusan = $value['jurusan'];
+
+        if ($cek_poin > 25) {
+          $query = "DELETE FROM tb_batas_poin WHERE nis = $nis";
+          $proses =  mysqli_query($conn, $query);
+        }
       }
       echo "
     <script>
