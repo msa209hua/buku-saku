@@ -98,7 +98,7 @@ li a {
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">E - Buku Saku</span>
+                <span class="name">E - Buku Saku</span>
                     <span class="profession">S.U.P.E.R. Admin</span>
                 </div>
             </div>
@@ -195,7 +195,6 @@ li a {
                 <span>S.U.P.E.R. Administrator</span>
                 <h2>Report Kebaikan Siswa</h2>
             </div>
-
             <div class="header--title">
                 <span>E - Buku Saku</span>
             </div>
@@ -260,6 +259,7 @@ li a {
             <td><b>Poin</b></td>
             <td><b>Keterangan</b></td>
             <td><b>Foto Bukti</b></td>
+            <td><b>Pelapor</b></td>
         </tr>
         <?php 
         $jumlah_baris = 3;
@@ -277,7 +277,8 @@ li a {
           <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
           <td><?=$row["keterangan"]; ?></td>
           <td><img src="../image/<?=$row["gambar"]; ?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
-          </tr>
+          <td><?=$row["pelapor"]; ?></td>
+        </tr>
           <?php endforeach; ?>
       </table>
       <?php
@@ -287,7 +288,7 @@ li a {
     $pelanggaran = mysqli_query($conn, $sql);
     ?>
       <div class="jenis-kasus">
-      <p class="judul">Jenis Pelanggaran</p>
+      <p class="judul">Jenis Kebaikan</p>
       <div class="row">
         <div>
           <table class="table-3 table table-striped" style="width: 100%;">

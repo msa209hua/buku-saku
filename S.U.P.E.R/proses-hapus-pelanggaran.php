@@ -385,7 +385,7 @@
             <td><?=$row["pelanggaran"], $row["kebaikan"]; ?></td>
             <td><img src="../image/<?= $row["gambar"] ?>" width="100" height="100" alt='foto tidak ada' title="Foto Bukti"></td>
             <td><?=$row["ket_poin"], $row["poin_minus"], $row["poin_plus"]; ?></td>
-            <td><input type="text" name="alasan" required></td>
+            <td><input type="text" name="alasan"></td>
             <input name="id_pelanggaran" type="hidden" value="<?=$row['id_pelanggaran'];?>">
             <td><input type="submit" name="hapus" value="hapus"><td>
           </tr>
