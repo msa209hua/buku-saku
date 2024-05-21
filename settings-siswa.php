@@ -49,31 +49,14 @@
             </td>
         </tr>
       </table>
-        <br>
-      <table>
-        <tr>
-            <td></td>
-        </tr>
-      </table>
-        <br>
       
-      <table>
-        <tr>
-          <td>
-            <button class="btn btn-primary" name="Back">Kembali</button>
-          </td>
-        </tr>
-      </table>
     </div>
     </form>
 
     <?php
     include "koneksi.php";
     session_start();
-    if (isset($_POST['Back'])) {
-        $nis = $_SESSION['nis'];
-        header("Location: buku-saku.php?id=$nis");
-    }
+
     $nis = $_SESSION['nis'];
     $sql=mysqli_query($conn, "SELECT * FROM siswa WHERE nis=$nis");
     if (isset($_POST['ganti'])) {

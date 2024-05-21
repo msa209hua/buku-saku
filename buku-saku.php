@@ -322,6 +322,7 @@
     $pelanggaran = mysqli_query($conn, $sql);
     ?>
       <p class="judul">Jenis Pelanggaran</p>
+      <br>
       <div class="jenis-kasus">
       <div class="row">
         <div>

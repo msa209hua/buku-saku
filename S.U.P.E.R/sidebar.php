@@ -101,9 +101,9 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-book-bookmark icon'></i>
-                            <span class="text nav-text">Pedoman</span>
+                    <a href="notification.php">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifikasi</span>
                         </a>
                     </li>
                     <li class="nav-link">
