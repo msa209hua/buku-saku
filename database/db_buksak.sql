@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Bulan Mei 2024 pada 08.58
+-- Waktu pembuatan: 21 Bulan Mei 2024 pada 09.43
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -1219,7 +1219,7 @@ CREATE TABLE `tb_batas_poin` (
 --
 
 INSERT INTO `tb_batas_poin` (`id`, `tanggal`, `nis`, `nama`, `tingkat`, `jurusan`, `kelas`, `poin`) VALUES
-(1, '2024-05-21 06:55:51', 102105270, 'ARI RIVALDI', 11, 'PPLG', '11', 25);
+(8, '2024-05-21 07:35:25', 102105270, 'ARI RIVALDI', 11, 'PPLG', '11', 25);
 
 -- --------------------------------------------------------
 
@@ -1338,7 +1338,16 @@ INSERT INTO `tb_riwayat` (`id_pelanggaran`, `nis`, `nama_siswa`, `kelas`, `pelan
 (66, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Terlambat', ''),
 (67, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', 'aaa'),
 (68, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Terlambat', ''),
-(69, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', 'aaa');
+(69, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', 'aaa'),
+(70, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Terlambat', 'aaa'),
+(71, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', ''),
+(72, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Terlambat', ''),
+(74, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', ''),
+(77, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', ''),
+(79, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Terlambat', ''),
+(80, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', ''),
+(82, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', ''),
+(83, 102105270, 'ARI RIVALDI', '11 PPLG B', 'Mabok', '');
 
 -- --------------------------------------------------------
 
@@ -1428,7 +1437,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_batas_poin`
 --
 ALTER TABLE `tb_batas_poin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kasus`
@@ -1446,7 +1455,7 @@ ALTER TABLE `tb_kasus_plus`
 -- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
